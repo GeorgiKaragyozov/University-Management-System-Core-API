@@ -1,0 +1,34 @@
+[
+  //TeacherDiscipline Status 1
+  {
+    "Id": 1,
+    "Code": "Code TeacherDiscipline Status",
+    "Name": "Name TeacherDiscipline Status",
+    "Description": "TeacherDiscipline Status Description"
+  },
+
+  //TeacherDiscipline Status 2
+  {
+    "Id": 2,
+    "Code": "Code TeacherDiscipline Status",
+    "Name": "Name TeacherDiscipline Status",
+    "Description": "TeacherDiscipline Status Description"
+  },
+
+  //TeacherDiscipline Status 3
+  {
+    "Id": 3,
+    "Code": "Code TeacherDiscipline Status",
+    "Name": "Name TeacherDiscipline Status",
+    "Description": "TeacherDiscipline Status Description"
+  },
+
+  //TeacherDiscipline Status 4
+  {
+    "Id": 4,
+    "Code": "Code TeacherDiscipline Status",
+    "Name": "Name TeacherDiscipline Status",
+    "Description": "TeacherDiscipline Status Description"
+  }
+]
+

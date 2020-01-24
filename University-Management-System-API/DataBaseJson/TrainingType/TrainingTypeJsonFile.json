@@ -1,0 +1,33 @@
+[
+  //Training Type 1
+  {
+    "Id": 1,
+    "Code": "Code Training Type",
+    "Name": "Name Training Type",
+    "Description": "Training Type Description"
+  },
+
+  //Training Type 2
+  {
+    "Id": 2,
+    "Code": "Code Training Type",
+    "Name": "Name Training Type",
+    "Description": "Training Type Description"
+  },
+
+  //Training Type 3
+  {
+    "Id": 3,
+    "Code": "Code Training Type",
+    "Name": "Name Training Type",
+    "Description": "Training Type Description"
+  },
+
+  //Training Type 4
+  {
+    "Id": 4,
+    "Code": "Code Training Type",
+    "Name": "Name Training Type",
+    "Description": "Training Type Description"
+  }
+]

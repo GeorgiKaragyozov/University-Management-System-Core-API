@@ -1,0 +1,119 @@
+[
+  //Speciality 1
+  {
+    "Id": 1,
+    "Code": "Code Speciality",
+    "Name": "Name Speciality",
+    "Description": "Speciality Description",
+    "EducationalDegrees": null,
+    "Faculty": {
+      "Id": 1,
+      "Code": "Code Faculty",
+      "Name": "Name Faculty",
+      "Description": "Faculty Description",
+      "Status": {
+        "Id": 1,
+        "Code": "Code Faculty Status",
+        "Name": "Name Faculty Status",
+        "Description": "Faculty Status Description"
+      }
+    },
+    "Status": {
+      "Id": 1,
+      "Code": "Code Speciality",
+      "Name": "Name Speciality",
+      "Description": "Speciality Description"
+    }
+  },
+
+  //Speciality 2
+  {
+    "Id": 2,
+    "Code": "Code Speciality",
+    "Name": "Name Speciality",
+    "Description": "Speciality Description",
+    "EducationalDegrees": null,
+    "Faculty": {
+      "Id": 2,
+      "Code": "Code Faculty",
+      "Name": "Name Faculty",
+      "Description": "Faculty Description",
+      "Status": {
+        "Id": 2,
+        "Code": "Code Faculty Status",
+        "Name": "Name Faculty Status",
+        "Description": "Faculty Status Description"
+      }
+    },
+    "Status": {
+      "Id": 2,
+      "Code": "Code Speciality",
+      "Name": "Name Speciality",
+      "Description": "Speciality Description"
+    }
+  },
+
+  //Speciality 3
+  {
+    "Id": 3,
+    "Code": "Code Speciality",
+    "Name": "Name Speciality",
+    "Description": "Speciality Description",
+    "EducationalDegrees": null,
+    "Faculty": {
+      "Id": 3,
+      "Code": "Code Faculty",
+      "Name": "Name Faculty",
+      "Description": "Faculty Description",
+      "Status": {
+        "Id": 3,
+        "Code": "Code Faculty Status",
+        "Name": "Name Faculty Status",
+        "Description": "Faculty Status Description"
+      }
+    },
+    "Status": {
+      "Id": 3,
+      "Code": "Code Speciality",
+      "Name": "Name Speciality",
+      "Description": "Speciality Description"
+    }
+  },
+
+  //Speciality 4
+  {
+    "Id": 4,
+    "Code": "Code Speciality",
+    "Name": "Name Speciality",
+    "Description": "Speciality Description",
+    "EducationalDegrees": null,
+    "Faculty": {
+      "Id": 4,
+      "Code": "Code Faculty",
+      "Name": "Name Faculty",
+      "Description": "Faculty Description",
+      "Status": {
+        "Id": 4,
+        "Code": "Code Faculty Status",
+        "Name": "Name Faculty Status",
+        "Description": "Faculty Status Description"
+      }
+    },
+    "Status": {
+      "Id": 4,
+      "Code": "Code Speciality",
+      "Name": "Name Speciality",
+      "Description": "Speciality Description"
+    }
+  },
+
+  {
+    "Id": 6,
+    "Code": "Code Speciality",
+    "Name": "Name Speciality",
+    "Description": "Speciality Description",
+    "EducationalDegrees": null,
+    "Faculty": null,
+    "Status": null
+  }
+]

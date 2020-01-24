@@ -1,0 +1,33 @@
+[
+  //Education degreee 1
+  {
+    "Id": 1,
+    "Code": "Code Education degreee",
+    "Name": "Name Education degreee",
+    "Description": "Education degreee Description"
+  },
+
+  //Education degreee 2
+  {
+    "Id": 2,
+    "Code": "Code Education degreee",
+    "Name": "Name Education degreee",
+    "Description": "Education degreee Description"
+  },
+
+  //Education degreee 3
+  {
+    "Id": 3,
+    "Code": "Code Education degreee type",
+    "Name": "Name Education degreee type",
+    "Description": "Education degreee type Description"
+  },
+
+  //Education degreee 4
+  {
+    "Id": 4,
+    "Code": "Code Education degreee type",
+    "Name": "Name Education degreee type",
+    "Description": "Education degreee type Description"
+  }
+]

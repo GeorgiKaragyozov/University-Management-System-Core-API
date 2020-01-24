@@ -1,0 +1,57 @@
+[
+  //Discipline 1
+  {
+    "Id": 1,
+    "Code": "Code Discipline",
+    "Name": "Name Discipline",
+    "Description": "Discipline Description",
+    "Status": {
+      "Id": 1,
+      "Code": "Code Discipline Status",
+      "Name": "Name Discipline Status",
+      "Description": "Discipline Status Description"
+    }
+  },
+
+  //Discipline 2
+  {
+    "Id": 2,
+    "Code": "Code Discipline",
+    "Name": "Name Discipline",
+    "Description": "Discipline Description",
+    "Status": {
+      "Id": 2,
+      "Code": "Code Discipline Status",
+      "Name": "Name Discipline Status",
+      "Description": "Discipline Status Description"
+    }
+  },
+
+  //Discipline 3
+  {
+    "Id": 3,
+    "Code": "Code Discipline",
+    "Name": "Name Discipline",
+    "Description": "Discipline Description",
+    "Status": {
+      "Id": 3,
+      "Code": "Code Discipline Status",
+      "Name": "Name Discipline Status",
+      "Description": "Discipline Status Description"
+    }
+  },
+
+  //Discipline 4
+  {
+    "Id": 4,
+    "Code": "Code Discipline",
+    "Name": "Name Discipline",
+    "Description": "Discipline Description",
+    "Status": {
+      "Id": 4,
+      "Code": "Code Discipline Status",
+      "Name": "Name Discipline Status",
+      "Description": "Discipline Status Description"
+    }
+  }
+]

@@ -1,0 +1,41 @@
+[
+  //Speciality Trainig Type 1
+  {
+    "Id": 1,
+    "Code": "Code Speciality Trainig Type",
+    "Name": "Name Speciality Trainig Type",
+    "Description": "Speciality Trainig Type Description",
+    "TrainingType": null,
+    "Speciality":  null
+  },
+
+  //Speciality Trainig Type 2
+  {
+    "Id": 2,
+    "Code": "Code Speciality Trainig Type",
+    "Name": "Name Speciality Trainig Type",
+    "Description": "Speciality Trainig Type Description",
+    "TrainingType": null,
+    "Speciality": null
+  },
+
+  //Speciality Trainig Type 3
+  {
+    "Id": 3,
+    "Code": "Code Speciality Trainig Type",
+    "Name": "Name Speciality Trainig Type",
+    "Description": "Speciality Trainig Type Description",
+    "TrainingType": null,
+    "Speciality": null
+  },
+
+  //Speciality Trainig Type 4
+  {
+    "Id": 4,
+    "Code": "Code Speciality Trainig Type",
+    "Name": "Name Speciality Trainig Type",
+    "Description": "Speciality Trainig Type Description",
+    "TrainingType": null,
+    "Speciality": null
+  }
+]

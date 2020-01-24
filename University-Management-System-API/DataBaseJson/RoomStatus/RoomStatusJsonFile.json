@@ -1,0 +1,33 @@
+[
+  //Room Status 1
+  {
+    "Id": 1,
+    "Code": "Code Room Status",
+    "Name": "Name Room Status",
+    "Description": "Room Status Description"
+  },
+
+  //Room Status 2
+  {
+    "Id": 2,
+    "Code": "Code Room Status",
+    "Name": "Name Room Status",
+    "Description": "Room Status Description"
+  },
+
+  //Room Status 3
+  {
+    "Id": 3,
+    "Code": "Code Room Status",
+    "Name": "Name Room Status",
+    "Description": "Room Status Description"
+  },
+
+  //Room Status 4
+  {
+    "Id": 4,
+    "Code": "Code Room Status",
+    "Name": "Name Room Status",
+    "Description": "Room Status Description"
+  }
+]

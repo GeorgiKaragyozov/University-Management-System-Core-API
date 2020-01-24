@@ -1,0 +1,57 @@
+[
+  //Room 1
+  {
+    "Id": 1,
+    "Code": "Code Room",
+    "Name": "Name Room",
+    "Description": "Room Description",
+    "Status": {
+      "Id": 1,
+      "Code": "Code Room Status",
+      "Name": "Name Room Status",
+      "Description": "Room Status Description"
+    }
+  },
+
+  //Room 2
+  {
+    "Id": 2,
+    "Code": "Code Room",
+    "Name": "Name Room",
+    "Description": "Room Description",
+    "Status": {
+      "Id": 2,
+      "Code": "Code Room Status",
+      "Name": "Name Room Status",
+      "Description": "Room Status Description"
+    }
+  },
+
+  //Room 3
+  {
+    "Id": 3,
+    "Code": "Code Room",
+    "Name": "Name Room",
+    "Description": "Room Description",
+    "Status": {
+      "Id": 3,
+      "Code": "Code Room Status",
+      "Name": "Name Room Status",
+      "Description": "Room Status Description"
+    }
+  },
+
+  //Lecture Status 4
+  {
+    "Id": 4,
+    "Code": "Code Room",
+    "Name": "Name Room",
+    "Description": "Room Description",
+    "Status": {
+      "Id": 4,
+      "Code": "Code Room Status",
+      "Name": "Name Room Status",
+      "Description": "Room Status Description"
+    }
+  }
+]

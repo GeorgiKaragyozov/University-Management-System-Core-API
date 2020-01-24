@@ -1,0 +1,71 @@
+[
+  //User 1
+  {
+    "Id": 1,
+    "Username": "UserName1",
+    "Password": "password1",
+    "Status": {
+      "Id": 1,
+      "Code": "Code User Status",
+      "Name": "Name User Status",
+      "Description": "User Status Description"
+    }
+  },
+
+  //User 2
+  {
+    "Id": 2,
+    "Username": "UserName1",
+    "Password": "password1",
+    "Status": {
+      "Id": 2,
+      "Code": "Code User Status",
+      "Name": "Name User Status",
+      "Description": "User Status Description"
+    }
+  },
+
+  //User 3
+  {
+    "Id": 3,
+    "Username": "UserName1",
+    "Password": "password1",
+    "Status": {
+      "Id": 3,
+      "Code": "Code User Status",
+      "Name": "Name User Status",
+      "Description": "User Status Description"
+    }
+  },
+
+  //User 4
+  {
+    "Id": 4,
+    "Username": "UserName1",
+    "Password": "password1",
+    "Status": {
+      "Id": 4,
+      "Code": "Code User Status",
+      "Name": "Name User Status",
+      "Description": "User Status Description"
+    }
+  },
+  {
+    "Id": 5,
+    "Username": "UserName1",
+    "Password": "password1",
+    "Status": {
+      "Id": 4,
+      "Code": "Code User Status",
+      "Name": "Name User Status",
+      "Description": "User Status Description"
+    }
+  },
+  {
+    "Id": 6,
+    "Username": "UserName1",
+    "Password": "password1",
+    "Status": null
+  }
+]
+

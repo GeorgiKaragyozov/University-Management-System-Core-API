@@ -1,0 +1,33 @@
+[
+  //Departament Status 1
+  {
+    "Id": 1,
+    "Code": "Code Departament Status",
+    "Name": "Name Departament Status",
+    "Description": "Departament Status Description"
+  },
+
+  //Departament Status 2
+  {
+    "Id": 2,
+    "Code": "Code Departament Status",
+    "Name": "Name Departament Status",
+    "Description": "Departament Status Description"
+  },
+
+  //Departament Status 3
+  {
+    "Id": 3,
+    "Code": "Departament Status",
+    "Name": "Departament Status",
+    "Description": "Departament Status Description"
+  },
+
+  //Departament Status 4
+  {
+    "Id": 4,
+    "Code": "Departament Status",
+    "Name": "Departament Status",
+    "Description": "Departament Status Description"
+  }
+]

@@ -1,0 +1,327 @@
+{
+  "1": {
+    "FirstName": "Ivan",
+    "MiddleName": "Georgiev",
+    "LastName": "Marinov",
+    "Egn": "8388371213",
+    "Address": "kichuka",
+    "City": "Sofia",
+    "Country": "Bulgaria",
+    "MobilePhone": "08976654220",
+    "HomePhone": "032221144",
+    "Email": "IvanMarinov@gmail.com",
+    "UserId": 0,
+    "User": {
+      "Username": "UserName1",
+      "Password": "password1",
+      "StatusId": 0,
+      "Status": null,
+      "Id": 1
+    },
+    "StatusId": 0,
+    "Status": {
+      "Code": "Code Status",
+      "Name": "Name Status",
+      "Description": "StatusDescription",
+      "Id": 1
+    },
+    "SpecialityId": 0,
+    "Speciality": {
+      "StatusId": 0,
+      "Status": {
+        "Code": "Code Speciality",
+        "Name": "Name Speciality",
+        "Description": "Speciality Description",
+        "Id": 1
+      },
+      "EducationalDegreeId": 0,
+      "EducationalDegree": null,
+      "FacultyId": 0,
+      "Faculty": null,
+      "Code": "Code Speciality",
+      "Name": "Name Speciality",
+      "Description": "Speciality Description",
+      "Id": 1
+    },
+    "DepartamentId": 0,
+    "Departament": {
+      "StatusId": 0,
+      "Status": null,
+      "Code": "Code 1",
+      "Name": "Departament 1",
+      "Description": null,
+      "Id": 1
+    },
+    "TypeAccountId": 0,
+    "TypeAccount": {
+      "Code": "Code TypeAccount ",
+      "Name": "Name TypeAccount",
+      "Description": "TypeAccount Description",
+      "Id": 1
+    },
+    "Code": "Mario code",
+    "Name": "The name is Mario",
+    "Description": "Teacher Mario Georgiev Kuzmanov",
+    "Id": 1
+  },
+  "2": {
+    "FirstName": "Mario",
+    "MiddleName": "Georgiev",
+    "LastName": "Kuzmanov",
+    "Egn": "8388371213",
+    "Address": "SomeAddress",
+    "City": "Burgas",
+    "Country": "Bulgaria",
+    "MobilePhone": "087887878787",
+    "HomePhone": "032221144",
+    "Email": "MarioKuzmanov@gmail.com",
+    "UserId": 0,
+    "User": {
+      "Username": "UserName1",
+      "Password": "password1",
+      "StatusId": 0,
+      "Status": null,
+      "Id": 2
+    },
+    "StatusId": 0,
+    "Status": {
+      "Code": "Code Status",
+      "Name": "Name Status",
+      "Description": "StatusDescription",
+      "Id": 2
+    },
+    "SpecialityId": 0,
+    "Speciality": {
+      "StatusId": 0,
+      "Status": {
+        "Code": "Code Speciality",
+        "Name": "Name Speciality",
+        "Description": "Speciality Description",
+        "Id": 2
+      },
+      "EducationalDegreeId": 0,
+      "EducationalDegree": null,
+      "FacultyId": 0,
+      "Faculty": null,
+      "Code": "Code Speciality",
+      "Name": "Name Speciality",
+      "Description": "Speciality Description",
+      "Id": 2
+    },
+    "DepartamentId": 0,
+    "Departament": {
+      "StatusId": 0,
+      "Status": null,
+      "Code": "Code 2",
+      "Name": "Departament 2",
+      "Description": null,
+      "Id": 2
+    },
+    "TypeAccountId": 0,
+    "TypeAccount": {
+      "Code": "Code TypeAccount ",
+      "Name": "Name TypeAccount",
+      "Description": "TypeAccount Description",
+      "Id": 2
+    },
+    "Code": "Mario code",
+    "Name": "The name is Mario",
+    "Description": "Teacher Mario Georgiev Kuzmanov",
+    "Id": 2
+  },
+  "3": {
+    "FirstName": "Dimitur",
+    "MiddleName": "Ivanov",
+    "LastName": "Petrov",
+    "Egn": "9934567890",
+    "Address": "Trakia",
+    "City": "Plovdiv",
+    "Country": "Bulgaria",
+    "MobilePhone": "08976652130",
+    "HomePhone": "032221144",
+    "Email": "DimiturPetrov@gmail.com",
+    "UserId": 0,
+    "User": {
+      "Username": "UserName1",
+      "Password": "password1",
+      "StatusId": 0,
+      "Status": null,
+      "Id": 3
+    },
+    "StatusId": 0,
+    "Status": {
+      "Code": "Code Status",
+      "Name": "Name Status",
+      "Description": "StatusDescription",
+      "Id": 0
+    },
+    "SpecialityId": 0,
+    "Speciality": {
+      "StatusId": 0,
+      "Status": {
+        "Code": "Code Speciality",
+        "Name": "Name Speciality",
+        "Description": "Speciality Description",
+        "Id": 3
+      },
+      "EducationalDegreeId": 0,
+      "EducationalDegree": null,
+      "FacultyId": 0,
+      "Faculty": null,
+      "Code": "Code Speciality",
+      "Name": "Name Speciality",
+      "Description": "Speciality Description",
+      "Id": 3
+    },
+    "DepartamentId": 0,
+    "Departament": {
+      "StatusId": 0,
+      "Status": null,
+      "Code": "Code 3",
+      "Name": "Departament 3",
+      "Description": null,
+      "Id": 3
+    },
+    "TypeAccountId": 0,
+    "TypeAccount": {
+      "Code": "Code TypeAccount ",
+      "Name": "Name TypeAccount",
+      "Description": "TypeAccount Description",
+      "Id": 3
+    },
+    "Code": "Dimitur code",
+    "Name": "The name is Dimitur",
+    "Description": "Teacher Dimitur Ivanov Petrov",
+    "Id": 3
+  },
+  "4": {
+    "FirstName": "Boris",
+    "MiddleName": "Ivanov",
+    "LastName": "Stefanov",
+    "Egn": "8803044404",
+    "Address": "Trakia",
+    "City": "Plovdiv",
+    "Country": "Bulgaria",
+    "MobilePhone": "0898621172",
+    "HomePhone": "032214554",
+    "Email": "Boris1988@gmail.com",
+    "UserId": 0,
+    "User": {
+      "Username": "UserName1",
+      "Password": "password1",
+      "StatusId": 0,
+      "Status": null,
+      "Id": 4
+    },
+    "StatusId": 0,
+    "Status": {
+      "Code": "Code Status",
+      "Name": "Name Status",
+      "Description": "StatusDescription",
+      "Id": 4
+    },
+    "SpecialityId": 0,
+    "Speciality": {
+      "StatusId": 0,
+      "Status": {
+        "Code": "Code Speciality",
+        "Name": "Name Speciality",
+        "Description": "Speciality Description",
+        "Id": 4
+      },
+      "EducationalDegreeId": 0,
+      "EducationalDegree": null,
+      "FacultyId": 0,
+      "Faculty": null,
+      "Code": "Code Speciality",
+      "Name": "Name Speciality",
+      "Description": "Speciality Description",
+      "Id": 4
+    },
+    "DepartamentId": 0,
+    "Departament": {
+      "StatusId": 0,
+      "Status": null,
+      "Code": "Code 4",
+      "Name": "Departament 4",
+      "Description": null,
+      "Id": 4
+    },
+    "TypeAccountId": 0,
+    "TypeAccount": {
+      "Code": "Code TypeAccount ",
+      "Name": "Name TypeAccount",
+      "Description": "TypeAccount Description",
+      "Id": 4
+    },
+    "Code": "Boris code",
+    "Name": "The name is Boris",
+    "Description": "Teacher Boris Ivanov Stefanov",
+    "Id": 4
+  },
+  "5": {
+    "FirstName": "Ivan",
+    "MiddleName": "Georgiev",
+    "LastName": "Marinov",
+    "Egn": "1234567890",
+    "Address": "kichuka",
+    "City": "Plovdiv",
+    "Country": "Bulgaria",
+    "MobilePhone": "08976654220",
+    "HomePhone": "032221144",
+    "Email": "Ivan@abv.bg",
+    "UserId": 0,
+    "User": {
+      "Username": "Ivan new",
+      "Password": "51",
+      "StatusId": 0,
+      "Status": null,
+      "Id": 5
+    },
+    "StatusId": 0,
+    "Status": {
+      "Code": "Code Status",
+      "Name": "Name Status",
+      "Description": "StatusDescription",
+      "Id": 5
+    },
+    "SpecialityId": 0,
+    "Speciality": {
+      "StatusId": 0,
+      "Status": {
+        "Code": "Code Speciality",
+        "Name": "Name Speciality",
+        "Description": "Speciality Description",
+        "Id": 5
+      },
+      "EducationalDegreeId": 0,
+      "EducationalDegree": null,
+      "FacultyId": 0,
+      "Faculty": null,
+      "Code": "Code Speciality",
+      "Name": "Name Speciality",
+      "Description": "Speciality Description",
+      "Id": 5
+    },
+    "DepartamentId": 0,
+    "Departament": {
+      "StatusId": 0,
+      "Status": null,
+      "Code": "Code 5",
+      "Name": "Departament 5",
+      "Description": null,
+      "Id": 5
+    },
+    "TypeAccountId": 0,
+    "TypeAccount": {
+      "Code": "Code TypeAccount ",
+      "Name": "Name TypeAccount",
+      "Description": "TypeAccount Description",
+      "Id": 5
+    },
+    "Code": "ivan code",
+    "Name": "Ivan name",
+    "Description": "Teacher account",
+    "Id": 5
+  }
+}

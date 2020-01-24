@@ -1,0 +1,70 @@
+[
+  //Departament 1
+  {
+    "Id": 1,
+    "Code": "Code Departament",
+    "Name": "Name Departament",
+    "Description": "Departaments Description",
+    "Status": {
+      "Id": 1,
+      "Code": "Code Departament Status",
+      "Name": "Name Departament Status",
+      "Description": "Departaments Status Description"
+    }
+  },
+
+  //Departament 2
+  {
+    "Id": 2,
+    "Code": "Code Departament",
+    "Name": "Name Departament",
+    "Description": "Departaments Description",
+    "Status": {
+      "Id": 2,
+      "Code": "Code Departament Status",
+      "Name": "Name Departament Status",
+      "Description": "Departaments Status Description"
+    }
+  },
+
+  //Departament 3
+  {
+    "Id": 3,
+    "Code": "Code Departament",
+    "Name": "Name Departament",
+    "Description": "Departaments Description",
+    "Status": {
+      "Id": 3,
+      "Code": "Code Departament Status",
+      "Name": "Name Departament Status",
+      "Description": "Departaments Status Description"
+    }
+  },
+
+  //Departament 4
+  {
+    "Id": 4,
+    "Code": "Code Departament",
+    "Name": "Name Departament",
+    "Description": "Departaments Description",
+    "Status": {
+      "Id": 4,
+      "Code": "Code Departament Status",
+      "Name": "Name Departament Status",
+      "Description": "Departaments Status Description"
+    }
+  },
+
+  {
+    "Id": 6,
+    "Code": "Code Departament",
+    "Name": "Name Departament",
+    "Description": "Departaments Description",
+    "Status": {
+      "Id": 6,
+      "Code": "Code Departament Status",
+      "Name": "Name Departament Status",
+      "Description": "Departaments Status Description"
+    }
+  }
+]

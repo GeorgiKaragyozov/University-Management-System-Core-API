@@ -1,0 +1,34 @@
+[
+  //Faculty Status 1
+  {
+    "Id": 1,
+    "Code": "Code Faculty Status",
+    "Name": "Name Faculty Status",
+    "Description": "Faculty Status Description"
+  },
+
+  //Faculty Status 2
+  {
+    "Id": 2,
+    "Code": "Code Faculty Status",
+    "Name": "Name Faculty Status",
+    "Description": "Faculty Status Description"
+  },
+
+  //Faculty Status 3
+  {
+    "Id": 3,
+    "Code": "Faculty Status",
+    "Name": "Faculty  Status",
+    "Description": "Faculty Status Description"
+  },
+
+  //Faculty Status 4
+  {
+    "Id": 4,
+    "Code": "Faculty Status",
+    "Name": "Faculty Status",
+    "Description": "Faculty Status Description"
+  }
+]
+

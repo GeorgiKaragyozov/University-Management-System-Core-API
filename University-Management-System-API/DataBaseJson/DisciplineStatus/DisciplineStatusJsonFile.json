@@ -1,0 +1,34 @@
+[
+  //Discipline Status 1
+  {
+    "Id": 1,
+    "Code": "Code Discipline Status",
+    "Name": "Name Discipline Status",
+    "Description": "Discipline Status Description"
+  },
+
+  //Discipline Status 2
+  {
+    "Id": 2,
+    "Code": "Code Discipline Status",
+    "Name": "Name Discipline Status",
+    "Description": "Discipline Status Description"
+  },
+
+  //Discipline Status 3
+  {
+    "Id": 3,
+    "Code": "Code Discipline Status",
+    "Name": "Name Discipline Status",
+    "Description": "Discipline Status Description"
+  },
+
+  //Discipline Status 4
+  {
+    "Id": 4,
+    "Code": "Code Discipline Status",
+    "Name": "Name Discipline Status",
+    "Description": "Discipline Status Description"
+  }
+]
+

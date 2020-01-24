@@ -1,0 +1,109 @@
+[
+  //Lecture  1
+  {
+    "Id": 1,
+    "Code": "Code Lecture",
+    "Name": "Name Lecture",
+    "Description": "Lecture Description",
+    "TeacherDiscipline": null,
+    "Room": {
+      "Id": 1,
+      "Code": "Code Room",
+      "Name": "Name Room",
+      "Description": "Room Description",
+      "Status": {
+        "Id": 1,
+        "Code": "Code Room Status",
+        "Name": "Name Room Status",
+        "Description": "Room Status Description"
+      }
+    },
+    "Status": {
+      "Id": 1,
+      "Code": "Code Lecture Status",
+      "Name": "Name Lecture Status",
+      "Description": "Lecture Status Description"
+    }
+  },
+
+  //Lecture  2
+  {
+    "Id": 2,
+    "Code": "Code Lecture",
+    "Name": "Name Lecture",
+    "Description": "Lecture Description",
+    "TeacherDiscipline": null,
+    "Room": {
+      "Id": 2,
+      "Code": "Code Room",
+      "Name": "Name Room",
+      "Description": "Room Description",
+      "Status": {
+        "Id": 2,
+        "Code": "Code Room Status",
+        "Name": "Name Room Status",
+        "Description": "Room Status Description"
+      }
+    },
+    "Status": {
+      "Id": 2,
+      "Code": "Code Lecture Status",
+      "Name": "Name Lecture Status",
+      "Description": "Lecture Status Description"
+    }
+  },
+
+  //Lecture  3
+  {
+    "Id": 3,
+    "Code": "Code Lecture",
+    "Name": "Name Lecture",
+    "Description": "Lecture Description",
+    "TeacherDiscipline": null,
+    "Room": {
+      "Id": 3,
+      "Code": "Code Room",
+      "Name": "Name Room",
+      "Description": "Room Description",
+      "Status": {
+        "Id": 3,
+        "Code": "Code Room Status",
+        "Name": "Name Room Status",
+        "Description": "Room Status Description"
+      }
+    },
+    "Status": {
+      "Id": 3,
+      "Code": "Code Lecture Status",
+      "Name": "Name Lecture Status",
+      "Description": "Lecture Status Description"
+    }
+  },
+
+  //Lecture  4
+  {
+    "Id": 4,
+    "Code": "Code Lecture",
+    "Name": "Name Lecture",
+    "Description": "Lecture Description",
+    "TeacherDiscipline": null,
+    "Room": {
+      "Id": 4,
+      "Code": "Code Room",
+      "Name": "Name Room",
+      "Description": "Room Description",
+      "Status": {
+        "Id": 4,
+        "Code": "Code Room Status",
+        "Name": "Name Room Status",
+        "Description": "Room Status Description"
+      }
+    },
+    "Status": {
+      "Id": 4,
+      "Code": "Code Lecture Status",
+      "Name": "Name Lecture Status",
+      "Description": "Lecture Status Description"
+    }
+  }
+]

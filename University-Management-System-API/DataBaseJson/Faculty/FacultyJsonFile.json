@@ -1,0 +1,57 @@
+[
+  //Faculty 1
+  {
+    "Id": 1,
+    "Code": "Code Faculty",
+    "Name": "Name Faculty",
+    "Description": "Faculty Description",
+    "Status": {
+      "Id": 1,
+      "Code": "Code Faculty Status",
+      "Name": "Name Faculty Status",
+      "Description": "Faculty Status Description"
+    }
+  },
+
+  //Faculty 2
+  {
+    "Id": 2,
+    "Code": "Code Faculty",
+    "Name": "Name Faculty",
+    "Description": "Faculty Description",
+    "Status": {
+      "Id": 2,
+      "Code": "Code Faculty Status",
+      "Name": "Name Faculty Status",
+      "Description": "Faculty Status Description"
+    }
+  },
+
+  //Faculty 3
+  {
+    "Id": 3,
+    "Code": "Code Faculty",
+    "Name": "Name Faculty",
+    "Description": "Faculty Description",
+    "Status": {
+      "Id": 3,
+      "Code": "Code Faculty Status",
+      "Name": "Name Faculty Status",
+      "Description": "Faculty Status Description"
+    }
+  },
+
+  //Faculty 4
+  {
+    "Id": 4,
+    "Code": "Code Faculty",
+    "Name": "Name Faculty",
+    "Description": "Faculty Description",
+    "Status": {
+      "Id": 4,
+      "Code": "Code Faculty Status",
+      "Name": "Name Faculty Status",
+      "Description": "Faculty Status Description"
+    }
+  }
+]

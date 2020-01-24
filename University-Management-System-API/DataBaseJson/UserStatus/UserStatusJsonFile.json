@@ -1,0 +1,27 @@
+[
+  {
+    "Code": "Code User Status1",
+    "Name": "Name User Status1",
+    "Description": "User Status Description1",
+    "Id": 1
+  },
+  {
+    "Code": "Code User Status2",
+    "Name": "Name User Status2",
+    "Description": "User Status Description2",
+    "Id": 2
+  },
+  {
+    "Code": "Code User Status3",
+    "Name": "Name User Status3",
+    "Description": "User Status Description3",
+    "Id": 3
+  },
+  {
+    "Code": "Code User Status4",
+    "Name": "Name User Status4",
+    "Description": "User Status Description4",
+    "Id": 4
+  }
+]
+

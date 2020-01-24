@@ -1,0 +1,46 @@
+[
+  //TeacherDiscipline 1
+  {
+    "Id": 1,
+    "Code": "Code TeacherDiscipline",
+    "Name": "Name TeacherDiscipline",
+    "Description": "TeacherDiscipline Description",
+    "Account": null,
+    "Discipline": null,
+    "Status": null
+  },
+
+  //TeacherDiscipline 2
+  {
+    "Id": 2,
+    "Code": "Code TeacherDiscipline",
+    "Name": "Name TeacherDiscipline",
+    "Description": "TeacherDiscipline Description",
+    "Account": null,
+    "Discipline": null,
+    "Status": null
+  },
+
+  //TeacherDiscipline 3
+  {
+    "Id": 3,
+    "Code": "Code TeacherDiscipline",
+    "Name": "Name TeacherDiscipline",
+    "Description": "TeacherDiscipline Description",
+    "Account": null,
+    "Discipline": null,
+    "Status": null
+  },
+
+  //TeacherDiscipline 4
+  {
+    "Id": 4,
+    "Code": "Code TeacherDiscipline",
+    "Name": "Name TeacherDiscipline",
+    "Description": "TeacherDiscipline Description",
+    "Account": null,
+    "Discipline": null,
+    "Status": null
+  }
+]
+
