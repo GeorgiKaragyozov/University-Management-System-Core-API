@@ -31,7 +31,7 @@ namespace University_Management_System_API.Business.Convertor.UserUserGroup
         {
             return new Model.UserUserGroup
             {
-                Id = param.Id,
+                Id = param.Id
             };
         }
 

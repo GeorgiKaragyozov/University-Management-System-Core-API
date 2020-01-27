@@ -1,6 +1,6 @@
 ﻿namespace University_Management_System_API.Business.Convertor.UserGroupStatus
 {
-    public class UserGroupStatusParam : BaseParam
+    public class UserGroupStatusParam : BaseParamNamed
     {
 
     }

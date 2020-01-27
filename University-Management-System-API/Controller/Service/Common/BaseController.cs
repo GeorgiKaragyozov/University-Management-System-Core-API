@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using University_Management_System_API.Business.Processor.Common;
+using Microsoft.AspNetCore.Authorization;
 
 namespace University_Management_System_API.Controller.Service.Common
 {

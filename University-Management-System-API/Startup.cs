@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using University_Management_System_API.Extensions.Common;
 using University_Management_System_API.Swagger;
+using Microsoft.AspNetCore.Authentication;
+using University_Management_System_API.Handlers;
 
 namespace University_Management_System_API
 {
@@ -33,6 +35,9 @@ namespace University_Management_System_API
 
             //Register swagger
             RegisterSwagger.ConfigureSwagger(services);
+
+            services.AddAuthentication("BasicAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,15 +55,14 @@ namespace University_Management_System_API
 
             app.UseRouting();
 
+            //Authentication
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-            });
-
-            //
-            app.UseAuthentication();
+            });           
         }
     }
 }

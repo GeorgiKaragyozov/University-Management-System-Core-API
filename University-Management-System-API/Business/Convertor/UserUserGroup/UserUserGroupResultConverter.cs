@@ -11,6 +11,7 @@ namespace University_Management_System_API.Business.Convertor.UserUserGroup
             result.UserName = param.User.Username;
 
             result.UserGroupId = param.UserGroup.Id;
+            result.UserGroupName = param.UserGroup.Name;
         }
 
         public override UserUserGroupResult GetResult()
