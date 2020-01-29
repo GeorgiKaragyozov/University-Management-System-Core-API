@@ -1,4 +1,5 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
+﻿using System.Threading.Tasks;
+using University_Management_System_API.DataAccess.DataAccessObject.Common;
 
 namespace University_Management_System_API.DataAccess.DataAccessObject.User
 {
@@ -7,6 +8,11 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.User
         protected override long GetPK(Model.User entity)
         {
             return entity.Id;
+        }
+
+        public Task<Model.User> Authenticate(Model.User entity)
+        {
+            throw new System.NotImplementedException();
         }
 
         public UserDaoFile(IUserStorage storage)

@@ -12,24 +12,24 @@ namespace University_Management_System_API.Business.Convertor.Lecture
         private ITeacherDisciplineDao _teacherDisciplineDao;
         public ITeacherDisciplineDao TeacherDisciplineDao
         {
-            get { return this._teacherDisciplineDao; }
-            set { this._teacherDisciplineDao = value; }
+            get { return _teacherDisciplineDao; }
+            set { _teacherDisciplineDao = value; }
         }
 
 
         private IRoomDao _roomDao;
         public IRoomDao RoomDao
         {
-            get { return this._roomDao; }
-            set { this._roomDao = value; }
+            get { return _roomDao; }
+            set { _roomDao = value; }
         }
 
 
         private ILectureStatusDao _statusDao;
         public ILectureStatusDao StatusDao
         {
-            get { return this._statusDao; }
-            set { this._statusDao = value; }
+            get { return _statusDao; }
+            set { _statusDao = value; }
         }
 
         public LectureParamConverter(

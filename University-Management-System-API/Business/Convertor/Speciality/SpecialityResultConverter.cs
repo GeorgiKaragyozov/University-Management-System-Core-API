@@ -7,9 +7,6 @@ namespace University_Management_System_API.Business.Convertor.Speciality
     {
         public override void ConvertSpecific(Model.Speciality param, SpecialityResult result)
         {
-            //result.EducationalDegrees = param.EducationalDegrees;
-            //result.TrainingType = param.TrainingType;
-
             result.StatusId = param.Status.Id;
             result.StatusName = param.Status.Name;
             result.FacultyId = param.Faculty.Id;

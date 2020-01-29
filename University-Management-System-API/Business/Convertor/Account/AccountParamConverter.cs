@@ -14,75 +14,50 @@ namespace University_Management_System_API.Business.Convertor.Account
         private IUserDao _userDao;
         public IUserDao UserDao
         {
-            get 
-            {
-                return this._userDao;
-            }
-            set 
-            { 
-                this._userDao = value; 
-            }
+            get { return _userDao; }
+            set {  _userDao = value; }
         }
 
 
         private IAccountStatusDao _statusDao;
         public IAccountStatusDao StatusDao
         {
-            get
-            {
-                return this._statusDao;
-            }
-            set 
-            {
-                this._statusDao = value; 
-            }
+            get { return _statusDao; }
+            set { _statusDao = value; }
         }
 
 
         private ISpecialityDao _specialityDao;
         public ISpecialityDao SpecialityDao
         {
-            get
-            {
-                return this._specialityDao;
-            }
-            set
-            {
-                this._specialityDao = value;
-            }
+            get { return _specialityDao; }
+            set { _specialityDao = value; }
         }
 
 
         private IDepartamentDao _departamentDao;
         public IDepartamentDao DepartamentDao
         {
-            get
-            {
-                return this._departamentDao;
-            }
-            set
-            {
-                this._departamentDao = value;
-            }
+            get { return _departamentDao; }
+            set { _departamentDao = value; }
         }
-
 
         private IAccountTypeDao _accountTypeDao;
         public IAccountTypeDao AccountTypeDao
         {
-            get { return this._accountTypeDao; }
-            set { this._accountTypeDao = value; }
+            get { return _accountTypeDao; }
+            set { _accountTypeDao = value; }
         }
 
         public AccountParamConverter(
             IUserDao userDao,
-            IAccountStatusDao accountStatusDao,
+            IAccountStatusDao statusDao,
             ISpecialityDao specialityDao,
             IDepartamentDao departamentDao,
             IAccountTypeDao accountTypeDao)
         {
             this.UserDao = userDao;
-            this.AccountTypeDao = accountTypeDao;
+            this.StatusDao = statusDao;
             this.SpecialityDao = specialityDao;
             this.DepartamentDao = departamentDao;
             this.AccountTypeDao = accountTypeDao;

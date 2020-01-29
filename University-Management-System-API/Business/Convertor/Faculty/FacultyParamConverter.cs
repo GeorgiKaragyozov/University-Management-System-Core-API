@@ -9,8 +9,8 @@ namespace University_Management_System_API.Business.Convertor.Faculty
         private IFacultyStatusDao _statusDao;
         public IFacultyStatusDao StatusDao
         {
-            get { return this._statusDao; }
-            set { this._statusDao = value; }
+            get { return _statusDao; }
+            set { _statusDao = value; }
         }
 
         public FacultyParamConverter(IFacultyStatusDao statusDao)

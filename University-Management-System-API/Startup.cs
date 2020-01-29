@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using University_Management_System_API.Extensions.Common;
 using University_Management_System_API.Swagger;
 using Microsoft.AspNetCore.Authentication;
-using University_Management_System_API.Handlers;
+using University_Management_System_API.BasicAuthentication.AuthenticationHendler;
 
 namespace University_Management_System_API
 {
@@ -28,14 +28,15 @@ namespace University_Management_System_API
 
             services.AddDbContext<UniversityManagementSystemContext>(options => 
                 options.UseSqlServer(
-                    @"Server=.;Database=University-Management-System-API-DB;Integrated Security = True"));
+                    @"Server=.;Database=University-Management-System-API-DB;Integrated Security = True"));                
 
             // Injection of all objects
             BaseRegisterExtensions.BaseRegisterDependencies(services);
 
-            //Register swagger
-            RegisterSwagger.ConfigureSwagger(services);
+            //... rest of services configuration
+            services.AddSwaggerDocumentation();
 
+            // configure basic authentication 
             services.AddAuthentication("BasicAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
         }
@@ -43,17 +44,22 @@ namespace University_Management_System_API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //Swagger
-            ConfigureSwagger.Configure(app);
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
+            SwaggerServiceExtensions.UseSwaggerDocumentation(app);
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            // global cors policy
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             //Authentication
             app.UseAuthentication();

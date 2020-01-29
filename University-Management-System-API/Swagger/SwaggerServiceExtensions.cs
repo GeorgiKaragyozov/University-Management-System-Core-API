@@ -1,15 +1,17 @@
-﻿using System.Linq;
+﻿using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
-using System.IO;
-using System;
+using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace University_Management_System_API.Swagger
 {
-    public static class RegisterSwagger
+    public static class SwaggerServiceExtensions
     {
-        public static void ConfigureSwagger(IServiceCollection services)
+        public static IServiceCollection AddSwaggerDocumentation(this IServiceCollection services)
         {
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -39,7 +41,7 @@ namespace University_Management_System_API.Swagger
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
                     {
-                          new OpenApiSecurityScheme
+                        new OpenApiSecurityScheme
                             {
                                 Reference = new OpenApiReference
                                 {
@@ -47,7 +49,7 @@ namespace University_Management_System_API.Swagger
                                     Id = "basic"
                                 }
                             },
-                          new string[] {}
+                        new string[] {}
                     }
                 });
 
@@ -58,7 +60,30 @@ namespace University_Management_System_API.Swagger
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
 
                 c.IncludeXmlComments(xmlPath);
-            });        
+            });
+
+            return services;
+        }
+
+        public static IApplicationBuilder UseSwaggerDocumentation(this IApplicationBuilder app)
+        {
+            app.UseStaticFiles();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            app.UseDeveloperExceptionPage();
+
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "University Management System");
+
+                c.DocumentTitle = "University Management System";
+                c.DocExpansion(DocExpansion.None);
+            });
+
+            return app;
         }
     }
 }

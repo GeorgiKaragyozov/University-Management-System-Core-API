@@ -10,8 +10,8 @@ using University_Management_System_API;
 namespace University_Management_System_API.Migrations
 {
     [DbContext(typeof(UniversityManagementSystemContext))]
-    [Migration("20200124180147_Initialmig")]
-    partial class Initialmig
+    [Migration("20200129205622_Default")]
+    partial class Default
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -585,11 +585,15 @@ namespace University_Management_System_API.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("StatusId");
+
+                    b.HasIndex("Username")
+                        .IsUnique()
+                        .HasFilter("[Username] IS NOT NULL");
 
                     b.ToTable("Users");
                 });

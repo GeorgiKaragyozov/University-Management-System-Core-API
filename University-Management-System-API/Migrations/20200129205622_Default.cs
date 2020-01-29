@@ -3,7 +3,7 @@ using University_Management_System_API.DataAccess.DataAccessObject;
 
 namespace University_Management_System_API.Migrations
 {
-    public partial class Initialmig : Migration
+    public partial class Default : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -668,6 +668,13 @@ namespace University_Management_System_API.Migrations
                 name: "IX_Users_StatusId",
                 table: "Users",
                 column: "StatusId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_Username",
+                table: "Users",
+                column: "Username",
+                unique: true,
+                filter: "[Username] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserUserGroups_UserGroupId",

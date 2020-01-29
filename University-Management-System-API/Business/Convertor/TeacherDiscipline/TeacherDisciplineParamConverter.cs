@@ -12,24 +12,24 @@ namespace University_Management_System_API.Business.Convertor.TeacherDiscipline
         private IAccountDao _accountDao;
         public IAccountDao AccountDao
         {
-            get { return this._accountDao; }
-            set { this._accountDao = value; }
+            get { return _accountDao; }
+            set { _accountDao = value; }
         }
 
 
         private IDisciplineDao _disciplineDao;
         public IDisciplineDao DisciplineDao
         {
-            get { return this._disciplineDao; }
-            set { this._disciplineDao = value; }
+            get { return _disciplineDao; }
+            set { _disciplineDao = value; }
         }
 
 
         private ITeacherDisciplineStatusDao _statusDao;
         public ITeacherDisciplineStatusDao StatusDao
         {
-            get { return this._statusDao; }
-            set { this._statusDao = value; }
+            get { return _statusDao; }
+            set { _statusDao = value; }
         }
 
         public TeacherDisciplineParamConverter(

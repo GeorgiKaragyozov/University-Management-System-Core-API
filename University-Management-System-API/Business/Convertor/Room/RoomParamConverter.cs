@@ -9,8 +9,8 @@ namespace University_Management_System_API.Business.Convertor.Room
         private IRoomStatusDao _statusDao;
         public IRoomStatusDao StatusDao
         {
-            get { return this._statusDao; }
-            set { this._statusDao = value; }
+            get { return _statusDao; }
+            set { _statusDao = value; }
         }
 
         public RoomParamConverter(IRoomStatusDao statusDao)

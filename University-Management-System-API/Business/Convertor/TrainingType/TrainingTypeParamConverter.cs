@@ -10,14 +10,8 @@ namespace University_Management_System_API.Business.Convertor.TrainingType
         private ISpecialityDao _specialityDao;
         public ISpecialityDao SpecialityDao
         {
-            get
-            {
-                return this._specialityDao;
-            }
-            set
-            {
-                this._specialityDao = value;
-            }
+            get { return _specialityDao; }
+            set { _specialityDao = value; }
         }
 
         public TrainingTypeParamConverter(ISpecialityDao specialityDao)

@@ -56,6 +56,10 @@ namespace University_Management_System_API
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Username)
+                .IsUnique();
+
             base.OnModelCreating(modelBuilder);
         }            
     }

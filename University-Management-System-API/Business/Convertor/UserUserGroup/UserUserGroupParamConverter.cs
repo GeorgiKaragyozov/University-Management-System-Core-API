@@ -10,15 +10,15 @@ namespace University_Management_System_API.Business.Convertor.UserUserGroup
         private IUserDao _userDao;
         public IUserDao UserDao
         {
-            get { return this._userDao; }
-            set { this._userDao = value; }
+            get { return _userDao; }
+            set { _userDao = value; }
         }
 
         private IUserGroupDao _userGroupDao;
         public IUserGroupDao UserGroupDao
         {
-            get { return this._userGroupDao; }
-            set { this._userGroupDao = value; }
+            get { return _userGroupDao; }
+            set { _userGroupDao = value; }
         }
 
         public UserUserGroupParamConverter(IUserDao userDao, IUserGroupDao userGroupDao)

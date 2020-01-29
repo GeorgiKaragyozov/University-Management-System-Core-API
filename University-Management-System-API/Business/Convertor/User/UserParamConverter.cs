@@ -9,8 +9,8 @@ namespace University_Management_System_API.Business.Convertor.User
         private IUserStatusDao _statusDao;
         public IUserStatusDao StatusDao
         {
-            get { return this._statusDao; }
-            set { this._statusDao = value; }
+            get { return _statusDao; }
+            set { _statusDao = value; }
         }
 
         public UserParamConverter(IUserStatusDao statusDao)

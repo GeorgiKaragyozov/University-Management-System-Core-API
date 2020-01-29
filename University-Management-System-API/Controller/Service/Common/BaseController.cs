@@ -7,21 +7,22 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace University_Management_System_API.Controller.Service.Common
 {
+    [Authorize]
+    [ApiController]
     [Produces("application/json")]
     [Route("api/[Controller]")]
-    [ApiController]
-    public abstract class BaseController<TParam, TResult, TPK, IBaseProcessor> : ControllerBase
+    public abstract class BaseController<TParam, TResult, TPK, TBaseProcessor> : ControllerBase
 
-        where IBaseProcessor : IBaseProcessor<TParam, TResult, TPK> 
+        where TBaseProcessor : IBaseProcessor<TParam, TResult, TPK> 
     {
-        private IBaseProcessor _processor;
-        public IBaseProcessor Processor
+        private TBaseProcessor _processor;
+        public TBaseProcessor Processor
         {
             get { return _processor; }
             set { _processor = value; }
         }
 
-        public BaseController(IBaseProcessor processor)
+        public BaseController(TBaseProcessor processor)
         {
             this.Processor = processor;
         }

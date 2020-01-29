@@ -2,6 +2,7 @@
 using University_Management_System_API.Extensions.Account;
 using University_Management_System_API.Extensions.AccountStatus;
 using University_Management_System_API.Extensions.AccountType;
+using University_Management_System_API.Extensions.BasicAuthentication;
 using University_Management_System_API.Extensions.Departament;
 using University_Management_System_API.Extensions.DepartamentStatus;
 using University_Management_System_API.Extensions.Discipline;
@@ -109,6 +110,9 @@ namespace University_Management_System_API.Extensions.Common
 
             //------------------- UserUserGroup -------------------//
             RegisterUserUserGroupExtensions.RegisterDependencies(services);
+
+            //------------------- AuthenticationProvider -------------------//
+            RegisterAuthenticationProviderExtensions.RegisterDependencies(services);
         }       
     }
 }

@@ -9,8 +9,8 @@ namespace University_Management_System_API.Business.Convertor.Discipline
         private IDisciplineStatusDao _statusDao;
         public IDisciplineStatusDao StatusDao
         {
-            get { return this._statusDao; }
-            set { this._statusDao = value; }
+            get { return _statusDao; }
+            set { _statusDao = value; }
         }
 
         public DisciplineParamConverter(IDisciplineStatusDao statusDao)

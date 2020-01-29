@@ -9,8 +9,8 @@ namespace University_Management_System_API.Business.Convertor.Departament
         private IDepartamentStatusDao _statusDao;
         public IDepartamentStatusDao StatusDao
         {
-            get { return this._statusDao; }
-            set { this._statusDao = value; }
+            get { return _statusDao; }
+            set { _statusDao = value; }
         }
 
         public DepartamentParamConverter(IDepartamentStatusDao statusDao)

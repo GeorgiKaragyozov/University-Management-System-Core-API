@@ -11,16 +11,16 @@ namespace University_Management_System_API.Business.Convertor.SpecialityTraining
         private ISpecialityDao _specialityDao;
         public ISpecialityDao SpecialityDao
         {
-            get { return this._specialityDao; }
-            set { this._specialityDao = value; }
+            get { return _specialityDao; }
+            set { _specialityDao = value; }
         }
 
 
         private ITrainingTypeDao _trainingTypeDao;
         public ITrainingTypeDao TrainingTypeDao
         {
-            get { return this._trainingTypeDao; }
-            set { this._trainingTypeDao = value; }
+            get { return _trainingTypeDao; }
+            set { _trainingTypeDao = value; }
         }
 
         public override Model.SpecialityTrainingType GetEntity(SpecialityTrainingTypeParam param)

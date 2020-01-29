@@ -11,7 +11,7 @@ namespace University_Management_System_API.Business.Convertor.Speciality
         private ISpecialityStatusDao _statusDao;
         public ISpecialityStatusDao StatusDao
         {
-            get { return this._statusDao; }
+            get { return _statusDao; }
             set { this._statusDao = value; }
         }
 
@@ -19,8 +19,8 @@ namespace University_Management_System_API.Business.Convertor.Speciality
         private IFacultyDao _facultyDao;
         public IFacultyDao FacultyDao
         {
-            get { return this._facultyDao; }
-            set { this._facultyDao = value; }
+            get { return _facultyDao; }
+            set { _facultyDao = value; }
         }
 
 
@@ -55,7 +55,6 @@ namespace University_Management_System_API.Business.Convertor.Speciality
             entity.Status = StatusDao.Find(param.StatusId);
             entity.Faculty = FacultyDao.Find(param.FacultyId);
             entity.EducationalDegree = EducationalDegreeDao.Find(param.EducationalDegreeId);
-            //entity.TrainingType = param.TrainingType;
         }
     }
 }

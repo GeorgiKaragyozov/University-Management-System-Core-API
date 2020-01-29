@@ -56,7 +56,10 @@ namespace University_Management_System_API.Business.Processor.Common
         /// <returns>entity</returns>
         public TResult Create(TParam param)
         {
-            TEntity entity = ParamConverter.Convert(param, null);
+            TEntity entity = null;
+
+            entity = ParamConverter.Convert(param, entity);
+            //TEntity entity = ParamConverter.Convert(param, null);
 
             entity = Dao.Save(entity);
 
@@ -255,6 +258,6 @@ namespace University_Management_System_API.Business.Processor.Common
         public void ValidateParameters(List<TParam> param)
         {
             throw new NotImplementedException();
-        }
+        }    
     }
 }

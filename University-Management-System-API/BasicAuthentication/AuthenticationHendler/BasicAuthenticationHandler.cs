@@ -1,29 +1,35 @@
 ﻿using System;
-using System.Text;
-using System.Linq;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.Extensions.Options;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
 using System.Net.Http.Headers;
 using System.Security.Claims;
+using System.Text;
+using System.Text.Encodings.Web;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using University_Management_System_API.BasicAuthentication.AuthenticationProvider;
+using University_Management_System_API.Business.Convertor.User;
 
-namespace University_Management_System_API.Handlers
+namespace University_Management_System_API.BasicAuthentication.AuthenticationHendler
 {
     public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
-        private readonly UniversityManagementSystemContext _context;
+        private IAuthenticationProvider _provider;
+        public IAuthenticationProvider Provider
+        {
+            get { return _provider; }
+            set { _provider = value; }
+        }
 
         public BasicAuthenticationHandler(
             IOptionsMonitor<AuthenticationSchemeOptions> options,
             ILoggerFactory logger,
             UrlEncoder encoder,
             ISystemClock clock,
-            UniversityManagementSystemContext context)
+            IAuthenticationProvider provider)
             : base(options, logger, encoder, clock)
         {
-            this._context = context;
+            this.Provider = provider;
         }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -33,6 +39,8 @@ namespace University_Management_System_API.Handlers
                 return AuthenticateResult.Fail("Authorization Header not found");
             }
 
+            UserResult result = null;
+
             try
             {
                 var authenticationValues = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);
@@ -40,22 +48,20 @@ namespace University_Management_System_API.Handlers
                 var bytes = Convert.FromBase64String(authenticationValues.Parameter);
 
                 string[] credentials = Encoding.UTF8.GetString(bytes).Split(":");
-                string username = credentials[0];
-                string password = credentials[1];
+                UserParam param = new UserParam();
 
-                Model.User user = _context.Users
-                    .Where(
-                        user => user.Username == username 
-                        && user.Password == password)
-                        .Single();
+                param.Username = credentials[0];
+                param.Password = credentials[1];
 
-                if (user == null)
+                result = await Provider.Authenticate(param);
+
+                if (result == null)
                 {
                     return AuthenticateResult.Fail("Invalid Username or Password");
                 }
                 else
                 {
-                    var claims = new[] { new Claim(ClaimTypes.Name, user.Username) };
+                    var claims = new[] { new Claim(ClaimTypes.Name, result.Username) };
                     var identity = new ClaimsIdentity(claims, Scheme.Name);
                     var principal = new ClaimsPrincipal(identity);
                     var ticket = new AuthenticationTicket(principal, Scheme.Name);
@@ -70,4 +76,3 @@ namespace University_Management_System_API.Handlers
         }
     }
 }
-
