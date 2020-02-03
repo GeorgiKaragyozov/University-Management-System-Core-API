@@ -49,7 +49,7 @@ namespace University_Management_System_API
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlServer(@"Server=.;Database=University-Management-System-API-DB;Integrated Security = True");
+                .UseSqlServer(@"Server=.;Database=University-Management-System-API-DB;column encryption setting=enabled;Integrated Security = True");
 
             optionsBuilder.
                 UseLazyLoadingProxies();

@@ -6,8 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using University_Management_System_API.Extensions.Common;
 using University_Management_System_API.Swagger;
-using Microsoft.AspNetCore.Authentication;
-using University_Management_System_API.BasicAuthentication.AuthenticationHendler;
 
 namespace University_Management_System_API
 {
@@ -28,17 +26,13 @@ namespace University_Management_System_API
 
             services.AddDbContext<UniversityManagementSystemContext>(options => 
                 options.UseSqlServer(
-                    @"Server=.;Database=University-Management-System-API-DB;Integrated Security = True"));                
+                    @"Server=.;Database=University-Management-System-API-DB;column encryption setting=enabled;Integrated Security = True"));                
 
             // Injection of all objects
             BaseRegisterExtensions.BaseRegisterDependencies(services);
 
             //... rest of services configuration
             services.AddSwaggerDocumentation();
-
-            // configure basic authentication 
-            services.AddAuthentication("BasicAuthentication")
-                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

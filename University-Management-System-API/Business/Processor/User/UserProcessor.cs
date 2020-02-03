@@ -23,15 +23,15 @@ namespace University_Management_System_API.Business.Processor.User
 
         }
 
-        public async Task<UserResult> Authenticate(UserParam param)
+        public async Task<UserResult> AuthenticateAsync(UserParam param)
         {
             Model.User entity = new Model.User();
-            UserResult result = new UserResult();
 
             entity = ParamConverter.ConvertStandart(param, entity);
 
-            entity = await Dao.Authenticate(entity);
+            entity = await Dao.AuthenticateAsync(entity);
 
+            UserResult result = new UserResult();
             result = ResultConverter.ConvertStandart(entity, result);
 
             return result;

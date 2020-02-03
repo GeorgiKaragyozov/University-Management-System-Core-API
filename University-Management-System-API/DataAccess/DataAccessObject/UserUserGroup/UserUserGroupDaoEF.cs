@@ -1,4 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using University_Management_System_API.DataAccess.DataAccessObject.Common;
 
 namespace University_Management_System_API.DataAccess.DataAccessObject.UserUserGroup
 {
@@ -8,6 +11,16 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.UserUserG
           : base(context)
         {
 
+        }
+
+        public async Task<List<string>> GetUserGroupsAsync(Model.UserUserGroup entity)
+        {
+            List<string> ListRoles = await Task.Run(() => _dbContext.UserUserGroups
+                .Where(e => e.User.Id == entity.User.Id)
+                .Select(r => r.UserGroup.Name)
+                .ToList());
+
+            return ListRoles;
         }
     }
 }

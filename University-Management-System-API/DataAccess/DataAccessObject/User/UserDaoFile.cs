@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using University_Management_System_API.DataAccess.DataAccessObject.Common;
 
 namespace University_Management_System_API.DataAccess.DataAccessObject.User
@@ -10,9 +11,14 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.User
             return entity.Id;
         }
 
-        public Task<Model.User> Authenticate(Model.User entity)
+        public async Task<Model.User> AuthenticateAsync(Model.User entity)
         {
-            throw new System.NotImplementedException();
+            Model.User user = await Task.Run(() => DataStorage
+                    .ReturnDictionary().SingleOrDefault(
+                       e => e.Value.Username == entity.Username &&
+                       e.Value.Password == entity.Password).Value);
+
+            return user;
         }
 
         public UserDaoFile(IUserStorage storage)

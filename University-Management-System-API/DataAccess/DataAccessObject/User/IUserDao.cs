@@ -5,6 +5,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.User
 {
     public interface IUserDao : IBaseDao<Model.User, long>
     {
-        Task<Model.User> Authenticate(Model.User entity);
+        Task<Model.User> AuthenticateAsync(Model.User entity);
     }
 }

@@ -1,24 +1,23 @@
-﻿using System;
-using System.Net.Http.Headers;
-using System.Security.Claims;
-using System.Text;
-using System.Text.Encodings.Web;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
+using System.Text.Encodings.Web;
+using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using University_Management_System_API.BasicAuthentication.AuthenticationProvider;
+using Microsoft.AspNetCore.Authentication;
 using University_Management_System_API.Business.Convertor.User;
+using University_Management_System_API.Business.Convertor.UserUserGroup;
+using University_Management_System_API.BasicAuthentication.AuthenticationProvider;
 
 namespace University_Management_System_API.BasicAuthentication.AuthenticationHendler
 {
     public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
-        private IAuthenticationProvider _provider;
-        public IAuthenticationProvider Provider
+        private IBasicAuthenticationProvider _basicProvider;
+        public IBasicAuthenticationProvider BasicProvider
         {
-            get { return _provider; }
-            set { _provider = value; }
+            get { return _basicProvider; }
+            set { _basicProvider = value; }
         }
 
         public BasicAuthenticationHandler(
@@ -26,10 +25,10 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationHen
             ILoggerFactory logger,
             UrlEncoder encoder,
             ISystemClock clock,
-            IAuthenticationProvider provider)
+            IBasicAuthenticationProvider basicProvider)
             : base(options, logger, encoder, clock)
         {
-            this.Provider = provider;
+            this.BasicProvider = basicProvider;
         }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -39,40 +38,47 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationHen
                 return AuthenticateResult.Fail("Authorization Header not found");
             }
 
-            UserResult result = null;
+            UserResult result;
+            List<string> listUserRoles;
 
             try
             {
-                var authenticationValues = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);
+                result = await BasicProvider.AuthenticateAsync(Request);
 
-                var bytes = Convert.FromBase64String(authenticationValues.Parameter);
-
-                string[] credentials = Encoding.UTF8.GetString(bytes).Split(":");
-                UserParam param = new UserParam();
-
-                param.Username = credentials[0];
-                param.Password = credentials[1];
-
-                result = await Provider.Authenticate(param);
-
-                if (result == null)
+                UserUserGroupParam groupParam = new UserUserGroupParam
                 {
-                    return AuthenticateResult.Fail("Invalid Username or Password");
-                }
-                else
-                {
-                    var claims = new[] { new Claim(ClaimTypes.Name, result.Username) };
-                    var identity = new ClaimsIdentity(claims, Scheme.Name);
-                    var principal = new ClaimsPrincipal(identity);
-                    var ticket = new AuthenticationTicket(principal, Scheme.Name);
+                    UserId = result.Id
+                };
 
-                    return AuthenticateResult.Success(ticket);
-                }
+                listUserRoles = await BasicProvider.GetUserGroupsAsync(groupParam);
             }
-            catch (Exception)
+            catch
             {
-                return AuthenticateResult.Fail("An Error has occured");
+                return AuthenticateResult.Fail("Invalid Authorization Header");
             }
+
+            if (result == null)
+                return AuthenticateResult.Fail("Invalid Username or Password");
+
+            IList<Claim> claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, result.Id.ToString()),
+                new Claim(ClaimTypes.Name, result.Username)
+            };
+
+            listUserRoles.ForEach(userGroups => 
+                claims.Add(new Claim(ClaimTypes.Role, userGroups)));
+
+            //foreach (string userGroups in listUserRoles)
+            //{
+            //    claims.Add(new Claim(ClaimTypes.Role, userGroups));
+            //}
+
+            var identity = new ClaimsIdentity(claims, Scheme.Name);
+            var principal = new ClaimsPrincipal(identity);
+            var ticket = new AuthenticationTicket(principal, Scheme.Name);
+
+            return AuthenticateResult.Success(ticket);
         }
     }
 }

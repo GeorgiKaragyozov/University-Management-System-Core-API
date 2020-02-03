@@ -93,6 +93,7 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <response code="200">Returns deleted items by Id</response>
         /// <response code="400">If the param's id is null</response> 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin, User")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult DeleteById(TPK id)
@@ -183,6 +184,7 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns>params</returns>
         /// <response code="302">Returns the found item</response>
         [HttpGet("ListAll")]
+        [Authorize(Roles = "Admin, User")]
         [ProducesResponseType(StatusCodes.Status302Found)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult ListAll()
