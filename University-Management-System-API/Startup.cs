@@ -24,9 +24,10 @@ namespace University_Management_System_API
         {
             services.AddControllers();
 
-            services.AddDbContext<UniversityManagementSystemContext>(options => 
-                options.UseSqlServer(
-                    @"Server=.;Database=University-Management-System-API-DB;column encryption setting=enabled;Integrated Security = True"));                
+            services.AddDbContext<UniversityManagementSystemContext>(options =>
+                options.UseSqlServer(Configuration
+                .GetConnectionString("University-Management-System-Default")
+                ).UseLazyLoadingProxies());
 
             // Injection of all objects
             BaseRegisterExtensions.BaseRegisterDependencies(services);

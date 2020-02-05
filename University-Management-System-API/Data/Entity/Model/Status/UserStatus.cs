@@ -2,6 +2,6 @@
 {
     public class UserStatus : NamedPersistent
     {
-
+        //public bool IsActive { get; set; }
     }
 }

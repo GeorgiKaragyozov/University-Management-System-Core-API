@@ -2,6 +2,6 @@
 {
     public class UserGroupStatus : NamedPersistent
     {
-
+        //public bool IsActive { get; set; }
     }
 }

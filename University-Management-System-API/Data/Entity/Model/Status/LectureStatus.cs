@@ -2,6 +2,6 @@
 {
     public class LectureStatus : NamedPersistent
     {
-
+        //public bool IsActive { get; set; }
     }
 }

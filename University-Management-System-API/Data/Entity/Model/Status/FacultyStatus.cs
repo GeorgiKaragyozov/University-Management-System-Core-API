@@ -2,6 +2,6 @@
 {
     public class FacultyStatus : NamedPersistent
     {
-
+        //public bool IsActive { get; set; }
     }
 }

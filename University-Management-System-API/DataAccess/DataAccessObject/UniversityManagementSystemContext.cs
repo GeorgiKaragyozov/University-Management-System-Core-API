@@ -46,18 +46,14 @@ namespace University_Management_System_API
         public virtual DbSet<TeacherDiscipline> TeacherDisciplines { get; set; }
         public virtual DbSet<TeacherDisciplineStatus> TeacherDisciplineStatuses { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder
-                .UseSqlServer(@"Server=.;Database=University-Management-System-API-DB;column encryption setting=enabled;Integrated Security = True");
-
-            optionsBuilder.
-                UseLazyLoadingProxies();
-        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.Username)
+                .IsUnique();
+
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Password)
                 .IsUnique();
 
             base.OnModelCreating(modelBuilder);

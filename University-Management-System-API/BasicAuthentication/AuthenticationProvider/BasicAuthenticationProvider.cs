@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using University_Management_System_API.Business.Convertor.User;
-using University_Management_System_API.Business.Convertor.UserUserGroup;
 using University_Management_System_API.Business.Processor.User;
 using University_Management_System_API.Business.Processor.UserUserGroup;
 
@@ -21,13 +21,17 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationPro
         }
 
         private IUserUserGroupProcessor _processorUserUserGroup;
+        private readonly object Scheme;
+
         public IUserUserGroupProcessor ProcessorUserUserGroup
         {
             get { return _processorUserUserGroup; }
             set { _processorUserUserGroup = value; }
         }
 
-        public BasicAuthenticationProvider(IUserProcessor processorUser, IUserUserGroupProcessor processorUserUserGroup)
+        public BasicAuthenticationProvider(
+            IUserProcessor processorUser,
+            IUserUserGroupProcessor processorUserUserGroup)
         {
             this.ProcessorUser = processorUser;
             this.ProcessorUserUserGroup = processorUserUserGroup;
@@ -50,9 +54,12 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationPro
             return result;
         }
 
-        public async Task<List<string>> GetUserGroupsAsync(UserUserGroupParam param)
+        public async Task<List<string>> GetUserGroupsAsync(UserResult result)
         {
-            return await ProcessorUserUserGroup.GetUserGroupsAsync(param);
+            return await Task.Run(() => 
+                ProcessorUserUserGroup.Find("UserId", result.Id.ToString())
+                .Select(x => x.UserGroupName)
+                .ToList());
         }
     }
 }

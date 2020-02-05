@@ -2,6 +2,6 @@
 {
     public class TeacherDisciplineStatus : NamedPersistent
     {
-
+        //public bool IsActive { get; set; }
     }
 }

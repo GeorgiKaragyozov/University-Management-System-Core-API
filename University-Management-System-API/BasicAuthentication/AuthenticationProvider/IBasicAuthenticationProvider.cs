@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using University_Management_System_API.Business.Convertor.User;
-using University_Management_System_API.Business.Convertor.UserUserGroup;
 
 namespace University_Management_System_API.BasicAuthentication.AuthenticationProvider
 {
@@ -10,6 +9,6 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationPro
     {
         Task<UserResult> AuthenticateAsync(HttpRequest request);
 
-        Task<List<string>> GetUserGroupsAsync(UserUserGroupParam param);
+        Task<List<string>> GetUserGroupsAsync(UserResult result);
     }
 }

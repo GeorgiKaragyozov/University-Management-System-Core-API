@@ -76,7 +76,7 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.Common
         /// <returns>List of entities found</returns>
         public List<TEntity> Find(string field, string value)
         {
-            TEntity entity = _dbContext.Set<TEntity>().SingleOrDefault();
+            List<TEntity> entity = _dbContext.Set<TEntity>().ToList();
 
             foreach (var item in entity.GetType().GetProperties())
             {
@@ -86,14 +86,10 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.Common
                 }
             }
 
-            return _dbContext.Set<TEntity>()
-                .ToList()
-                .Where(entity =>
-                     entity.GetType().GetProperty(field)
-                    .GetValue(entity, null)
-                    .ToString()
-                    .Equals(value))
-                    .ToList();
+            return entity.Where
+                (x => x.GetType().GetProperty(field).GetValue(x, null).ToString()
+                .Equals(value, StringComparison.OrdinalIgnoreCase))
+                .ToList();
         }
 
         /// <summary>

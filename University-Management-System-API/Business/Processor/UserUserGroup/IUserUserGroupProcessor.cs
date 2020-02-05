@@ -7,6 +7,6 @@ namespace University_Management_System_API.Business.Processor.UserUserGroup
 {
     public interface IUserUserGroupProcessor : IBaseProcessor<UserUserGroupParam, UserUserGroupResult, long>
     {
-        Task<List<string>> GetUserGroupsAsync(UserUserGroupParam param);
+
     }
 }

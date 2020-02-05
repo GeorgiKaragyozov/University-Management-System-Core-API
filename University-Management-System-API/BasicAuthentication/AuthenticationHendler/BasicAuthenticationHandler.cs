@@ -6,7 +6,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authentication;
 using University_Management_System_API.Business.Convertor.User;
-using University_Management_System_API.Business.Convertor.UserUserGroup;
 using University_Management_System_API.BasicAuthentication.AuthenticationProvider;
 
 namespace University_Management_System_API.BasicAuthentication.AuthenticationHendler
@@ -38,41 +37,31 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationHen
                 return AuthenticateResult.Fail("Authorization Header not found");
             }
 
-            UserResult result;
+            UserResult resultUser;
             List<string> listUserRoles;
 
             try
             {
-                result = await BasicProvider.AuthenticateAsync(Request);
+                resultUser = await BasicProvider.AuthenticateAsync(Request);
 
-                UserUserGroupParam groupParam = new UserUserGroupParam
-                {
-                    UserId = result.Id
-                };
-
-                listUserRoles = await BasicProvider.GetUserGroupsAsync(groupParam);
+                listUserRoles = await BasicProvider.GetUserGroupsAsync(resultUser);
             }
             catch
             {
                 return AuthenticateResult.Fail("Invalid Authorization Header");
             }
 
-            if (result == null)
+            if (resultUser == null)
                 return AuthenticateResult.Fail("Invalid Username or Password");
 
             IList<Claim> claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, result.Id.ToString()),
-                new Claim(ClaimTypes.Name, result.Username)
+                new Claim(ClaimTypes.NameIdentifier, resultUser.Id.ToString()),
+                new Claim(ClaimTypes.Name, resultUser.Username)
             };
 
             listUserRoles.ForEach(userGroups => 
                 claims.Add(new Claim(ClaimTypes.Role, userGroups)));
-
-            //foreach (string userGroups in listUserRoles)
-            //{
-            //    claims.Add(new Claim(ClaimTypes.Role, userGroups));
-            //}
 
             var identity = new ClaimsIdentity(claims, Scheme.Name);
             var principal = new ClaimsPrincipal(identity);

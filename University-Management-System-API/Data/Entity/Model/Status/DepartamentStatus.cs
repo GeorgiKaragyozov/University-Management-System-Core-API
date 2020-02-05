@@ -2,6 +2,6 @@
 {
     public class DepartamentStatus : NamedPersistent
     {
-
+        //public bool IsActive { get; set; }
     }
 }

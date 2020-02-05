@@ -1,4 +1,6 @@
-﻿namespace University_Management_System_API.Model
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace University_Management_System_API.Model
 {
     public class Account : NamedPersistent
     {
@@ -13,14 +15,24 @@
         public string HomePhone { get; set; }
         public string Email { get; set; }
 
+        [ForeignKey("User")]
+        public long UserId { get; set; }
         public virtual User User { get; set; }
 
+        [ForeignKey("Status")]
+        public long StatusId { get; set; }
         public virtual AccountStatus Status { get; set; }
 
+        [ForeignKey("Speciality")]
+        public long SpecialityId { get; set; }
         public virtual Speciality Speciality { get; set; }
 
+        [ForeignKey("Departament")]
+        public long DepartamentId { get; set; }
         public virtual Departament Departament { get; set; }
 
+        [ForeignKey("TypeAccount")]
+        public long TypeAccountId { get; set; }
         public virtual AccountType TypeAccount { get; set; }
     }
 }

@@ -2,6 +2,6 @@
 {
     public class RoomStatus : NamedPersistent
     {
-
+        //public bool IsActive { get; set; }
     }
 }
