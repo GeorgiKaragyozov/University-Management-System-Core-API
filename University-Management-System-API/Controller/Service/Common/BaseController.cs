@@ -92,11 +92,10 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns>response</returns>
         /// <response code="200">Returns deleted items by Id</response>
         /// <response code="400">If the param's id is null</response> 
-        [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin, User")]
+        [HttpDelete("EraseById/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult DeleteById(TPK id)
+        public ActionResult EraseById(TPK id)
         {
             if(id == null)
             {
@@ -105,14 +104,14 @@ namespace University_Management_System_API.Controller.Service.Common
 
             try
             {
-                Processor.Delete(id);
+                Processor.Erase(id);
 
                 if(id == null)
                 {
                     NotFound();
                 }
 
-                return Ok($"The entity with id = {id} was successfully deleted . \n");
+                return Ok($"The entity with id = {id} was successfully deleted .");
             }
             catch (Exception ex)
             {
@@ -127,10 +126,10 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns>response</returns>
         /// <response code="200">Returns deleted items</response>
         /// <response code="400">If the param's id is null</response> 
-        [HttpDelete()]
+        [HttpDelete("Erase")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult Delete(List<TPK> idList)
+        public ActionResult Erase(List<TPK> idList)
         {
             if(idList == null)
             {
@@ -139,9 +138,9 @@ namespace University_Management_System_API.Controller.Service.Common
 
             try
             {
-                Processor.Delete(idList);
+                Processor.Erase(idList);
 
-                return Ok("The entity was successfully removed. \n");
+                return Ok("The entity was successfully removed.");
             }
             catch (Exception ex)
             {
@@ -311,7 +310,7 @@ namespace University_Management_System_API.Controller.Service.Common
             {
                 Processor.Update(id, param);
 
-                return Ok($"The entity updated successfully . \n {param}");
+                return Ok($"The entity updated successfully . {param}");
             }
             catch (Exception ex)
             {
@@ -340,7 +339,71 @@ namespace University_Management_System_API.Controller.Service.Common
             {
                 Processor.Update(param);
 
-                return Ok($"The entities have been updated.\n {param}");
+                return Ok($"The entities have been updated. {param}");
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Function to update inactive a entity by id.
+        /// </summary>
+        /// <param name="id">param's id</param>
+        /// <returns>response</returns>
+        /// <response code="200">Returns update items by Id</response>
+        /// <response code="400">If the param's id is null</response> 
+        [HttpPut("DeleteById/{id}")]
+        [Authorize(Roles = "Admin, User")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]     
+        public ActionResult DeleteById(TPK id)
+        {
+            if (id == null)
+            {
+                BadRequest();
+            }
+
+            try
+            {
+                Processor.Delete(id);
+
+                if (id == null)
+                {
+                    NotFound();
+                }
+
+                return Ok($"Entity id = {id} successfully updated to inactive .");
+            }
+            catch (Exception ex)
+            {
+                return Ok(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Function to update inactive entities by list.
+        /// </summary>
+        /// <param name="idList">list params's id</param>
+        /// <returns>response</returns>
+        /// <response code="200">Returns update items</response>
+        /// <response code="400">If the param's id is null</response> 
+        [HttpPut("DeleteByList")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult Delete(List<TPK> idList)
+        {
+            if (idList == null)
+            {
+                BadRequest();
+            }
+
+            try
+            {
+                Processor.Delete(idList);
+
+                return Ok("The entities was successfully update to inactive.");
             }
             catch (Exception ex)
             {

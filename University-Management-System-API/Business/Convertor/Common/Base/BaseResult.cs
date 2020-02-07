@@ -3,5 +3,7 @@
     public abstract class BaseResult
     {
         public long Id { get; set; }
+
+        public sbyte Active { get; set; }
     }
 }

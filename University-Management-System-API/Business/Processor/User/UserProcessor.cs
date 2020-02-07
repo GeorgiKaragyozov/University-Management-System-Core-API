@@ -35,6 +35,6 @@ namespace University_Management_System_API.Business.Processor.User
             result = ResultConverter.ConvertStandart(entity, result);
 
             return result;
-        }
+        }           
     }
 }

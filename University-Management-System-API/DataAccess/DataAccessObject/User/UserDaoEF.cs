@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using University_Management_System_API.DataAccess.DataAccessObject.Common;
+using University_Management_System_API.Model;
 
 namespace University_Management_System_API.DataAccess.DataAccessObject.User
 {
@@ -19,6 +20,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.User
                 e.Password == entity.Password));
 
             return user;
-        }          
+        }
     }
 }

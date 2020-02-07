@@ -1,6 +1,6 @@
 ﻿namespace University_Management_System_API
 {
-    public abstract class NamedPersistent : Persistent
+    public abstract class PersistentNamed : Persistent
     {
         public string Code { get; set; }
         public string Name { get; set; }

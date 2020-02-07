@@ -1,7 +1,7 @@
 ﻿namespace University_Management_System_API.Model
 {
-    public class DepartamentStatus : NamedPersistent
+    public class DepartamentStatus : PersistentNamed
     {
-        //public bool IsActive { get; set; }
+
     }
 }

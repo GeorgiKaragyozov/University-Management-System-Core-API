@@ -45,6 +45,7 @@ namespace University_Management_System_API
 
         public virtual DbSet<TeacherDiscipline> TeacherDisciplines { get; set; }
         public virtual DbSet<TeacherDisciplineStatus> TeacherDisciplineStatuses { get; set; }
+        public virtual DbSet<ApiSession> ApiSessions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

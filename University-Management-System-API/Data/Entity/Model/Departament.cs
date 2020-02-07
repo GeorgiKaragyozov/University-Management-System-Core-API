@@ -2,7 +2,7 @@
 
 namespace University_Management_System_API.Model
 {
-    public class Departament : NamedPersistent
+    public class Departament : PersistentNamed
     {
         [ForeignKey("Status")]
         public long StatusId { get; set; }

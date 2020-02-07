@@ -21,7 +21,6 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationPro
         }
 
         private IUserUserGroupProcessor _processorUserUserGroup;
-        private readonly object Scheme;
 
         public IUserUserGroupProcessor ProcessorUserUserGroup
         {

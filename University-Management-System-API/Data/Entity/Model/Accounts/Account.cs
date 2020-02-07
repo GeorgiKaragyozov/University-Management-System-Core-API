@@ -2,7 +2,7 @@
 
 namespace University_Management_System_API.Model
 {
-    public class Account : NamedPersistent
+    public class Account : PersistentNamed
     {
         public string FirstName { get; set; }
         public string MiddleName { get; set; }

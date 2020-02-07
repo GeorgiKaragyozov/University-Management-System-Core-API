@@ -10,6 +10,10 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.Common
         TEntity Update(TEntity entity);
         List<TEntity> Update(List<TEntity> entity);
 
+        void Erase(TPK id);
+        void Erase(TEntity entity);
+        void Erase(List<TPK> idList);
+
         void Delete(TPK id);
         void Delete(TEntity entity);
         void Delete(List<TPK> idList);

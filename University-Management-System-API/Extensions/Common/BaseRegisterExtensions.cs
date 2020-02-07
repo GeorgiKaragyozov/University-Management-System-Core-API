@@ -2,6 +2,7 @@
 using University_Management_System_API.Extensions.Account;
 using University_Management_System_API.Extensions.AccountStatus;
 using University_Management_System_API.Extensions.AccountType;
+using University_Management_System_API.Extensions.ApiSession;
 using University_Management_System_API.Extensions.BasicAuthentication;
 using University_Management_System_API.Extensions.Departament;
 using University_Management_System_API.Extensions.DepartamentStatus;
@@ -12,6 +13,7 @@ using University_Management_System_API.Extensions.Faculty;
 using University_Management_System_API.Extensions.FacultyStatus;
 using University_Management_System_API.Extensions.Lecture;
 using University_Management_System_API.Extensions.LectureStatus;
+using University_Management_System_API.Extensions.Login;
 using University_Management_System_API.Extensions.Room;
 using University_Management_System_API.Extensions.RoomStatus;
 using University_Management_System_API.Extensions.Speciality;
@@ -113,6 +115,12 @@ namespace University_Management_System_API.Extensions.Common
 
             //------------------- AuthenticationProvider -------------------//
             RegisterAuthenticationProviderExtensions.RegisterDependencies(services);
+
+            //------------------- ApiSession -------------------//
+            RegisterApiSessionExtensions.RegisterDependencies(services);
+
+            //------------------- Login -------------------//
+            RegisterLoginExtensions.RegisterDependencies(services);
         }       
     }
 }

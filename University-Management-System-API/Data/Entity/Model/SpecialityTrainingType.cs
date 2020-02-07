@@ -2,7 +2,7 @@
 
 namespace University_Management_System_API.Model
 {
-    public class SpecialityTrainingType : NamedPersistent
+    public class SpecialityTrainingType : PersistentNamed
     {
         [ForeignKey("TrainingType")]
         public long TrainingTypeId { get; set; }

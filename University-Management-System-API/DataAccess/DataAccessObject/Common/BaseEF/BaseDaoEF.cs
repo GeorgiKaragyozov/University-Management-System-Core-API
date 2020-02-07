@@ -16,30 +16,62 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.Common
         }
 
         /// <summary>
-        /// Function to delete an entity from the database by id .
+        /// Function to Erase an entity from the database by id .
+        /// </summary>
+        /// <param name="id">entity's id</param>
+        public void Erase(TPK id)
+        {
+            TEntity entity = Find(id);
+
+            Erase(entity);
+        }
+
+        /// <summary>
+        /// Function to Erase an entity from the database by entity .
+        /// </summary>
+        /// <param name="entity">entity</param>
+        public void Erase(TEntity entity)
+        {
+            _dbContext.Set<TEntity>().Remove(entity);
+
+            _dbContext.SaveChanges();
+        }
+
+        /// <summary>
+        /// Function to Erase entities from the database by list from the id .
+        /// </summary>
+        /// <param name="idList">list of id</param>
+        public void Erase(List<TPK> idList)
+        {
+            idList.ForEach(e => Erase(e));
+        }
+
+        /// <summary>
+        /// Function to update inactive an entity from the database by id .
         /// </summary>
         /// <param name="id">entity's id</param>
         public void Delete(TPK id)
         {
-            TEntity entity = _dbContext.Set<TEntity>().Find(id);
+            TEntity entity = Find(id);
 
-            _dbContext.Set<TEntity>().Remove(entity);
-            _dbContext.SaveChanges();
+            entity.Active = 0;
+
+            Update(entity);
         }
 
         /// <summary>
-        /// Function to delete an entity from the database by entity .
+        /// Function to update inactive an entity from the database by entity .
         /// </summary>
         /// <param name="entity">entity</param>
         public void Delete(TEntity entity)
         {
-            _dbContext.Set<TEntity>().Remove(entity);
+            entity.Active = 0;
 
-            _dbContext.SaveChanges();
+            Update(entity);
         }
 
         /// <summary>
-        /// Function to delete entities from the database by list from the id .
+        /// Function to update inactive entities from the database by list from the id .
         /// </summary>
         /// <param name="idList">list of id</param>
         public void Delete(List<TPK> idList)

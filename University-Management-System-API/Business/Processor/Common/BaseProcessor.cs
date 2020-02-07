@@ -94,13 +94,40 @@ namespace University_Management_System_API.Business.Processor.Common
         /// </summary>
         /// <param name="id">param's id</param>
         /// <returns>response</returns>
+        public void Erase(TPK id)
+        {
+            Dao.Erase(id);
+        }
+
+        /// <summary>
+        /// Function to delete entities .
+        /// </summary>
+        /// <param name="idList">list params's id</param>
+        /// <returns>response</returns>
+        public void Erase(List<TPK> idList)
+        {
+            List<TEntity> entities = new List<TEntity>();
+
+            foreach (var item in idList)
+            {
+                entities.Add(Dao.Find(item));
+            }
+
+            Dao.Erase(idList);
+        }
+
+        /// <summary>
+        /// Function to update inactive a entity .
+        /// </summary>
+        /// <param name="id">param's id</param>
+        /// <returns>response</returns>
         public void Delete(TPK id)
         {
             Dao.Delete(id);
         }
 
         /// <summary>
-        /// Function to delete entities .
+        /// Function to update inactive entities .
         /// </summary>
         /// <param name="idList">list params's id</param>
         /// <returns>response</returns>

@@ -2,6 +2,6 @@
 {
     public class LectureStatusResult : BaseResultNamed
     {
-
+      
     }
 }

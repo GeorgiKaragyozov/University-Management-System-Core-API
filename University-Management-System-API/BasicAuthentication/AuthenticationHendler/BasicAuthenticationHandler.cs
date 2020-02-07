@@ -38,13 +38,13 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationHen
             }
 
             UserResult resultUser;
-            List<string> listUserRoles;
+            List<string> listUserGroups;
 
             try
             {
                 resultUser = await BasicProvider.AuthenticateAsync(Request);
 
-                listUserRoles = await BasicProvider.GetUserGroupsAsync(resultUser);
+                listUserGroups = await BasicProvider.GetUserGroupsAsync(resultUser);
             }
             catch
             {
@@ -60,7 +60,8 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationHen
                 new Claim(ClaimTypes.Name, resultUser.Username)
             };
 
-            listUserRoles.ForEach(userGroups => 
+            //User Roles
+            listUserGroups.ForEach(userGroups => 
                 claims.Add(new Claim(ClaimTypes.Role, userGroups)));
 
             var identity = new ClaimsIdentity(claims, Scheme.Name);

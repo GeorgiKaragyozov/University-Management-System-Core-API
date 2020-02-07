@@ -13,6 +13,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue:1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -28,6 +29,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -38,11 +40,30 @@ namespace University_Management_System_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ApiSessions",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
+                    Code = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    UserId = table.Column<long>(nullable: false),
+                    AuthToken = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ApiSessions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "DepartamentStatuses",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -58,6 +79,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -73,6 +95,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -88,6 +111,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -103,6 +127,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -118,6 +143,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -133,6 +159,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -148,6 +175,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -163,6 +191,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -178,6 +207,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -193,6 +223,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
@@ -208,10 +239,11 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    StatusId = table.Column<long>(nullable: true)
+                    StatusId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -230,10 +262,11 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    StatusId = table.Column<long>(nullable: true)
+                    StatusId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -252,10 +285,11 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    StatusId = table.Column<long>(nullable: true)
+                    StatusId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -274,10 +308,11 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    StatusId = table.Column<long>(nullable: true)
+                    StatusId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -296,10 +331,11 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    StatusId = table.Column<long>(nullable: true)
+                    StatusId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -318,9 +354,10 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Username = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
-                    StatusId = table.Column<long>(nullable: true)
+                    StatusId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -339,12 +376,13 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    StatusId = table.Column<long>(nullable: true),
-                    EducationalDegreeId = table.Column<long>(nullable: true),
-                    FacultyId = table.Column<long>(nullable: true)
+                    StatusId = table.Column<long>(nullable: false),
+                    EducationalDegreeId = table.Column<long>(nullable: false),
+                    FacultyId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -375,8 +413,9 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<long>(nullable: true),
-                    UserGroupId = table.Column<long>(nullable: true)
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
+                    UserId = table.Column<long>(nullable: false),
+                    UserGroupId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -401,6 +440,7 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
@@ -414,11 +454,11 @@ namespace University_Management_System_API.Migrations
                     MobilePhone = table.Column<string>(nullable: true),
                     HomePhone = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
-                    UserId = table.Column<long>(nullable: true),
-                    StatusId = table.Column<long>(nullable: true),
-                    SpecialityId = table.Column<long>(nullable: true),
-                    DepartamentId = table.Column<long>(nullable: true),
-                    TypeAccountId = table.Column<long>(nullable: true)
+                    UserId = table.Column<long>(nullable: false),
+                    StatusId = table.Column<long>(nullable: false),
+                    SpecialityId = table.Column<long>(nullable: false),
+                    DepartamentId = table.Column<long>(nullable: false),
+                    TypeAccountId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -461,11 +501,12 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    TrainingTypeId = table.Column<long>(nullable: true),
-                    SpecialityId = table.Column<long>(nullable: true)
+                    TrainingTypeId = table.Column<long>(nullable: false),
+                    SpecialityId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -490,12 +531,13 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    AccountId = table.Column<long>(nullable: true),
-                    DisciplineId = table.Column<long>(nullable: true),
-                    StatusId = table.Column<long>(nullable: true)
+                    AccountId = table.Column<long>(nullable: false),
+                    DisciplineId = table.Column<long>(nullable: false),
+                    StatusId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -526,12 +568,13 @@ namespace University_Management_System_API.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Active = table.Column<short>(nullable: false, defaultValue: 1),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    TeacherDisciplineId = table.Column<long>(nullable: true),
-                    RoomId = table.Column<long>(nullable: true),
-                    StatusId = table.Column<long>(nullable: true)
+                    TeacherDisciplineId = table.Column<long>(nullable: false),
+                    RoomId = table.Column<long>(nullable: false),
+                    StatusId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -665,6 +708,13 @@ namespace University_Management_System_API.Migrations
                 column: "StatusId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Users_Password",
+                table: "Users",
+                column: "Password",
+                unique: true,
+                filter: "[Password] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Users_StatusId",
                 table: "Users",
                 column: "StatusId");
@@ -689,6 +739,9 @@ namespace University_Management_System_API.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "ApiSessions");
+
             migrationBuilder.DropTable(
                 name: "Lectures");
 

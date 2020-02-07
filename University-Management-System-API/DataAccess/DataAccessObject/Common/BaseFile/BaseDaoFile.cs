@@ -26,17 +26,17 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.Common
         /// Function to delete an entity from the json file by id .
         /// </summary>
         /// <param name="id">entity's id</param>
-        public void Delete(TPK id)
+        public void Erase(TPK id)
         {
             TEntity entity = Find(id);
-            Delete(entity);        
+            Erase(entity);        
         }
 
         /// <summary>
         /// Function to delete an entity from the json file by entity .
         /// </summary>
         /// <param name="entity">entity</param>
-        public void Delete(TEntity entity)
+        public void Erase(TEntity entity)
         {
             DataStorage.ReturnDictionary()
                 .Remove(GetPK(entity));
@@ -46,9 +46,42 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.Common
         /// Function to delete entities from the json file by list from the id .
         /// </summary>
         /// <param name="idList">list of id</param>
+        public void Erase(List<TPK> idList)
+        {
+            idList.ForEach(x => Erase(x));
+        }
+
+        /// <summary>
+        /// Function to update inactive an entity from the json file by id .
+        /// </summary>
+        /// <param name="id">entity's id</param>
+        public void Delete(TPK id)
+        {
+            TEntity entity = Find(id);
+
+            entity.Active = 0;
+
+            Update(entity);
+        }
+
+        /// <summary>
+        /// Function to update inactive an entity from the json file by entity .
+        /// </summary>
+        /// <param name="entity">entity</param>
+        public void Delete(TEntity entity)
+        {
+            entity.Active = 0;
+
+            Update(entity);
+        }
+
+        /// <summary>
+        /// Function to update inactive entities from the json file by list from the id .
+        /// </summary>
+        /// <param name="idList">list of id</param>
         public void Delete(List<TPK> idList)
         {
-            idList.ForEach(x => Delete(x));
+            idList.ForEach(e => Delete(e));
         }
 
         /// <summary>
@@ -153,7 +186,7 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.Common
         /// <returns>The updated entity</returns>
         public TEntity Update(TEntity entity)
         {
-            Delete(entity);
+            Erase(entity);
 
             Save(entity);
 

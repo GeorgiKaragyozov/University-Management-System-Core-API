@@ -1,6 +1,6 @@
 ﻿namespace University_Management_System_API.Model
 {
-    public class AccountType : NamedPersistent
+    public class AccountType : PersistentNamed
     {
 
     }

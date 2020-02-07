@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace University_Management_System_API.Business.Processor.Common
 {
@@ -10,6 +9,9 @@ namespace University_Management_System_API.Business.Processor.Common
 
         void Update(TPK id, TParam param);
         void Update(List<TParam> param);
+
+        void Erase(TPK id);
+        void Erase(List<TPK> idList);
 
         void Delete(TPK id);
         void Delete(List<TPK> idList);

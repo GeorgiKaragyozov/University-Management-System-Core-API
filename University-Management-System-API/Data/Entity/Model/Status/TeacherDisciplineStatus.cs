@@ -1,7 +1,7 @@
 ﻿namespace University_Management_System_API.Model
 {
-    public class TeacherDisciplineStatus : NamedPersistent
+    public class TeacherDisciplineStatus : PersistentNamed
     {
-        //public bool IsActive { get; set; }
+   
     }
 }
