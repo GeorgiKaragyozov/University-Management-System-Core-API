@@ -54,10 +54,11 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationHen
             if (resultUser == null)
                 return AuthenticateResult.Fail("Invalid Username or Password");
 
-            IList<Claim> claims = new List<Claim>
+            var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, resultUser.Id.ToString()),
-                new Claim(ClaimTypes.Name, resultUser.Username)
+                new Claim(ClaimTypes.Name, resultUser.Username),
+                new Claim("UserStatusName", resultUser.StatusName)
             };
 
             //User Roles

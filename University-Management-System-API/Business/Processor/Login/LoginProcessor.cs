@@ -38,11 +38,13 @@ namespace University_Management_System_API.Business.Processor.Login
             try
             {
                 var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                string userStatusName = _httpContextAccessor.HttpContext.User.FindFirstValue("UserStatusName");
 
                 param = new ApiSessionParam()
                 {
                     AuthToken = RandomAuthTokenGenerator(),
-                    UserId = Convert.ToUInt32(userId)
+                    UserId = Convert.ToUInt32(userId),
+                    Name = userStatusName
                 };
 
                 ApiSessionProcessor.Create(param);

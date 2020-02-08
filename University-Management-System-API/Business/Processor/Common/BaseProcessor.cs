@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using University_Management_System_API.Business.Convertor;
 using University_Management_System_API.Business.Convertor.Common;
 using University_Management_System_API.DataAccess.DataAccessObject.Common;
@@ -75,16 +74,13 @@ namespace University_Management_System_API.Business.Processor.Common
         {
             List<TEntity> entities = new List<TEntity>();
 
-            foreach (var item in param)
-            {
-                entities.Add(ParamConverter.Convert(item, null));
-            }
+            param.ForEach(item => entities.Add(ParamConverter.Convert(item, null)));
 
             Dao.Save(entities);
 
             List<TResult> result = new List<TResult>();
 
-            entities.ForEach(ent => result.Add(ResultConverter.Convert(ent)));
+            entities.ForEach(entity => result.Add(ResultConverter.Convert(entity)));
 
             return result;
         }
@@ -106,13 +102,6 @@ namespace University_Management_System_API.Business.Processor.Common
         /// <returns>response</returns>
         public void Erase(List<TPK> idList)
         {
-            List<TEntity> entities = new List<TEntity>();
-
-            foreach (var item in idList)
-            {
-                entities.Add(Dao.Find(item));
-            }
-
             Dao.Erase(idList);
         }
 
@@ -133,13 +122,6 @@ namespace University_Management_System_API.Business.Processor.Common
         /// <returns>response</returns>
         public void Delete(List<TPK> idList)
         {
-            List<TEntity> entities = new List<TEntity>();
-
-            foreach (var item in idList)
-            {
-                entities.Add(Dao.Find(item));
-            }
-
             Dao.Delete(idList);
         }
 
