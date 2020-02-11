@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using University_Management_System_API.Business.Processor.Common;
 using Microsoft.AspNetCore.Authorization;
+using University_Management_System_API.Business.Processor.Common;
 
 namespace University_Management_System_API.Controller.Service.Common
 {
@@ -183,7 +183,7 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns>params</returns>
         /// <response code="302">Returns the found item</response>
         [HttpGet("ListAll")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status302Found)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult ListAll()

@@ -1,14 +1,13 @@
-﻿using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Text.Encodings.Web;
-using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authentication;
 using University_Management_System_API.Business.Convertor.User;
-using University_Management_System_API.BasicAuthentication.AuthenticationProvider;
+using University_Management_System_API.Authentication.AuthenticationProvider.BasicAuth;
+using University_Management_System_API.Authentication.AuthenticationProvider.TokenAuth;
 
-namespace University_Management_System_API.BasicAuthentication.AuthenticationHendler
+namespace University_Management_System_API.Authentication.AuthenticationHendler
 {
     public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
@@ -19,15 +18,25 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationHen
             set { _basicProvider = value; }
         }
 
+
+        private ITokenAuthenticationProvider _tokenProvider;
+        public ITokenAuthenticationProvider TokenProvider
+        {
+            get { return _tokenProvider; }
+            set { _tokenProvider = value; }
+        }
+
         public BasicAuthenticationHandler(
             IOptionsMonitor<AuthenticationSchemeOptions> options,
+            IBasicAuthenticationProvider basicProvider,
+            ITokenAuthenticationProvider tokenProvider,
             ILoggerFactory logger,
-            UrlEncoder encoder,
             ISystemClock clock,
-            IBasicAuthenticationProvider basicProvider)
+            UrlEncoder encoder)
             : base(options, logger, encoder, clock)
         {
             this.BasicProvider = basicProvider;
+            this.TokenProvider = tokenProvider;
         }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -38,13 +47,19 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationHen
             }
 
             UserResult resultUser;
-            List<string> listUserGroups;
+            //Get Headers Value
+            string authHeader = Request.Headers["Authorization"];
 
             try
             {
-                resultUser = await BasicProvider.AuthenticateAsync(Request);
-
-                listUserGroups = await BasicProvider.GetUserGroupsAsync(resultUser);
+                if (authHeader != null && authHeader.StartsWith("Basic"))
+                {
+                    resultUser = await BasicProvider.AuthenticateAsync(Request);
+                }
+                else
+                {
+                    resultUser = await TokenProvider.AuthenticateAsync(Request);
+                }
             }
             catch
             {
@@ -53,23 +68,10 @@ namespace University_Management_System_API.BasicAuthentication.AuthenticationHen
 
             if (resultUser == null)
                 return AuthenticateResult.Fail("Invalid Username or Password");
+         
+            var ticket = await BasicProvider.BuilderAuthenticationTicket(resultUser, Scheme);
 
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier, resultUser.Id.ToString()),
-                new Claim(ClaimTypes.Name, resultUser.Username),
-                new Claim("UserStatusName", resultUser.StatusName)
-            };
-
-            //User Roles
-            listUserGroups.ForEach(userGroups => 
-                claims.Add(new Claim(ClaimTypes.Role, userGroups)));
-
-            var identity = new ClaimsIdentity(claims, Scheme.Name);
-            var principal = new ClaimsPrincipal(identity);
-            var ticket = new AuthenticationTicket(principal, Scheme.Name);
-
-            return AuthenticateResult.Success(ticket);
+            return ticket;
         }
     }
 }
