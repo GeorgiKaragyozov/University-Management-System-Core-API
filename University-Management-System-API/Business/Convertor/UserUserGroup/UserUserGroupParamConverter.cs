@@ -21,7 +21,9 @@ namespace University_Management_System_API.Business.Convertor.UserUserGroup
             set { _userGroupDao = value; }
         }
 
-        public UserUserGroupParamConverter(IUserDao userDao, IUserGroupDao userGroupDao)
+        public UserUserGroupParamConverter(
+            IUserDao userDao,
+            IUserGroupDao userGroupDao)
         {
             this.UserDao = userDao;
             this.UserGroupDao = userGroupDao;

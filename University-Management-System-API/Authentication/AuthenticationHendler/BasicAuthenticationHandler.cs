@@ -1,42 +1,28 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using System.Text.Encodings.Web;
+using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authentication;
 using University_Management_System_API.Business.Convertor.User;
-using University_Management_System_API.Authentication.AuthenticationProvider.BasicAuth;
-using University_Management_System_API.Authentication.AuthenticationProvider.TokenAuth;
+using University_Management_System_API.Authentication.AuthenticationProvider;
 
 namespace University_Management_System_API.Authentication.AuthenticationHendler
 {
     public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
-        private IBasicAuthenticationProvider _basicProvider;
-        public IBasicAuthenticationProvider BasicProvider
-        {
-            get { return _basicProvider; }
-            set { _basicProvider = value; }
-        }
-
-
-        private ITokenAuthenticationProvider _tokenProvider;
-        public ITokenAuthenticationProvider TokenProvider
-        {
-            get { return _tokenProvider; }
-            set { _tokenProvider = value; }
-        }
+        private readonly IEnumerable<IBaseAuthenticationProvider> Providers;
 
         public BasicAuthenticationHandler(
             IOptionsMonitor<AuthenticationSchemeOptions> options,
-            IBasicAuthenticationProvider basicProvider,
-            ITokenAuthenticationProvider tokenProvider,
+            IEnumerable<IBaseAuthenticationProvider> providers,
             ILoggerFactory logger,
             ISystemClock clock,
             UrlEncoder encoder)
             : base(options, logger, encoder, clock)
         {
-            this.BasicProvider = basicProvider;
-            this.TokenProvider = tokenProvider;
+            this.Providers = providers;
         }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -46,19 +32,16 @@ namespace University_Management_System_API.Authentication.AuthenticationHendler
                 return AuthenticateResult.Fail("Authorization Header not found");
             }
 
-            UserResult resultUser;
-            //Get Headers Value
-            string authHeader = Request.Headers["Authorization"];
+            UserResult resultUser = null;
 
             try
             {
-                if (authHeader != null && authHeader.StartsWith("Basic"))
+                foreach (var providersItem in Providers)
                 {
-                    resultUser = await BasicProvider.AuthenticateAsync(Request);
-                }
-                else
-                {
-                    resultUser = await TokenProvider.AuthenticateAsync(Request);
+                    if (resultUser == null)
+                    {
+                        resultUser = await providersItem.AuthenticateAsync(Request);
+                    }
                 }
             }
             catch
@@ -68,8 +51,10 @@ namespace University_Management_System_API.Authentication.AuthenticationHendler
 
             if (resultUser == null)
                 return AuthenticateResult.Fail("Invalid Username or Password");
-         
-            var ticket = await BasicProvider.BuilderAuthenticationTicket(resultUser, Scheme);
+
+            var providerAuthentication = Providers.First();
+
+            var ticket = await providerAuthentication.BuilderAuthenticationTicket(resultUser, Scheme);
 
             return ticket;
         }

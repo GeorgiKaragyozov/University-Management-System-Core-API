@@ -12,6 +12,7 @@ namespace University_Management_System_API.Business.Convertor.EducationalDegree
 
         public override void ConvertSpecific(EducationalDegreeParam param,
             Model.EducationalDegree entity)
-        { }
+        { 
+        }
     }
 }

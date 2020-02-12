@@ -45,6 +45,10 @@ namespace University_Management_System_API.Business.Processor.Auth
             this.UserProcessor = userProcessor;
         }
 
+        /// <summary>
+        /// Create new session for user and return token
+        /// </summary>
+        /// <returns>User's token</returns>
         public string GetAuthToken()
         {
             UserResult result;
@@ -52,11 +56,14 @@ namespace University_Management_System_API.Business.Processor.Auth
 
             try
             {
+                //Get user's id with claim type 
                 var userId = HttpContextAccessor
                     .HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
+                //Get user result with function find by field
                 result = UserProcessor.Find("Id", userId).SingleOrDefault();
-
+                
+                //return random token for user
                 string randomToken = GenerateRandomToken.GenerateToken();
 
                 param = new ApiSessionParam()
@@ -64,9 +71,12 @@ namespace University_Management_System_API.Business.Processor.Auth
                     AuthToken = randomToken,
                     UserId = result.Id,
                     Name = result.StatusName,
+                    Code = result.Username,
+                    Description = $"This is {result.Username} with session created on {System.DateTime.Now}",
                     Active = result.Active
                 };
 
+                //creta new session for user
                 ApiSessionProcessor.Create(param);
             }
             catch (Exception ex)
@@ -77,6 +87,9 @@ namespace University_Management_System_API.Business.Processor.Auth
             return param.AuthToken;
         }
 
+        /// <summary>
+        /// Remove User's Session
+        /// </summary>
         public void RemoveApiSession()
         {
             try
@@ -87,7 +100,7 @@ namespace University_Management_System_API.Business.Processor.Auth
 
                 result = ApiSessionProcessor.Find("token", authHeader).SingleOrDefault();
 
-                ApiSessionProcessor.Delete(result.Id);
+                ApiSessionProcessor.Erase(result.Id);
             }
             catch (Exception ex)
             {

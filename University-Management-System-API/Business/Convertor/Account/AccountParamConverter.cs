@@ -42,6 +42,7 @@ namespace University_Management_System_API.Business.Convertor.Account
             set { _departamentDao = value; }
         }
 
+
         private IAccountTypeDao _accountTypeDao;
         public IAccountTypeDao AccountTypeDao
         {

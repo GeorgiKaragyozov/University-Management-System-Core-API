@@ -14,7 +14,8 @@ namespace University_Management_System_API.Business.Convertor.TrainingType
             set { _specialityDao = value; }
         }
 
-        public TrainingTypeParamConverter(ISpecialityDao specialityDao)
+        public TrainingTypeParamConverter(
+            ISpecialityDao specialityDao)
         {
             this.SpecialityDao = specialityDao;
         }
@@ -24,6 +25,8 @@ namespace University_Management_System_API.Business.Convertor.TrainingType
             return new Model.TrainingType();
         }
 
-        public override void ConvertSpecific(TrainingTypeParam param, Model.TrainingType entity) { }
+        public override void ConvertSpecific(TrainingTypeParam param, Model.TrainingType entity)
+        { 
+        }
     }
 }

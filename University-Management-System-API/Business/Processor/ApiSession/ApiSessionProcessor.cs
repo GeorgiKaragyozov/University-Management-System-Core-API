@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using University_Management_System_API.Business.Convertor.ApiSession;
 using University_Management_System_API.Business.Processor.Common;
+using University_Management_System_API.Business.Convertor.ApiSession;
 using University_Management_System_API.DataAccess.DataAccessObject.ApiSession;
 
 namespace University_Management_System_API.Business.Processor.ApiSession
@@ -14,6 +14,11 @@ namespace University_Management_System_API.Business.Processor.ApiSession
             return param.Id;
         }
 
+        /// <summary>
+        /// Get User's Session by token
+        /// </summary>
+        /// <param name="authToken">authToken</param>
+        /// <returns>session return</returns>
         public async Task<ApiSessionResult> GetByAuthTokenAsync(string authToken)
         {
             ApiSessionResult result = new ApiSessionResult();

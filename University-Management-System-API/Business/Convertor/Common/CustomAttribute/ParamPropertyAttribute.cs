@@ -2,8 +2,8 @@
 
 namespace University_Management_System_API.Business.Convertor.Common
 {
-    [AttributeUsage(AttributeTargets.Property)]
-    public abstract class ParamPropertyAttribute : Attribute
+    [AttributeUsage(AttributeTargets.All)]
+    public class ParamPropertyAttribute : Attribute
     { 
         public bool Ignored { get; set; }
 

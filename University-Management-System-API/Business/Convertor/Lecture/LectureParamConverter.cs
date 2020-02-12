@@ -1,8 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.LectureStatus;
+﻿using University_Management_System_API.Business.Convertor.Common;
 using University_Management_System_API.DataAccess.DataAccessObject.Room;
-using University_Management_System_API.DataAccess.DataAccessObject.Speciality;
 using University_Management_System_API.DataAccess.DataAccessObject.TeacherDiscipline;
-using University_Management_System_API.Business.Convertor.Common;
+using University_Management_System_API.DataAccess.DataAccessObject.LectureStatus;
 
 namespace University_Management_System_API.Business.Convertor.Lecture
 {
@@ -30,7 +29,7 @@ namespace University_Management_System_API.Business.Convertor.Lecture
         {
             get { return _statusDao; }
             set { _statusDao = value; }
-        }
+        }     
 
         public LectureParamConverter(
             ITeacherDisciplineDao teacherDisciplineDao,

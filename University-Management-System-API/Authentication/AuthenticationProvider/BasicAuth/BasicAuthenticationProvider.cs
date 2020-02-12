@@ -32,17 +32,22 @@ namespace University_Management_System_API.Authentication.AuthenticationProvider
 
         public async override Task<UserResult> AuthenticateAsync(HttpRequest request)
         {
-            var authHeader = AuthenticationHeaderValue.Parse(request.Headers["Authorization"]);
-            var credentialBytes = Convert.FromBase64String(authHeader.Parameter);
-            var credentials = Encoding.UTF8.GetString(credentialBytes).Split(new[] { ':' }, 2);
+            UserResult result = null;
 
-            UserParam param = new UserParam
+            //Get Headers Value
+            string Header = request.Headers["Authorization"];
+
+            if (Header.StartsWith("Basic"))
             {
-                Username = credentials[0],
-                Password = credentials[1]
-            };
+                var authHeader = AuthenticationHeaderValue.Parse(request.Headers["Authorization"]);
+                var credentialBytes = Convert.FromBase64String(authHeader.Parameter);
+                var credentials = Encoding.UTF8.GetString(credentialBytes).Split(new[] { ':' }, 2);
 
-            UserResult result = await ProcessorUser.AuthenticateAsync(param);
+                string username = credentials[0];
+                string password = credentials[1];
+
+                result = await ProcessorUser.AuthenticateAsync(username, password);
+            }
 
             return result;
         }

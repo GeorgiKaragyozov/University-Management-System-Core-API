@@ -6,7 +6,7 @@ namespace University_Management_System_API.Authentication.Common
     public static class GenerateRandomToken
     {
         /// <summary>
-        /// Generates a random plain text and calls the function CreateRandomSalt and GenerateHash
+        /// Generates a random plain text and calls the function GenerateSalt and GenerateHash
         /// </summary>
         /// <returns>Random plain text</returns>
         public static string GenerateToken()
@@ -16,7 +16,7 @@ namespace University_Management_System_API.Authentication.Common
 
             string token = Convert.ToBase64String(plainTextBytes);
 
-            byte[] salt = Salt.CreateRandomSalt();
+            byte[] salt = Salt.GenerateSalt();
 
             return HashPlainText.GenerateHash(token, salt);
         }

@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using University_Management_System_API.DataAccess.DataAccessObject.Common;
-using University_Management_System_API.Model;
 
 namespace University_Management_System_API.DataAccess.DataAccessObject.User
 {
@@ -13,6 +12,11 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.User
 
         }
 
+        /// <summary>
+        /// Checks in the database if there is a user with that username and password
+        /// </summary>
+        /// <param name="entity">user</param>
+        /// <returns>user data</returns>
         public async Task<Model.User> AuthenticateAsync(Model.User entity)
         {
             Model.User user = await Task.Run(() => _dbContext.Users.SingleOrDefault(

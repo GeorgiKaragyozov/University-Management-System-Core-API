@@ -11,6 +11,11 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.User
             return entity.Id;
         }
 
+        /// <summary>
+        /// Checks in the Json file if there is a user with that username and password
+        /// </summary>
+        /// <param name="entity">user</param>
+        /// <returns>user data</returns>
         public async Task<Model.User> AuthenticateAsync(Model.User entity)
         {
             Model.User user = await Task.Run(() => DataStorage

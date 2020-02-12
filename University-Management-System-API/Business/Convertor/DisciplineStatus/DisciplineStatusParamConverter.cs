@@ -12,6 +12,7 @@ namespace University_Management_System_API.Business.Convertor.DisciplineStatus
 
         public override void ConvertSpecific(DisciplineStatusParam param,
             Model.DisciplineStatus entity)
-        { }
+        { 
+        }
     }
 }

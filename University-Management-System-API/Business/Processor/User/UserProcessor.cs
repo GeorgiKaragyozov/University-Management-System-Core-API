@@ -1,4 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
+using University_Management_System_API.Authentication.Common;
 using University_Management_System_API.Business.Convertor.User;
 using University_Management_System_API.Business.Processor.Common;
 using University_Management_System_API.DataAccess.DataAccessObject.User;
@@ -20,13 +23,23 @@ namespace University_Management_System_API.Business.Processor.User
 
             : base(dao, paramConverter, resultConverter)
         {
-
         }
 
-        public async Task<UserResult> AuthenticateAsync(UserParam param)
+        /// <summary>
+        /// hashes the password and sends the request to DAO
+        /// </summary>
+        /// <param name="username">username</param>
+        /// <param name="password">password</param>
+        /// <returns>user result</returns>
+        public async Task<UserResult> AuthenticateAsync(string username, string password)
         {
-            Model.User entity = new Model.User();
-            entity = ParamConverter.Convert(param, entity);
+            Model.User entity = new Model.User()
+            {
+                Username = username,
+                Password = password
+            };
+
+            entity = ParamConverter.HashPassword(entity);
 
             entity = await Dao.AuthenticateAsync(entity);
 

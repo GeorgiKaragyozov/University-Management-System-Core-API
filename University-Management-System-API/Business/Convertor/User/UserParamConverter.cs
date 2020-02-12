@@ -1,4 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.UserStatus;
+﻿using System.Text;
+using Microsoft.Extensions.Options;
+using University_Management_System_API.Authentication.Common;
+using University_Management_System_API.DataAccess.DataAccessObject.UserStatus;
 using University_Management_System_API.Business.Convertor.Common;
 
 namespace University_Management_System_API.Business.Convertor.User
@@ -13,8 +16,17 @@ namespace University_Management_System_API.Business.Convertor.User
             set { _statusDao = value; }
         }
 
-        public UserParamConverter(IUserStatusDao statusDao)
+
+        private IOptions<SecretKeySettings> _options;
+        public IOptions<SecretKeySettings> Options
         {
+            get { return _options; }
+            set { _options = value; }
+        }
+
+        public UserParamConverter(IUserStatusDao statusDao, IOptions<SecretKeySettings> options)
+        {
+            this.Options = options;
             this.StatusDao = statusDao;
         }
 
@@ -29,6 +41,21 @@ namespace University_Management_System_API.Business.Convertor.User
         public override void ConvertSpecific(UserParam param, Model.User entity)
         {
             entity.Status = StatusDao.Find(param.StatusId);
+
+            entity = HashPassword(entity);
+        }
+
+        public Model.User HashPassword(Model.User entity)
+        {
+            //get secret value
+            var secret = this.Options.Value.Secret;
+
+            //to byte secret value
+            var key = Encoding.UTF8.GetBytes(secret);
+
+            entity.Password = HashPlainText.GenerateHash(entity.Password, key);
+
+            return entity;
         }
     }
 }

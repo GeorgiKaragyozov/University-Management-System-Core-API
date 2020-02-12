@@ -23,7 +23,7 @@ namespace University_Management_System_API.Controller.Service.Auth
         }
 
         /// <summary>
-        /// Login
+        /// function that creates a new user session
         /// </summary>
         /// <returns>new param</returns>
         /// <response code="200">Login Successfully</response>
@@ -39,7 +39,7 @@ namespace University_Management_System_API.Controller.Service.Auth
         }
 
         /// <summary>
-        /// Logout
+        /// function that searches for an existing user session and deletes it
         /// </summary>
         /// <returns>new param</returns>
         /// <response code="200">Logout Successfully</response>

@@ -12,6 +12,7 @@ namespace University_Management_System_API.Business.Convertor.LectureStatus
 
         public override void ConvertSpecific(LectureStatusParam param,
             Model.LectureStatus entity)
-        { }
+        { 
+        }
     }
 }

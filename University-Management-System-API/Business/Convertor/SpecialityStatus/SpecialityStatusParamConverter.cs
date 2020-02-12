@@ -12,6 +12,7 @@ namespace University_Management_System_API.Business.Convertor.SpecialityStatus
 
         public override void ConvertSpecific(SpecialityStatusParam param,
             Model.SpecialityStatus entity)
-        { }
+        {
+        }
     }
 }

@@ -215,16 +215,16 @@ insert into UserGroups (Code, Name, Description, StatusId) values ('2W53X6Z', 'z
 insert into UserGroups (Code, Name, Description, StatusId) values ('0SP34JZ', 'ipietzker9', 'Torp Inc', 10);
 
 /* ---------------------------------------------- User  ----------------------------------------------*/
-insert into Users (Username, Password, StatusId) values ('Danie', 'ZCbLGfpDFJ', 1);
-insert into Users (Username, Password, StatusId) values ('Barri', 's87ExWLkSGAA', 2);
-insert into Users (Username, Password, StatusId) values ('Suzy', 'td9cMP', 3);
-insert into Users (Username, Password, StatusId) values ('Alasdair', '6TOSeUk', 4);
-insert into Users (Username, Password, StatusId) values ('Krystalle', 'ydAsZe3', 5);
-insert into Users (Username, Password, StatusId) values ('Hammad', '7fmjc4mCGg', 6);
-insert into Users (Username, Password, StatusId) values ('Bronnie', 'TDu6eA', 7);
-insert into Users (Username, Password, StatusId) values ('Darelle', '5TxYwj5', 8);
-insert into Users (Username, Password, StatusId) values ('Sybil', 'DWx1gx', 9);
-insert into Users (Username, Password, StatusId) values ('Richmond', 'ItBNxVpfejp', 10);
+insert into Users (Username, Password, StatusId) values ('Danie', '9yE3EHd2Bhetnzb1aCsBVWNeJP1h/aWOKMV0ha3ghddoutkd4baGleYoMduKqh+5tcN21+imt8cEE2L8neimow==', 1);
+insert into Users (Username, Password, StatusId) values ('Barri', 'kHj4pB/rAFxiMcj2yvbIYQHmv2kKYVfxYqRh+Vjwjt0B1banIM+LNE5Yw6d9pmJXVYuYHZTQDrxPOsV6DgrSMg==', 2);
+insert into Users (Username, Password, StatusId) values ('Suzy', 'hpR2ut0H42L+hpaU3e35yATkRHWiatLICrNv1EvA0yJ+1vdTrDqTPZk6fho9G0rZ+4OooMAcJ6HuCUFvMJ2aPA==', 3);
+insert into Users (Username, Password, StatusId) values ('Alasdair', '4IemcCSIzU276vGcV2X9gREL+Y1/brCHiEGMzNU0Quj5kx176A5KOfVsYwpHThV4CpxZtJ/1bgTwPJvpS0UDKw==', 4);
+insert into Users (Username, Password, StatusId) values ('Krystalle', 'b69OneeJ0nHEiSX4f9Y++UbXcSusiTL3p7P6swLLk+8UG4TMHxbuKNGATEocFO4/6ewDVwVAidxC/UUP2FHDDQ==', 5);
+insert into Users (Username, Password, StatusId) values ('Hammad', 'GVWmsPoThzlqBo3jFnBs5tJEN615sfmarJU5sHckjd24a+c7U8mpi3BbJDQ9KZ7l7eAoPgtrwpbwPcAJGPOI0g==', 6);
+insert into Users (Username, Password, StatusId) values ('Bronnie', 'ucboPVB4oUQ4ypOBTH1HiiMAKqnKEz0EXYwC3T5PpYMoBxYOIr3Jsqj9lzhEEcwDFVc3LAVlyhxLPVYAklwEiw==', 7);
+insert into Users (Username, Password, StatusId) values ('Darelle', 'OGNBeKk/SjvPxc6cwz7uuDNrO9T0WKZ53fkx9x/XO+ThG32FjEbt+TCT1dVnmFEjlTolCha/h4EgeOAqp/SUfg==', 8);
+insert into Users (Username, Password, StatusId) values ('Sybil', 'polWbUzjBfo00W6UTe4/PftB72VP+Lyrvf+dnqkf7KLPm3qvrKigEdMCr5AHUfXcqpn+w5cwE4RlJSWsw2jgcg==', 9);
+insert into Users (Username, Password, StatusId) values ('Richmond', '9P0rZZo83lcxfXnRZAxiWp/2HOHL/lirwfj+0E2QBTw0Re2TQHy9TCzewQdqDj3zFoNCmKatwudWekzsXknGuA==', 10);
 
 /* ---------------------------------------------- Specialities  ----------------------------------------------*/
 insert into Specialities (Code, Name, Description, StatusId, EducationalDegreeId, FacultyId) values ('3E0C7HZ', 'fkemmish0', 'Pfannerstill-Erdman', 1, 1, 1);

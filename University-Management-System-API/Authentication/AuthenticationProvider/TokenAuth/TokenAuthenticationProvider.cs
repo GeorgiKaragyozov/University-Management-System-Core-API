@@ -34,6 +34,7 @@ namespace University_Management_System_API.Authentication.AuthenticationProvider
             string headerValue = request.Headers["Authorization"].ToString();
             ApiSessionResult resultSession = await ApiSessionProcessor.GetByAuthTokenAsync(headerValue);
 
+            //Call FindById
             UserResult resultUser = ProcessorUser.Find(resultSession.UserId);
 
             return resultUser;

@@ -12,6 +12,11 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.ApiSessio
 
         }
 
+        /// <summary>
+        /// Checks in the database for authToken
+        /// </summary>
+        /// <param name="authToken">authToken</param>
+        /// <returns>session</returns>
         public async Task<Model.ApiSession> GetByAuthTokenAsync(string authToken)
         {
             Model.ApiSession entity = await Task.Run(() =>

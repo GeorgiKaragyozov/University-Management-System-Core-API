@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-using University_Management_System_API.DataAccess.DataAccessObject;
+using University_Management_System_API.DataAccess.DataAccessObject.Common.SeedData;
 
 namespace University_Management_System_API.Migrations
 {

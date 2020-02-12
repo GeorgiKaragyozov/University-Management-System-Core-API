@@ -15,7 +15,6 @@ namespace University_Management_System_API.Business.Convertor.UserGroupStatus
 
         public override void ConvertSpecific(UserGroupStatusParam param, Model.UserGroupStatus entity)
         {
-
         }
     }
 }

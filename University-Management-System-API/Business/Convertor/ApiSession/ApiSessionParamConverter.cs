@@ -1,5 +1,4 @@
-﻿using System;
-using University_Management_System_API.Business.Convertor.Common;
+﻿using University_Management_System_API.Business.Convertor.Common;
 
 namespace University_Management_System_API.Business.Convertor.ApiSession
 {
@@ -8,7 +7,6 @@ namespace University_Management_System_API.Business.Convertor.ApiSession
     {
         public override void ConvertSpecific(ApiSessionParam param, Model.ApiSession entity)
         {
-
         }
 
         public override Model.ApiSession GetEntity(ApiSessionParam param)

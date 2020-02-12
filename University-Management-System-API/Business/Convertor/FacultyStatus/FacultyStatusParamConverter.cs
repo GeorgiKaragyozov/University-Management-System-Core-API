@@ -10,6 +10,8 @@ namespace University_Management_System_API.Business.Convertor.FacultyStatus
             return new Model.FacultyStatus();
         }
 
-        public override void ConvertSpecific(FacultyStatusParam param, Model.FacultyStatus entity) { }
+        public override void ConvertSpecific(FacultyStatusParam param, Model.FacultyStatus entity)
+        {
+        }
     }
 }

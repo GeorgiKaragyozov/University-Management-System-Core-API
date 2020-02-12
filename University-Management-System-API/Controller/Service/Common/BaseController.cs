@@ -37,6 +37,7 @@ namespace University_Management_System_API.Controller.Service.Common
         [HttpPost("Create")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [AllowAnonymous]
         public ActionResult Create([FromBody]TParam param)
         {
             if(param == null)
@@ -183,7 +184,7 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns>params</returns>
         /// <response code="302">Returns the found item</response>
         [HttpGet("ListAll")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, User")]
         [ProducesResponseType(StatusCodes.Status302Found)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult ListAll()

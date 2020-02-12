@@ -13,6 +13,7 @@ namespace University_Management_System_API.Business.Convertor.TeacherDisciplineS
 
         public override void ConvertSpecific(TeacherDisciplineStatusParam param,
             Model.TeacherDisciplineStatus entity)
-        { }
+        { 
+        }
     }
 }

@@ -13,7 +13,8 @@ namespace University_Management_System_API.Business.Convertor.UserGroup
             set { _statusDao = value; }
         }
 
-        public UserGroupParamConverter(IUserGroupStatusDao statusDao)
+        public UserGroupParamConverter(
+            IUserGroupStatusDao statusDao)
         {
             this.StatusDao = statusDao;
         }

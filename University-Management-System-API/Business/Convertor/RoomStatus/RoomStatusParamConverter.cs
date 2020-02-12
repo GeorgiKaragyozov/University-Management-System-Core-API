@@ -10,6 +10,8 @@ namespace University_Management_System_API.Business.Convertor.RoomStatus
             return new Model.RoomStatus();
         }
 
-        public override void ConvertSpecific(RoomStatusParam param, Model.RoomStatus entity) { }
+        public override void ConvertSpecific(RoomStatusParam param, Model.RoomStatus entity)
+        { 
+        }
     }
 }

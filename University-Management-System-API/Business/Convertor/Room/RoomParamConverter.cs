@@ -13,7 +13,8 @@ namespace University_Management_System_API.Business.Convertor.Room
             set { _statusDao = value; }
         }
 
-        public RoomParamConverter(IRoomStatusDao statusDao)
+        public RoomParamConverter(
+            IRoomStatusDao statusDao)
         {
             this.StatusDao = statusDao;
         }

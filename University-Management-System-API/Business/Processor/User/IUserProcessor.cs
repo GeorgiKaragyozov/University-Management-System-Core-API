@@ -6,6 +6,6 @@ namespace University_Management_System_API.Business.Processor.User
 {
     public interface IUserProcessor : IBaseProcessor<UserParam, UserResult, long>
     {
-        Task<UserResult> AuthenticateAsync(UserParam param);
+        Task<UserResult> AuthenticateAsync(string usename, string password);
     }
 }

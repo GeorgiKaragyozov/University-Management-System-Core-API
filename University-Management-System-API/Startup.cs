@@ -3,9 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using University_Management_System_API.Swagger;
 using Microsoft.Extensions.DependencyInjection;
 using University_Management_System_API.Extensions.Common;
-using University_Management_System_API.Swagger;
+using University_Management_System_API.Authentication.Common;
 
 namespace University_Management_System_API
 {
@@ -18,10 +19,13 @@ namespace University_Management_System_API
 
         public IConfiguration Configuration { get; }
 
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Secrete key
+            var SaltSettingsSercret = Configuration.GetSection("SecretKeySettings");
+                services.Configure<SecretKeySettings>(SaltSettingsSercret);
+
             services.AddControllers();
 
             services.AddDbContext<UniversityManagementSystemContext>(options =>

@@ -2,8 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using University_Management_System_API.Authentication.AuthenticationHendler;
 using University_Management_System_API.Authentication.AuthenticationProvider;
-using University_Management_System_API.Authentication.AuthenticationProvider.BasicAuth;
-using University_Management_System_API.Authentication.AuthenticationProvider.TokenAuth;
 
 namespace University_Management_System_API.Extensions.Authentication
 {
@@ -11,9 +9,9 @@ namespace University_Management_System_API.Extensions.Authentication
     {
         public static void RegisterDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IBasicAuthenticationProvider, BasicAuthenticationProvider>();
+            services.AddScoped<IBaseAuthenticationProvider, BasicAuthenticationProvider>();
 
-            services.AddScoped<ITokenAuthenticationProvider, TokenAuthenticationProvider>();
+            services.AddScoped<IBaseAuthenticationProvider, TokenAuthenticationProvider>();
 
             services.AddAuthentication("BasicAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);

@@ -1,5 +1,5 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.DepartamentStatus;
-using University_Management_System_API.Business.Convertor.Common;
+﻿using University_Management_System_API.Business.Convertor.Common;
+using University_Management_System_API.DataAccess.DataAccessObject.DepartamentStatus;
 
 namespace University_Management_System_API.Business.Convertor.Departament
 {
