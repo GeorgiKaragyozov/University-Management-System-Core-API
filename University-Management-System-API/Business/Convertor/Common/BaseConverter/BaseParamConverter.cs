@@ -2,9 +2,6 @@
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
-using University_Management_System_API.Authentication.Common;
-using System.Text;
-using Microsoft.Extensions.Options;
 
 namespace University_Management_System_API.Business.Convertor.Common
 {

@@ -43,6 +43,7 @@ namespace University_Management_System_API.Business.Convertor.User
             entity.Status = StatusDao.Find(param.StatusId);
 
             entity = HashPassword(entity);
+    
         }
 
         public Model.User HashPassword(Model.User entity)

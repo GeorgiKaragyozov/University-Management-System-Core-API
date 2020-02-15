@@ -28,7 +28,7 @@ namespace University_Management_System_API.Controller.Service.Auth
         /// <returns>new param</returns>
         /// <response code="200">Login Successfully</response>
         /// <response code="400"></response> 
-        [HttpPost("Login")]
+        [HttpGet("Login")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult Login()

@@ -9,14 +9,12 @@ namespace University_Management_System_API.Authentication.Common
         /// Generates a random plain text and calls the function GenerateSalt and GenerateHash
         /// </summary>
         /// <returns>Random plain text</returns>
-        public static string GenerateToken()
+        public static string GenerateToken(byte[] salt)
         {
             string authToken = Guid.NewGuid().ToString();
             var plainTextBytes = Encoding.UTF8.GetBytes(authToken);
 
             string token = Convert.ToBase64String(plainTextBytes);
-
-            byte[] salt = Salt.GenerateSalt();
 
             return HashPlainText.GenerateHash(token, salt);
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Abp.Application.Features;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace University_Management_System_API.Controller.Service.Common
         {
             this.Processor = processor;
         }
-
+ 
         /// <summary>
         /// Function to create new entity .
         /// </summary>
@@ -184,7 +185,7 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns>params</returns>
         /// <response code="302">Returns the found item</response>
         [HttpGet("ListAll")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User")]      
         [ProducesResponseType(StatusCodes.Status302Found)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult ListAll()

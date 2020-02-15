@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 using University_Management_System_API.Authentication.Common;
 using University_Management_System_API.Business.Processor.User;
 using University_Management_System_API.Business.Convertor.User;
@@ -35,14 +37,24 @@ namespace University_Management_System_API.Business.Processor.Auth
             set { this._userProcessor = value; }
         }
 
+
+        private IOptions<SecretKeySettings> _options;
+        public IOptions<SecretKeySettings> Options
+        {
+            get { return _options; }
+            set { _options = value; }
+        }
+
         public AuthProcessor(
             IHttpContextAccessor httpContextAccessor,
             IApiSessionProcessor apiSessionProcessor,
-            IUserProcessor userProcessor)
+            IUserProcessor userProcessor,
+            IOptions<SecretKeySettings> options)
         {
             this.HttpContextAccessor = httpContextAccessor;
             this.ApiSessionProcessor = apiSessionProcessor;
             this.UserProcessor = userProcessor;
+            this.Options = options;
         }
 
         /// <summary>
@@ -62,9 +74,14 @@ namespace University_Management_System_API.Business.Processor.Auth
 
                 //Get user result with function find by field
                 result = UserProcessor.Find("Id", userId).SingleOrDefault();
-                
+
+                //get secret value
+                var secret = this.Options.Value.Secret;
+                //to byte secret value
+                var key = Encoding.UTF8.GetBytes(secret);
+
                 //return random token for user
-                string randomToken = GenerateRandomToken.GenerateToken();
+                string randomToken = GenerateRandomToken.GenerateToken(key);
 
                 param = new ApiSessionParam()
                 {
