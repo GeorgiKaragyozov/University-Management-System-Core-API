@@ -1,7 +1,4 @@
-﻿using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Options;
-using University_Management_System_API.Authentication.Common;
+﻿using System.Threading.Tasks;
 using University_Management_System_API.Business.Convertor.User;
 using University_Management_System_API.Business.Processor.Common;
 using University_Management_System_API.DataAccess.DataAccessObject.User;

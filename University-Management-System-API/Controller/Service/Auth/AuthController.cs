@@ -44,7 +44,7 @@ namespace University_Management_System_API.Controller.Service.Auth
         /// <returns>new param</returns>
         /// <response code="200">Logout Successfully</response>
         /// <response code="400"></response> 
-        [HttpPost("Logout")]
+        [HttpGet("Logout")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult Logout()

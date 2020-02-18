@@ -1,14 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using Microsoft.FeatureManagement;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using University_Management_System_API.Swagger;
 using Microsoft.Extensions.DependencyInjection;
 using University_Management_System_API.Extensions.Common;
 using University_Management_System_API.Authentication.Common;
-using Microsoft.FeatureManagement.FeatureFilters;
 
 namespace University_Management_System_API
 {

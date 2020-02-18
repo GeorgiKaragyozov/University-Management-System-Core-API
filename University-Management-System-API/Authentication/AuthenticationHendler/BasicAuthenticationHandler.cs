@@ -36,7 +36,7 @@ namespace University_Management_System_API.Authentication.AuthenticationHendler
 
             try
             {
-                foreach (var providersItem in Providers)
+                foreach (var providersItem in Providers)    
                 {
                     if (resultUser == null)
                     {

@@ -57,6 +57,19 @@ namespace University_Management_System_API.Business.Processor.Auth
             this.Options = options;
         }
 
+        public UserResult GetUser()
+        {
+            UserResult result;
+
+            //Get user's id with claim type 
+            var userId = HttpContextAccessor
+                .HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            //Get user result with function find by field
+            result = UserProcessor.Find("Id", userId).SingleOrDefault();
+            return result;
+        }
+
         /// <summary>
         /// Create new session for user and return token
         /// </summary>
@@ -68,12 +81,7 @@ namespace University_Management_System_API.Business.Processor.Auth
 
             try
             {
-                //Get user's id with claim type 
-                var userId = HttpContextAccessor
-                    .HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-                //Get user result with function find by field
-                result = UserProcessor.Find("Id", userId).SingleOrDefault();
+                result = GetUser();
 
                 //get secret value
                 var secret = this.Options.Value.Secret;
@@ -115,7 +123,7 @@ namespace University_Management_System_API.Business.Processor.Auth
 
                 var authHeader = HttpContextAccessor.HttpContext.Request.Headers["Authorization"].ToString();
 
-                result = ApiSessionProcessor.Find("token", authHeader).SingleOrDefault();
+                result = ApiSessionProcessor.Find("AuthToken", authHeader).SingleOrDefault();
 
                 ApiSessionProcessor.Erase(result.Id);
             }
