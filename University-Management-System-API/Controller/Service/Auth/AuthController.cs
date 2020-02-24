@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
 using University_Management_System_API.Business.Processor.Auth;
@@ -35,7 +36,14 @@ namespace University_Management_System_API.Controller.Service.Auth
         {
             string authTokenUser = Processor.GetAuthToken();
 
-            return Ok(authTokenUser);
+            try
+            {
+                return Ok(authTokenUser);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         /// <summary>
@@ -49,9 +57,16 @@ namespace University_Management_System_API.Controller.Service.Auth
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult Logout()
         {
-            Processor.RemoveApiSession();
+            Processor.EraseApiSession();
 
-            return Ok("Session was successfully delete.");
+            try
+            {
+                return Ok("Session was successfully delete.");
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }         
         }
     }
 }

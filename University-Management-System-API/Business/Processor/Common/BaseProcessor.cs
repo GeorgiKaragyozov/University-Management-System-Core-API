@@ -58,8 +58,6 @@ namespace University_Management_System_API.Business.Processor.Common
             TEntity entity = null;
 
             entity = ParamConverter.Convert(param, entity);
-            //TEntity entity = ParamConverter.Convert(param, null);
-
             entity = Dao.Save(entity);
 
             return ResultConverter.Convert(entity);

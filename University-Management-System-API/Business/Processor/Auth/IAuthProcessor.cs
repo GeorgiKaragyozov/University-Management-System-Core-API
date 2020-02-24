@@ -4,6 +4,6 @@
     {
         string GetAuthToken();
 
-        void RemoveApiSession();
+        void EraseApiSession();
     }
 }

@@ -113,19 +113,22 @@ namespace University_Management_System_API.Business.Processor.Auth
         }
 
         /// <summary>
-        /// Remove User's Session
+        /// Erase User's Session
         /// </summary>
-        public void RemoveApiSession()
+        public void EraseApiSession()
         {
             try
             {
                 ApiSessionResult result = new ApiSessionResult();
 
-                var authHeader = HttpContextAccessor.HttpContext.Request.Headers["Authorization"].ToString();
+                //Get Headers Value
+                string authHeader = HttpContextAccessor.HttpContext.Request.Headers["Authorization"];
 
-                result = ApiSessionProcessor.Find("AuthToken", authHeader).SingleOrDefault();
-
-                ApiSessionProcessor.Erase(result.Id);
+                if (!authHeader.StartsWith("Basic"))
+                {
+                    result = ApiSessionProcessor.Find("AuthToken", authHeader).SingleOrDefault();
+                    ApiSessionProcessor.Erase(result.Id);
+                }           
             }
             catch (Exception ex)
             {
