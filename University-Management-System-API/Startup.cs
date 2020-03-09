@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using University_Management_System_API.Swagger;
 using Microsoft.Extensions.DependencyInjection;
 using University_Management_System_API.Extensions.Common;
-using University_Management_System_API.Authentication.Common;
+using University_Management_System_API.Authentication.Common;   
 
 namespace University_Management_System_API
 {

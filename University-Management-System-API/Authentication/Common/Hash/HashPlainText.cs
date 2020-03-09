@@ -19,7 +19,7 @@ namespace University_Management_System_API.Authentication.Common
                 salt: salt,
                 prf: KeyDerivationPrf.HMACSHA512,
                 iterationCount: 10000,
-                numBytesRequested: 512 / 8));
+                numBytesRequested: 512 / 8));        
 
             return hashed;
         }

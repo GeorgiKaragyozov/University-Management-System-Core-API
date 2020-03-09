@@ -4,11 +4,14 @@ using System.Text;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
+using System.Text.RegularExpressions;
 using University_Management_System_API.Authentication.Common;
 using University_Management_System_API.Business.Processor.User;
 using University_Management_System_API.Business.Convertor.User;
 using University_Management_System_API.Business.Convertor.ApiSession;
 using University_Management_System_API.Business.Processor.ApiSession;
+using University_Management_System_API.Business.Processor.Account;
+using University_Management_System_API.Business.Convertor.Account;
 
 namespace University_Management_System_API.Business.Processor.Auth
 {
@@ -35,6 +38,14 @@ namespace University_Management_System_API.Business.Processor.Auth
         {
             get { return this._userProcessor; }
             set { this._userProcessor = value; }
+        }
+
+
+        private IAccountProcessor _accountProcessor;
+        public IAccountProcessor AccountProcessor
+        {
+            get { return this._accountProcessor; }
+            set { this._accountProcessor = value; }
         }
 
 
@@ -70,6 +81,26 @@ namespace University_Management_System_API.Business.Processor.Auth
             return result;
         }
 
+        public bool IsActiveUser(UserResult result)
+        {
+            if(result.Active == 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool IsActiveAccount(AccountResult result)
+        {
+            if (result.Active == 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         /// <summary>
         /// Create new session for user and return token
         /// </summary>
@@ -77,32 +108,38 @@ namespace University_Management_System_API.Business.Processor.Auth
         public string GetAuthToken()
         {
             UserResult result;
-            ApiSessionParam param;
+            ApiSessionParam param = null;
 
             try
             {
                 result = GetUser();
 
-                //get secret value
-                var secret = this.Options.Value.Secret;
-                //to byte secret value
-                var key = Encoding.UTF8.GetBytes(secret);
-
-                //return random token for user
-                string randomToken = GenerateRandomToken.GenerateToken(key);
-
-                param = new ApiSessionParam()
+                if (IsActiveUser(result))
                 {
-                    AuthToken = randomToken,
-                    UserId = result.Id,
-                    Name = result.StatusName,
-                    Code = result.Username,
-                    Description = $"This is {result.Username} with session created on {System.DateTime.Now}",
-                    Active = result.Active
-                };
+                    //get secret value
+                    var secret = this.Options.Value.Secret;
+                    //to byte secret value
+                    var key = Encoding.UTF8.GetBytes(secret);
 
-                //creta new session for user
-                ApiSessionProcessor.Create(param);
+                    //return random token for user
+                    string randomToken = GenerateRandomToken.GenerateToken(key);
+
+                    var regex = new Regex("[:!@#$%^&*()}{|\":?><\\]\\;'/.,~+-]");
+                    randomToken = regex.Replace(randomToken, "-");
+
+                    param = new ApiSessionParam()
+                    {
+                        AuthToken = randomToken,
+                        UserId = result.Id,
+                        Name = result.StatusName,
+                        Code = result.Username,
+                        Description = $"This is {result.Username} with session created on {System.DateTime.Now}",
+                        Active = result.Active
+                    };
+
+                    //creta new session for user
+                    ApiSessionProcessor.Create(param);
+                }
             }
             catch (Exception ex)
             {

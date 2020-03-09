@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 using University_Management_System_API.Business.Processor.Common;
+using System.Linq;
 
 namespace University_Management_System_API.Controller.Service.Common
 {
@@ -26,7 +27,7 @@ namespace University_Management_System_API.Controller.Service.Common
         {
             this.Processor = processor;
         }
- 
+    
         /// <summary>
         /// Function to create new entity .
         /// </summary>
@@ -40,7 +41,7 @@ namespace University_Management_System_API.Controller.Service.Common
         [AllowAnonymous]
         public ActionResult Create([FromBody]TParam param)
         {
-            if(param == null)
+            if (param == null)
             {
                 BadRequest();
             }
@@ -184,7 +185,7 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns>params</returns>
         /// <response code="302">Returns the found item</response>
         [HttpGet("ListAll")]
-        [Authorize(Roles = "Admin, User")]      
+        //[Authorize(Roles = "Admin, User")]      
         [ProducesResponseType(StatusCodes.Status302Found)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult ListAll()
@@ -212,6 +213,7 @@ namespace University_Management_System_API.Controller.Service.Common
         [HttpGet("FindByField/{field}/{value}")]
         [ProducesResponseType(StatusCodes.Status302Found)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [AllowAnonymous]
         public ActionResult FindByField(string field, string value)
         {
             if(field == null && value == null)
@@ -222,6 +224,36 @@ namespace University_Management_System_API.Controller.Service.Common
             try
             {
                 List<TResult> result = Processor.Find(field, value);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        /// <response code="200"></response>
+        /// <response code="400"></response> 
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [HttpGet("FindByFieldSingle/{field}/{value}")]
+        [AllowAnonymous]
+        public ActionResult FindByFieldSingle(string field, string value)
+        {
+            if (field == null && value == null)
+            {
+                BadRequest();
+            }
+
+            try
+            {
+                TResult result = Processor.Find(field, value)
+                    .FirstOrDefault();
 
                 return Ok(result);
             }
@@ -297,10 +329,10 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns>response and update param</returns>
         /// <response code="200">Returns the updated object</response>
         /// <response code="400">If the id or param are null</response> 
-        [HttpPut("{id}")]
+        [HttpPut("Update/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult Update(TPK id,[FromBody]TParam param)
+        public ActionResult Update(TPK id, [FromBody]TParam param)
         {
             if (id == null && param == null)
             {
@@ -356,7 +388,7 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <response code="200">Returns update items by Id</response>
         /// <response code="400">If the param's id is null</response> 
         [HttpPut("DeleteById/{id}")]
-        [Authorize(Roles = "Admin, User")]
+        //[Authorize(Roles = "Admin, User")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]     
         public ActionResult DeleteById(TPK id)

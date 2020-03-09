@@ -33,12 +33,19 @@ namespace University_Management_System_API.Controller.Service.Auth
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult Login()
-        {
-            string authTokenUser = Processor.GetAuthToken();
-
+        {           
             try
             {
-                return Ok(authTokenUser);
+                string authTokenUser = Processor.GetAuthToken();
+
+                if(authTokenUser == null)
+                {
+                    return BadRequest();
+                }
+                else
+                {
+                    return Ok(authTokenUser);
+                }
             }
             catch (Exception ex)
             {
@@ -56,11 +63,11 @@ namespace University_Management_System_API.Controller.Service.Auth
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult Logout()
-        {
-            Processor.EraseApiSession();
-
+        {          
             try
             {
+                Processor.EraseApiSession();
+
                 return Ok("Session was successfully delete.");
             }
             catch (Exception ex)
