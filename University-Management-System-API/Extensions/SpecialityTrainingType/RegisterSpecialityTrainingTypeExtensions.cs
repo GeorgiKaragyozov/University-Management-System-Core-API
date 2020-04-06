@@ -1,12 +1,12 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using University_Management_System_API.Business.Convertor.SpecialityTrainingType;
-using University_Management_System_API.Business.Processor.SpecialityTrainingType;
-using University_Management_System_API.DataAccess.DataAccessObject.Speciality;
-using University_Management_System_API.DataAccess.DataAccessObject.SpecialityTrainingType;
-using University_Management_System_API.DataAccess.DataAccessObject.TrainingType;
-
-namespace University_Management_System_API.Extensions.SpecialityTrainingType
+﻿namespace University_Management_System_API.Extensions.SpecialityTrainingType
 {
+    using Microsoft.Extensions.DependencyInjection;
+    using University_Management_System_API.Business.Convertor.SpecialityTrainingType;
+    using University_Management_System_API.Business.Processor.SpecialityTrainingType;
+    using University_Management_System_API.DataAccess.DataAccessObject.Speciality;
+    using University_Management_System_API.DataAccess.DataAccessObject.SpecialityTrainingType;
+    using University_Management_System_API.DataAccess.DataAccessObject.TrainingType;
+
     public static class RegisterSpecialityTrainingTypeExtensions
     {
         public static void RegisterDependencies(this IServiceCollection services)

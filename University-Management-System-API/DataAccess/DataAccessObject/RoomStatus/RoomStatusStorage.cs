@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.RoomStatus
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.RoomStatus
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class RoomStatusStorage : BaseStorage<Model.RoomStatus, long>, IRoomStatusStorage
     {
         private readonly string _jsonFile = @"D:\Users\Georgi\Desktop\University-Management-System-Core\University-Management-System\DataBaseJson\RoomStatus\RoomStatusJsonFile.json";

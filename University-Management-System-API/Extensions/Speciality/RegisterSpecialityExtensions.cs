@@ -1,13 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using University_Management_System_API.Business.Convertor.Speciality;
-using University_Management_System_API.Business.Processor.Speciality;
-using University_Management_System_API.DataAccess.DataAccessObject.EducationalDegree;
-using University_Management_System_API.DataAccess.DataAccessObject.Faculty;
-using University_Management_System_API.DataAccess.DataAccessObject.Speciality;
-using University_Management_System_API.DataAccess.DataAccessObject.SpecialityStatus;
-
-namespace University_Management_System_API.Extensions.Speciality
+﻿namespace University_Management_System_API.Extensions.Speciality
 {
+    using Microsoft.Extensions.DependencyInjection;
+    using University_Management_System_API.Business.Convertor.Speciality;
+    using University_Management_System_API.Business.Processor.Speciality;
+    using University_Management_System_API.DataAccess.DataAccessObject.EducationalDegree;
+    using University_Management_System_API.DataAccess.DataAccessObject.Faculty;
+    using University_Management_System_API.DataAccess.DataAccessObject.Speciality;
+    using University_Management_System_API.DataAccess.DataAccessObject.SpecialityStatus;
+
     public static class RegisterSpecialityExtensions
     {
         public static void RegisterDependencies(this IServiceCollection services)

@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using University_Management_System_API.Business.Convertor.FacultyStatus;
-using University_Management_System_API.Business.Processor.FacultyStatus;
-using University_Management_System_API.DataAccess.DataAccessObject.FacultyStatus;
-
-namespace University_Management_System_API.Extensions.FacultyStatus
+﻿namespace University_Management_System_API.Extensions.FacultyStatus
 {
+    using Microsoft.Extensions.DependencyInjection;
+    using University_Management_System_API.Business.Convertor.FacultyStatus;
+    using University_Management_System_API.Business.Processor.FacultyStatus;
+    using University_Management_System_API.DataAccess.DataAccessObject.FacultyStatus;
+
     public static class RegisterFacultyStatusExtensions
     {
         public static void RegisterDependencies(this IServiceCollection services)

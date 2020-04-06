@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.Common
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.Common
 {
+    using System;
+    using System.Linq;
+    using System.Collections.Generic;
+    using Microsoft.EntityFrameworkCore;
+
     public abstract class BaseDaoEF<TEntity, TPK> : IBaseDao<TEntity,TPK>
         where TEntity : Persistent
     {

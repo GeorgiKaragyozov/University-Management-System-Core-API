@@ -1,8 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-using University_Management_System_API.Model;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.DisciplineStatus
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.DisciplineStatus
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class DisciplineStatusStorage : BaseStorage<Model.DisciplineStatus, long>, IDisciplineStatusStorage
     {
         private readonly string _jsonFile = @"D:\Users\Georgi\Desktop\University-Management-System-Core\University-Management-System\DataBaseJson\DisciplineStatus\DisciplineStatusJsonFile.json";

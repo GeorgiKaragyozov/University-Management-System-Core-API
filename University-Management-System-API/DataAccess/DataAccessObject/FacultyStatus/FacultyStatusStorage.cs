@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.FacultyStatus
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.FacultyStatus
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class FacultyStatusStorage : BaseStorage<Model.FacultyStatus, long>, IFacultyStatusStorage
     {
         private readonly string _jsonFile = @"D:\Users\Georgi\Desktop\University-Management-System-Core\University-Management-System\DataBaseJson\FacultyStatus\FacultyStatusJsonFile.json";

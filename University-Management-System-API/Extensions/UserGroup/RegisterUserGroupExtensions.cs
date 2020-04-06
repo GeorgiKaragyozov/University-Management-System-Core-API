@@ -1,11 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using University_Management_System_API.Business.Convertor.UserGroup;
-using University_Management_System_API.Business.Processor.UserGroup;
-using University_Management_System_API.DataAccess.DataAccessObject.UserGroup;
-using University_Management_System_API.DataAccess.DataAccessObject.UserGroupStatus;
-
-namespace University_Management_System_API.Extensions.UserGroup
+﻿namespace University_Management_System_API.Extensions.UserGroup
 {
+    using Microsoft.Extensions.DependencyInjection;
+    using University_Management_System_API.Business.Convertor.UserGroup;
+    using University_Management_System_API.Business.Processor.UserGroup;
+    using University_Management_System_API.DataAccess.DataAccessObject.UserGroup;
+    using University_Management_System_API.DataAccess.DataAccessObject.UserGroupStatus;
+
     public static class RegisterUserGroupExtensions
     {
         public static void RegisterDependencies(this IServiceCollection services)

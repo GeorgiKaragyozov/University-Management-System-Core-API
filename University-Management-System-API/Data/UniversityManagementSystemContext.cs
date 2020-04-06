@@ -1,14 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using University_Management_System_API.Model;
-
-namespace University_Management_System_API
+﻿namespace University_Management_System_API
 {
+    using Microsoft.EntityFrameworkCore;
+    using University_Management_System_API.Model;
+
     public class UniversityManagementSystemContext : DbContext
     {
         public UniversityManagementSystemContext(DbContextOptions options)
             : base(options)
         {
-
         }
 
         public virtual DbSet<User> Users { get; set; }

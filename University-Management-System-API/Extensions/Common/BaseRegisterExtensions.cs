@@ -1,35 +1,35 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using University_Management_System_API.Extensions.Account;
-using University_Management_System_API.Extensions.AccountStatus;
-using University_Management_System_API.Extensions.AccountType;
-using University_Management_System_API.Extensions.ApiSession;
-using University_Management_System_API.Extensions.Authentication;
-using University_Management_System_API.Extensions.Departament;
-using University_Management_System_API.Extensions.DepartamentStatus;
-using University_Management_System_API.Extensions.Discipline;
-using University_Management_System_API.Extensions.DisciplineStatus;
-using University_Management_System_API.Extensions.EducationalDegree;
-using University_Management_System_API.Extensions.Faculty;
-using University_Management_System_API.Extensions.FacultyStatus;
-using University_Management_System_API.Extensions.Lecture;
-using University_Management_System_API.Extensions.LectureStatus;
-using University_Management_System_API.Extensions.Auth;
-using University_Management_System_API.Extensions.Room;
-using University_Management_System_API.Extensions.RoomStatus;
-using University_Management_System_API.Extensions.Speciality;
-using University_Management_System_API.Extensions.SpecialityStatus;
-using University_Management_System_API.Extensions.SpecialityTrainingType;
-using University_Management_System_API.Extensions.TeacherDiscipline;
-using University_Management_System_API.Extensions.TeacherDisciplineStatus;
-using University_Management_System_API.Extensions.TrainingType;
-using University_Management_System_API.Extensions.User;
-using University_Management_System_API.Extensions.UserGroup;
-using University_Management_System_API.Extensions.UserGroupStatus;
-using University_Management_System_API.Extensions.UserStatus;
-using University_Management_System_API.Extensions.UserUserGroup;
-
-namespace University_Management_System_API.Extensions.Common
+﻿namespace University_Management_System_API.Extensions.Common
 {
+    using Microsoft.Extensions.DependencyInjection;
+    using University_Management_System_API.Extensions.Account;
+    using University_Management_System_API.Extensions.AccountStatus;
+    using University_Management_System_API.Extensions.AccountType;
+    using University_Management_System_API.Extensions.ApiSession;
+    using University_Management_System_API.Extensions.Authentication;
+    using University_Management_System_API.Extensions.Departament;
+    using University_Management_System_API.Extensions.DepartamentStatus;
+    using University_Management_System_API.Extensions.Discipline;
+    using University_Management_System_API.Extensions.DisciplineStatus;
+    using University_Management_System_API.Extensions.EducationalDegree;
+    using University_Management_System_API.Extensions.Faculty;
+    using University_Management_System_API.Extensions.FacultyStatus;
+    using University_Management_System_API.Extensions.Lecture;
+    using University_Management_System_API.Extensions.LectureStatus;
+    using University_Management_System_API.Extensions.Auth;
+    using University_Management_System_API.Extensions.Room;
+    using University_Management_System_API.Extensions.RoomStatus;
+    using University_Management_System_API.Extensions.Speciality;
+    using University_Management_System_API.Extensions.SpecialityStatus;
+    using University_Management_System_API.Extensions.SpecialityTrainingType;
+    using University_Management_System_API.Extensions.TeacherDiscipline;
+    using University_Management_System_API.Extensions.TeacherDisciplineStatus;
+    using University_Management_System_API.Extensions.TrainingType;
+    using University_Management_System_API.Extensions.User;
+    using University_Management_System_API.Extensions.UserGroup;
+    using University_Management_System_API.Extensions.UserGroupStatus;
+    using University_Management_System_API.Extensions.UserStatus;
+    using University_Management_System_API.Extensions.UserUserGroup;
+
     public static class BaseRegisterExtensions
     {
         /// <summary>

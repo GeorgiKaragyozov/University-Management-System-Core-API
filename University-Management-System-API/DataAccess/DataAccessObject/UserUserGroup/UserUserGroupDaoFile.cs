@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.UserUserGroup
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.UserUserGroup
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class UserUserGroupDaoFile
         : BaseDaoFile<Model.UserUserGroup, long, IUserUserGroupStorage>, IUserUserGroupDao
     {
@@ -13,7 +13,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.UserUserG
         public UserUserGroupDaoFile(IUserUserGroupStorage storage)
           : base(storage)
         {
-
         }
     }
 }

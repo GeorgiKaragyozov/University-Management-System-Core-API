@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using University_Management_System_API.Business.Convertor.LectureStatus;
-using University_Management_System_API.Business.Processor.LectureStatus;
-using University_Management_System_API.DataAccess.DataAccessObject.LectureStatus;
-
-namespace University_Management_System_API.Extensions.LectureStatus
+﻿namespace University_Management_System_API.Extensions.LectureStatus
 {
+    using Microsoft.Extensions.DependencyInjection;
+    using University_Management_System_API.Business.Convertor.LectureStatus;
+    using University_Management_System_API.Business.Processor.LectureStatus;
+    using University_Management_System_API.DataAccess.DataAccessObject.LectureStatus;
+
     public static class RegisterLectureStatusExtensions
     {
         public static void RegisterDependencies(this IServiceCollection services)

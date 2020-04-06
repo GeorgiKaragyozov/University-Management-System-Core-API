@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using University_Management_System_API.Business.Convertor.AccountType;
-using University_Management_System_API.Business.Processor.AccountType;
-using University_Management_System_API.DataAccess.DataAccessObject.AccountType;
-
-namespace University_Management_System_API.Extensions.AccountType
+﻿namespace University_Management_System_API.Extensions.AccountType
 {
+    using Microsoft.Extensions.DependencyInjection;
+    using University_Management_System_API.Business.Convertor.AccountType;
+    using University_Management_System_API.Business.Processor.AccountType;
+    using University_Management_System_API.DataAccess.DataAccessObject.AccountType;
+
     public static class RegisterAccountTypeExtensions
     {
         public static void RegisterDependencies(this IServiceCollection services)

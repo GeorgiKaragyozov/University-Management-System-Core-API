@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.RoomStatus
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.RoomStatus
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class RoomStatusDaoFile : BaseDaoFile<Model.RoomStatus, long, IRoomStatusStorage>, IRoomStatusDao
     {
         protected override long GetPK(Model.RoomStatus entity)
@@ -12,7 +12,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.RoomStatu
         public RoomStatusDaoFile(IRoomStatusStorage storage)
           : base(storage)
         {
-
         }
     }
 }

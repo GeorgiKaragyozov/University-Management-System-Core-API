@@ -1,8 +1,8 @@
-﻿using System.IO;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.Common.SeedData
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.Common.SeedData
 {
+    using System.IO;
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public static class SqlScriptMigration
     {
         /// <summary>

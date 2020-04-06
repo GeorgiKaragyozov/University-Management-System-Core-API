@@ -1,15 +1,14 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.User
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.User
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class UserDaoEF : BaseDaoEF<Model.User, long>, IUserDao
     {
         public UserDaoEF(UniversityManagementSystemContext context)
             : base(context)
         {
-
         }
 
         /// <summary>

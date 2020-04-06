@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.EducationalDegree
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.EducationalDegree
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class EducationalDegreeDaoFile
          : BaseDaoFile<Model.EducationalDegree, long, IEducationalDegreeStorage>, IEducationalDegreeDao
     {
@@ -13,7 +13,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.Education
         public EducationalDegreeDaoFile(IEducationalDegreeStorage storage)
             : base(storage)
         {
-
         }
     }
 }

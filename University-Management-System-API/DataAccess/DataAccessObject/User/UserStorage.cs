@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.User
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.User
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class UserStorage : BaseStorage<Model.User, long>, IUserStorage
     {
         private readonly string _jsonFile = @"D:\Users\Georgi\Desktop\University-Management-System-Core\University-Management-System\DataBaseJson\User\UserJsonFile.json";

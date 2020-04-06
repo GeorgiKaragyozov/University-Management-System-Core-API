@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using University_Management_System_API.DataAccess.DataAccessObject.Common.BaseFile;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.Common
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.Common
 {
+    using System;
+    using System.Linq;
+    using System.Collections.Generic;
+    using University_Management_System_API.DataAccess.DataAccessObject.Common.BaseFile;
+
     public abstract class BaseDaoFile<TEntity, TPK, TStorage> : IBaseDao<TEntity, TPK>
          where TEntity : Persistent
          where TStorage : IBaseStorage<TEntity,TPK>

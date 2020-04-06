@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using University_Management_System_API.Business.Convertor.ApiSession;
-using University_Management_System_API.Business.Processor.ApiSession;
-using University_Management_System_API.DataAccess.DataAccessObject.ApiSession;
-
-namespace University_Management_System_API.Extensions.ApiSession
+﻿namespace University_Management_System_API.Extensions.ApiSession
 {
+    using Microsoft.Extensions.DependencyInjection;
+    using University_Management_System_API.Business.Convertor.ApiSession;
+    using University_Management_System_API.Business.Processor.ApiSession;
+    using University_Management_System_API.DataAccess.DataAccessObject.ApiSession;
+
     public static class RegisterApiSessionExtensions
     {
         public static void RegisterDependencies(this IServiceCollection services)

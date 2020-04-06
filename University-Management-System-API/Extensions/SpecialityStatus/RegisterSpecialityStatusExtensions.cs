@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using University_Management_System_API.Business.Convertor.SpecialityStatus;
-using University_Management_System_API.Business.Processor.SpecialityStatus;
-using University_Management_System_API.DataAccess.DataAccessObject.SpecialityStatus;
-
-namespace University_Management_System_API.Extensions.SpecialityStatus
+﻿namespace University_Management_System_API.Extensions.SpecialityStatus
 {
+    using Microsoft.Extensions.DependencyInjection;
+    using University_Management_System_API.Business.Convertor.SpecialityStatus;
+    using University_Management_System_API.Business.Processor.SpecialityStatus;
+    using University_Management_System_API.DataAccess.DataAccessObject.SpecialityStatus;
+
     public static class RegisterSpecialityStatusExtensions
     {
         public static void RegisterDependencies(this IServiceCollection services)

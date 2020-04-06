@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.Departament
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.Departament
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class DepartamentStorage : BaseStorage<Model.Departament, long>, IDepartamentStorage
     {
         private readonly string _jsonFile = @"D:\Users\Georgi\Desktop\University-Management-System-Core\University-Management-System\DataBaseJson\Departament\DepartamentJsonFile.json";

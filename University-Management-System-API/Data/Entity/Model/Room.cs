@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace University_Management_System_API.Model
+﻿namespace University_Management_System_API.Model
 {
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class Room : PersistentNamed
     {
         [ForeignKey("Status")]

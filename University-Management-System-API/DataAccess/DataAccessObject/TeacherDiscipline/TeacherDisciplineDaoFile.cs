@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.TeacherDiscipline
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.TeacherDiscipline
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class TeacherDisciplineDaoFile
         : BaseDaoFile<Model.TeacherDiscipline, long, ITeacherDisciplineStorage>, ITeacherDisciplineDao
     {
@@ -13,7 +13,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.TeacherDi
         public TeacherDisciplineDaoFile(ITeacherDisciplineStorage storage)
           : base(storage)
         {
-
         }
     }
 }

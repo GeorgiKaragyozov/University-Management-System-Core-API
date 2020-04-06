@@ -1,11 +1,11 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Authorization;
-using University_Management_System_API.Business.Processor.Auth;
-
-namespace University_Management_System_API.Controller.Service.Auth
+﻿namespace University_Management_System_API.Controller.Service.Auth
 {
+    using System;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Authorization;
+    using University_Management_System_API.Business.Processor.Auth;
+
     [Authorize]
     [ApiController]
     [Route("api/[Controller]")]

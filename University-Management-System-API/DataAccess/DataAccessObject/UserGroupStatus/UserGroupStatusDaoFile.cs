@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.UserGroupStatus
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.UserGroupStatus
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class UserGroupStatusDaoFile : BaseDaoFile<Model.UserGroupStatus, long, IUserGroupStatusStorage>,
         IUserGroupStatusDao
     {
@@ -13,7 +13,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.UserGroup
         public UserGroupStatusDaoFile(IUserGroupStatusStorage storage)
           : base(storage)
         {
-
         }
     }
 }

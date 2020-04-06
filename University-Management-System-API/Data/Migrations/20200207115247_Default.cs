@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using University_Management_System_API.DataAccess.DataAccessObject.Common.SeedData;
-
-namespace University_Management_System_API.Migrations
+﻿namespace University_Management_System_API.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+    using University_Management_System_API.DataAccess.DataAccessObject.Common.SeedData;
+
     public partial class Default : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

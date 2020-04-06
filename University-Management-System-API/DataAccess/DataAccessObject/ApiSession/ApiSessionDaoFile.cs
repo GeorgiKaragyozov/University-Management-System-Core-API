@@ -1,15 +1,14 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.ApiSession
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.ApiSession
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class ApiSessionDaoFile : BaseDaoFile<Model.ApiSession, long, IApiSessionStorage>, IApiSessionDao
     {
         public ApiSessionDaoFile(IApiSessionStorage storage)
             : base(storage)
         {
-
         }
 
         protected override long GetPK(Model.ApiSession entity)

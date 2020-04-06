@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.SpecialityTrainingType
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.SpecialityTrainingType
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class SpecialityTrainingTypeDaoFile
         : BaseDaoFile<Model.SpecialityTrainingType, long, ISpecialityTrainingTypeStorage>,
         ISpecialityTrainingTypeDao
@@ -14,7 +14,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.Specialit
         public SpecialityTrainingTypeDaoFile(ISpecialityTrainingTypeStorage storage)
           : base(storage)
         {
-
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.AccountStatus
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.AccountStatus
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class AccountStatusDaoFile
         : BaseDaoFile<Model.AccountStatus, long, IAccountStatusStorage>, IAccountStatusDao
     {
@@ -13,7 +13,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.AccountSt
         public AccountStatusDaoFile(IAccountStatusStorage storage)
             : base(storage)
         {
-
         }
     }
 }

@@ -1,13 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using University_Management_System_API.Business.Convertor.TeacherDiscipline;
-using University_Management_System_API.Business.Processor.TeacherDiscipline;
-using University_Management_System_API.DataAccess.DataAccessObject.Account;
-using University_Management_System_API.DataAccess.DataAccessObject.Discipline;
-using University_Management_System_API.DataAccess.DataAccessObject.TeacherDiscipline;
-using University_Management_System_API.DataAccess.DataAccessObject.TeacherDisciplineStatus;
-
-namespace University_Management_System_API.Extensions.TeacherDiscipline
+﻿namespace University_Management_System_API.Extensions.TeacherDiscipline
 {
+    using Microsoft.Extensions.DependencyInjection;
+    using University_Management_System_API.Business.Convertor.TeacherDiscipline;
+    using University_Management_System_API.Business.Processor.TeacherDiscipline;
+    using University_Management_System_API.DataAccess.DataAccessObject.Account;
+    using University_Management_System_API.DataAccess.DataAccessObject.Discipline;
+    using University_Management_System_API.DataAccess.DataAccessObject.TeacherDiscipline;
+    using University_Management_System_API.DataAccess.DataAccessObject.TeacherDisciplineStatus;
+
     public static class RegisterTeacherDisciplineExtensions
     {
         public static void RegisterDependencies(this IServiceCollection services)

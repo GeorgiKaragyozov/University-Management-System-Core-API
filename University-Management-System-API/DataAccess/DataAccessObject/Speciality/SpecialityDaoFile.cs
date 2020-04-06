@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.Speciality
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.Speciality
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class SpecialityDaoFile : BaseDaoFile<Model.Speciality, long, ISpecialityStorage>, ISpecialityDao
     {
         protected override long GetPK(Model.Speciality entity)
@@ -12,7 +12,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.Specialit
         public SpecialityDaoFile(ISpecialityStorage storage)
           : base(storage)
         {
-
         }
     }
 }

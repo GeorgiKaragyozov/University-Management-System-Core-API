@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.SpecialityStatus
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.SpecialityStatus
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class SpecialityStatusDaoFile
         : BaseDaoFile<Model.SpecialityStatus, long, ISpecialityStatusStorage>, ISpecialityStatusDao
     {
@@ -13,7 +13,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.Specialit
         public SpecialityStatusDaoFile(ISpecialityStatusStorage storage)
           : base(storage)
         {
-
         }
     }
 }

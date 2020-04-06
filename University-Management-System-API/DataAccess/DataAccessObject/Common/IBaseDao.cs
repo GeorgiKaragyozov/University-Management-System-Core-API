@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.Common
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.Common
 {
+    using System.Collections.Generic;
+
     public interface IBaseDao<TEntity, TPK>
     {
         TEntity Save(TEntity entity);

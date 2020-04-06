@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using University_Management_System_API.DataAccess.DataAccessObject.Common.BaseFile;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.Common
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.Common
 {
+    using System.IO;
+    using System.Linq;
+    using Newtonsoft.Json;
+    using System.Collections.Generic;
+    using University_Management_System_API.DataAccess.DataAccessObject.Common.BaseFile;
+
     public abstract class BaseStorage<TEntity, TPK> : IBaseStorage<TEntity, TPK>
         where TEntity : Persistent
     {

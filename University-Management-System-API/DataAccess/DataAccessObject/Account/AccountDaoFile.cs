@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.Account
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.Account
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class AccountDaoFile : BaseDaoFile<Model.Account, long, IAccountStorage>, IAccountDao
     {
         protected override long GetPK(Model.Account entity)
@@ -12,7 +12,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.Account
         public AccountDaoFile(IAccountStorage storage)
             : base(storage)
         {
-
         }
     }
 }

@@ -1,14 +1,19 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.User
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.User
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class UserDaoFile : BaseDaoFile<Model.User, long, IUserStorage>, IUserDao
     {
         protected override long GetPK(Model.User entity)
         {
             return entity.Id;
+        }
+
+        public UserDaoFile(IUserStorage storage)
+         : base(storage)
+        {
         }
 
         /// <summary>
@@ -24,12 +29,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.User
                        e.Value.Password == entity.Password).Value);
 
             return user;
-        }
-
-        public UserDaoFile(IUserStorage storage)
-          : base(storage)
-        {
-
-        }
+        }    
     }
 }

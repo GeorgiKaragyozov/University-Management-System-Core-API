@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.DataAccess.DataAccessObject.LectureStatus
+﻿namespace University_Management_System_API.DataAccess.DataAccessObject.LectureStatus
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public class LectureStatusDaoFile
         : BaseDaoFile<Model.LectureStatus, long, ILectureStatusStorage>, ILectureStatusDao
     {
@@ -13,7 +13,6 @@ namespace University_Management_System_API.DataAccess.DataAccessObject.LectureSt
         public LectureStatusDaoFile(ILectureStatusStorage storage)
            : base(storage)
         {
-
         }
     }
 }
