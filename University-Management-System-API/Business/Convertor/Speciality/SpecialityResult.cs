@@ -10,7 +10,5 @@
 
         public long EducationalDegreeId { get; set; }
         public string EducationalDegreeName { get; set; }
-
-        //public TrainingType TrainingType { get; set; }
     }
 }

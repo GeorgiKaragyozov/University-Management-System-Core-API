@@ -1,9 +1,8 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.RoomStatus
+﻿namespace University_Management_System_API.Business.Convertor.RoomStatus
 {
-    public class RoomStatusParamConverter 
-        : BaseParamConverter<RoomStatusParam, Model.RoomStatus>, IRoomStatusParamConverter
+    using University_Management_System_API.Business.Convertor.Common;
+
+    public class RoomStatusParamConverter : BaseParamConverter<RoomStatusParam, Model.RoomStatus>, IRoomStatusParamConverter
     {
         public override Model.RoomStatus GetEntity(RoomStatusParam param)
         {

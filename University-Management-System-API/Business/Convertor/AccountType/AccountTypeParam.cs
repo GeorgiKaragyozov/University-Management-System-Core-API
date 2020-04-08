@@ -2,6 +2,5 @@
 {
     public class AccountTypeParam : BaseParamNamed
     {
-
     }
 }

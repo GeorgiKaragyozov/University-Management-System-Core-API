@@ -1,10 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.DepartamentStatus
+﻿namespace University_Management_System_API.Business.Convertor.DepartamentStatus
 {
-    public interface IDepartamentStatusResultConverter 
+    using University_Management_System_API.Business.Convertor.Common;
+
+    public interface IDepartamentStatusResultConverter
         : IBaseResultConverter<Model.DepartamentStatus, DepartamentStatusResult>
     {
-
     }
 }

@@ -1,12 +1,11 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.Room;
-using University_Management_System_API.DataAccess.DataAccessObject.TeacherDiscipline;
-using University_Management_System_API.DataAccess.DataAccessObject.LectureStatus;
-
-namespace University_Management_System_API.Business.Convertor.Lecture
+﻿namespace University_Management_System_API.Business.Convertor.Lecture
 {
-    public class LectureParamConverter 
-        :  BaseParamConverter<LectureParam, Model.Lecture>, ILectureParamConverter
+    using University_Management_System_API.Business.Convertor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.Room;
+    using University_Management_System_API.DataAccess.DataAccessObject.TeacherDiscipline;
+    using University_Management_System_API.DataAccess.DataAccessObject.LectureStatus;
+
+    public class LectureParamConverter : BaseParamConverter<LectureParam, Model.Lecture>, ILectureParamConverter
     {
         private ITeacherDisciplineDao _teacherDisciplineDao;
         public ITeacherDisciplineDao TeacherDisciplineDao

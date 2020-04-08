@@ -1,15 +1,15 @@
-﻿using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Authentication;
-using University_Management_System_API.Business.Convertor.User;
-using University_Management_System_API.Business.Processor.User;
-using University_Management_System_API.Business.Processor.UserUserGroup;
-
-namespace University_Management_System_API.Authentication.AuthenticationProvider
+﻿namespace University_Management_System_API.Authentication.AuthenticationProvider
 {
+    using System.Linq;
+    using System.Security.Claims;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Http;
+    using System.Collections.Generic;
+    using Microsoft.AspNetCore.Authentication;
+    using University_Management_System_API.Business.Convertor.User;
+    using University_Management_System_API.Business.Processor.User;
+    using University_Management_System_API.Business.Processor.UserUserGroup;
+
     public abstract class BaseAuthenticationProvider : IBaseAuthenticationProvider
     {
         private IUserProcessor _processorUser;

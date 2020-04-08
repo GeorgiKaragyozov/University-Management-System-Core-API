@@ -1,9 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.TeacherDisciplineStatus;
-using University_Management_System_API.Business.Processor.TeacherDisciplineStatus;
-using University_Management_System_API.Controller.Service.Common;
-
-namespace University_Management_System_API.Controller.Service.TeacherDisciplineStatus
+﻿namespace University_Management_System_API.Controller.Service.TeacherDisciplineStatus
 {
+    using University_Management_System_API.Business.Convertor.TeacherDisciplineStatus;
+    using University_Management_System_API.Business.Processor.TeacherDisciplineStatus;
+    using University_Management_System_API.Controller.Service.Common;
+
     public class TeacherDisciplineStatusController
          : BaseController<TeacherDisciplineStatusParam, TeacherDisciplineStatusResult, long,
              ITeacherDisciplineStatusProcessor>
@@ -11,8 +11,6 @@ namespace University_Management_System_API.Controller.Service.TeacherDisciplineS
         public TeacherDisciplineStatusController(ITeacherDisciplineStatusProcessor processor)
             : base(processor)
         {
-
         }
-
     }
 }

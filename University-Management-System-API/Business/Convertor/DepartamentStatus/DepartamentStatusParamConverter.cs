@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.DepartamentStatus
+﻿namespace University_Management_System_API.Business.Convertor.DepartamentStatus
 {
+    using University_Management_System_API.Business.Convertor.Common;
+
     public class DepartamentStatusParamConverter 
         : BaseParamConverter<DepartamentStatusParam, Model.DepartamentStatus>, IDepartamentStatusParamConverter
     {
@@ -10,8 +10,8 @@ namespace University_Management_System_API.Business.Convertor.DepartamentStatus
             return new Model.DepartamentStatus();
         }
 
-        public override void ConvertSpecific(DepartamentStatusParam param,
-            Model.DepartamentStatus entity)
-        { }
+        public override void ConvertSpecific(DepartamentStatusParam param, Model.DepartamentStatus entity)
+        { 
+        }
     }
 }

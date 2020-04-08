@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.AccountStatus
+﻿namespace University_Management_System_API.Business.Convertor.AccountStatus
 {
+    using University_Management_System_API.Business.Convertor.Common;
+
     public class AccountStatusParamConverter 
         : BaseParamConverter<AccountStatusParam, Model.AccountStatus>, IAccountStatusParamConverter
     {
@@ -10,6 +10,8 @@ namespace University_Management_System_API.Business.Convertor.AccountStatus
             return new Model.AccountStatus();
         }
 
-        public override void ConvertSpecific(AccountStatusParam param, Model.AccountStatus entity) { }
+        public override void ConvertSpecific(AccountStatusParam param, Model.AccountStatus entity)
+        {
+        }
     }
 }

@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.Business.Convertor.DisciplineStatus;
-namespace University_Management_System_API.Business.Processor.DisciplineStatus
+﻿namespace University_Management_System_API.Business.Processor.DisciplineStatus
 {
     using University_Management_System_API.Business.Processor.Common;
+    using University_Management_System_API.Business.Convertor.DisciplineStatus;
     using University_Management_System_API.DataAccess.DataAccessObject.DisciplineStatus;
 
     public class DisciplineStatusProcessor
@@ -14,7 +14,8 @@ namespace University_Management_System_API.Business.Processor.DisciplineStatus
             return param.Id;
         }
 
-        public DisciplineStatusProcessor(IDisciplineStatusDao dao,
+        public DisciplineStatusProcessor(
+            IDisciplineStatusDao dao,
             IDisciplineStatusParamConverter paramConverter,
             IDisciplineStatusResultConverter resultConverter)
 

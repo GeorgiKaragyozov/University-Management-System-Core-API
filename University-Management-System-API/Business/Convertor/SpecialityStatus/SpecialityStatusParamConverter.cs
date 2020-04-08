@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.SpecialityStatus
+﻿namespace University_Management_System_API.Business.Convertor.SpecialityStatus
 {
+    using University_Management_System_API.Business.Convertor.Common;
+
     public class SpecialityStatusParamConverter 
         : BaseParamConverter<SpecialityStatusParam, Model.SpecialityStatus>, ISpecialityStatusParamConverter
     {
@@ -10,8 +10,7 @@ namespace University_Management_System_API.Business.Convertor.SpecialityStatus
             return new Model.SpecialityStatus();
         }
 
-        public override void ConvertSpecific(SpecialityStatusParam param,
-            Model.SpecialityStatus entity)
+        public override void ConvertSpecific(SpecialityStatusParam param, Model.SpecialityStatus entity)
         {
         }
     }

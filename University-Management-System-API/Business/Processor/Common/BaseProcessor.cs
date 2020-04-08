@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using University_Management_System_API.Business.Convertor;
-using University_Management_System_API.Business.Convertor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.Common;
-
-namespace University_Management_System_API.Business.Processor.Common
+﻿namespace University_Management_System_API.Business.Processor.Common
 {
+    using System;
+    using System.Collections.Generic;
+    using University_Management_System_API.Business.Convertor;
+    using University_Management_System_API.Business.Convertor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.Common;
+
     public abstract class BaseProcessor<TParamConverter, TResultConverter, TParam, TResult, TDao, TPK, TEntity>
         : IBaseProcessor<TParam, TResult, TPK>
 
@@ -71,13 +71,11 @@ namespace University_Management_System_API.Business.Processor.Common
         public List<TResult> Create(List<TParam> param)
         {
             List<TEntity> entities = new List<TEntity>();
-
             param.ForEach(item => entities.Add(ParamConverter.Convert(item, null)));
 
             Dao.Save(entities);
 
             List<TResult> result = new List<TResult>();
-
             entities.ForEach(entity => result.Add(ResultConverter.Convert(entity)));
 
             return result;
@@ -143,7 +141,6 @@ namespace University_Management_System_API.Business.Processor.Common
         public List<TResult> Find()
         {
             List<TEntity> entities = Dao.Find();
-
             List<TResult> results = new List<TResult>();
 
             foreach (TEntity item in entities)

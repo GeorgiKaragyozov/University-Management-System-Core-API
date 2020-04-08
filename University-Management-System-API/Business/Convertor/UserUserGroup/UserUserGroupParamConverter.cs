@@ -1,9 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.User;
-using University_Management_System_API.DataAccess.DataAccessObject.UserGroup;
-
-namespace University_Management_System_API.Business.Convertor.UserUserGroup
+﻿namespace University_Management_System_API.Business.Convertor.UserUserGroup
 {
+    using University_Management_System_API.Business.Convertor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.User;
+    using University_Management_System_API.DataAccess.DataAccessObject.UserGroup;
+
     public class UserUserGroupParamConverter
          : BaseParamConverter<UserUserGroupParam, Model.UserUserGroup>, IUserUserGroupParamConverter
     {
@@ -21,9 +21,7 @@ namespace University_Management_System_API.Business.Convertor.UserUserGroup
             set { _userGroupDao = value; }
         }
 
-        public UserUserGroupParamConverter(
-            IUserDao userDao,
-            IUserGroupDao userGroupDao)
+        public UserUserGroupParamConverter(IUserDao userDao, IUserGroupDao userGroupDao)
         {
             this.UserDao = userDao;
             this.UserGroupDao = userGroupDao;

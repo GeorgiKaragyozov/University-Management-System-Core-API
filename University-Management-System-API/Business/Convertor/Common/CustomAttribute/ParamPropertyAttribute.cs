@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace University_Management_System_API.Business.Convertor.Common
+﻿namespace University_Management_System_API.Business.Convertor.Common
 {
+    using System;
+
     [AttributeUsage(AttributeTargets.All)]
     public class ParamPropertyAttribute : Attribute
     { 

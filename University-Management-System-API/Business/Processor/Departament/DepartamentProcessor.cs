@@ -1,9 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.Departament;
-using University_Management_System_API.Business.Processor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.Departament;
-
-namespace University_Management_System_API.Business.Processor.Departament
+﻿namespace University_Management_System_API.Business.Processor.Departament
 {
+    using University_Management_System_API.Business.Convertor.Departament;
+    using University_Management_System_API.Business.Processor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.Departament;
+
     public class DepartamentProcessor
         : BaseProcessor<IDepartamentParamConverter, IDepartamentResultConverter, DepartamentParam,
             DepartamentResult, IDepartamentDao, long, Model.Departament>, IDepartamentProcessor
@@ -13,13 +13,13 @@ namespace University_Management_System_API.Business.Processor.Departament
             return param.Id;
         }
 
-        public DepartamentProcessor(IDepartamentDao dao,
+        public DepartamentProcessor(
+            IDepartamentDao dao,
             IDepartamentParamConverter paramConverter,
             IDepartamentResultConverter resultConverter)
 
             : base(dao, paramConverter, resultConverter)
         {
-
         }
     }
 }

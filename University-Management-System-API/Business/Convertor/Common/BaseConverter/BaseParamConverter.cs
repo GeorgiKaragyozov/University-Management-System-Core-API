@@ -1,10 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Reflection;
-using System.Collections.Generic;
-
-namespace University_Management_System_API.Business.Convertor.Common
+﻿namespace University_Management_System_API.Business.Convertor.Common
 {
+    using System;
+    using System.Linq;
+    using System.Reflection;
+    using System.Collections.Generic;
+
     public abstract class BaseParamConverter<TParam, TEntity> : IBaseParamConverter<TParam, TEntity>
         where TEntity : Persistent
     {

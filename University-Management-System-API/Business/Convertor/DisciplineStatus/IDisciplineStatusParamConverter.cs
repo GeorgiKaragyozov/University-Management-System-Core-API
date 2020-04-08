@@ -1,10 +1,8 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.DisciplineStatus
+﻿namespace University_Management_System_API.Business.Convertor.DisciplineStatus
 {
-    public interface IDisciplineStatusParamConverter 
-        : IBaseParamConverter<DisciplineStatusParam, Model.DisciplineStatus>
-    {
+    using University_Management_System_API.Business.Convertor.Common;
 
+    public interface IDisciplineStatusParamConverter : IBaseParamConverter<DisciplineStatusParam, Model.DisciplineStatus>
+    {
     }
 }

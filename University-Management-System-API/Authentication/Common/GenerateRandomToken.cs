@@ -1,8 +1,8 @@
-﻿using System;
-using System.Text;
-
-namespace University_Management_System_API.Authentication.Common
+﻿namespace University_Management_System_API.Authentication.Common
 {
+    using System;
+    using System.Text;
+
     public static class GenerateRandomToken
     {
         /// <summary>

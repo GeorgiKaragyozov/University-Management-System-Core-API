@@ -1,18 +1,17 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.Lecture
+﻿namespace University_Management_System_API.Business.Convertor.Lecture
 {
-    public class LectureResultConverter 
-        : BaseResultConverter<Model.Lecture, LectureResult>, ILectureResultConverter
+    using University_Management_System_API.Business.Convertor.Common;
+
+    public class LectureResultConverter : BaseResultConverter<Model.Lecture, LectureResult>, ILectureResultConverter
     {
-        public override void ConvertSpecific(Model.Lecture param, LectureResult result)
+        public override void ConvertSpecific(Model.Lecture entity, LectureResult result)
         {
-            result.TeacherDisciplineId = param.TeacherDiscipline.Id;
-            result.TeacherDisciplineName = param.TeacherDiscipline.Name;
-            result.RoomId = param.Room.Id;
-            result.RoomName = param.Room.Name;
-            result.StatusId = param.Status.Id;
-            result.StatusName = param.Status.Name;
+            result.TeacherDisciplineId = entity.TeacherDiscipline.Id;
+            result.TeacherDisciplineName = entity.TeacherDiscipline.Name;
+            result.RoomId = entity.Room.Id;
+            result.RoomName = entity.Room.Name;
+            result.StatusId = entity.Status.Id;
+            result.StatusName = entity.Status.Name;
         }
 
         public override LectureResult GetResult()

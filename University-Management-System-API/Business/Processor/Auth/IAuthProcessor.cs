@@ -1,7 +1,7 @@
-﻿using University_Management_System_API.Business.Convertor.User;
-
-namespace University_Management_System_API.Business.Processor.Auth
+﻿namespace University_Management_System_API.Business.Processor.Auth
 {
+    using University_Management_System_API.Business.Convertor.User;
+
     public interface IAuthProcessor
     {
         string GetAuthToken();

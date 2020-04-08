@@ -1,10 +1,8 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.TeacherDiscipline
+﻿namespace University_Management_System_API.Business.Convertor.TeacherDiscipline
 {
-    public interface ITeacherDisciplineResultConverter 
-        : IBaseResultConverter<Model.TeacherDiscipline, TeacherDisciplineResult>
-    {
+    using University_Management_System_API.Business.Convertor.Common;
 
+    public interface ITeacherDisciplineResultConverter : IBaseResultConverter<Model.TeacherDiscipline, TeacherDisciplineResult>
+    {
     }
 }

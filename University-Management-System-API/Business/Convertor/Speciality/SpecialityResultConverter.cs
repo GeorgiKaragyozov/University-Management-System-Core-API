@@ -1,18 +1,18 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.Speciality
+﻿namespace University_Management_System_API.Business.Convertor.Speciality
 {
+    using University_Management_System_API.Business.Convertor.Common;
+
     public class SpecialityResultConverter 
         : BaseResultConverter<Model.Speciality, SpecialityResult>, ISpecialityResultConverter
     {
-        public override void ConvertSpecific(Model.Speciality param, SpecialityResult result)
+        public override void ConvertSpecific(Model.Speciality entity, SpecialityResult result)
         {
-            result.StatusId = param.Status.Id;
-            result.StatusName = param.Status.Name;
-            result.FacultyId = param.Faculty.Id;
-            result.FacultyName = param.Faculty.Name;
-            result.EducationalDegreeId = param.EducationalDegree.Id;
-            result.EducationalDegreeName = param.EducationalDegree.Name;
+            result.StatusId = entity.Status.Id;
+            result.StatusName = entity.Status.Name;
+            result.FacultyId = entity.Faculty.Id;
+            result.FacultyName = entity.Faculty.Name;
+            result.EducationalDegreeId = entity.EducationalDegree.Id;
+            result.EducationalDegreeName = entity.EducationalDegree.Name;
         }
 
         public override SpecialityResult GetResult()

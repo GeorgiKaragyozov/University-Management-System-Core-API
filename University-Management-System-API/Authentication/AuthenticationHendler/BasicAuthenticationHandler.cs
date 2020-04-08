@@ -1,15 +1,15 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using System.Text.Encodings.Web;
-using System.Collections.Generic;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Authentication;
-using University_Management_System_API.Business.Convertor.User;
-using University_Management_System_API.Authentication.AuthenticationProvider;
-
-namespace University_Management_System_API.Authentication.AuthenticationHendler
+﻿namespace University_Management_System_API.Authentication.AuthenticationHendler
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Text.Encodings.Web;
+    using System.Collections.Generic;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Extensions.Options;
+    using Microsoft.AspNetCore.Authentication;
+    using University_Management_System_API.Business.Convertor.User;
+    using University_Management_System_API.Authentication.AuthenticationProvider;
+
     public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
         private readonly IEnumerable<IBaseAuthenticationProvider> Providers;

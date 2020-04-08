@@ -1,10 +1,8 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.EducationalDegree
+﻿namespace University_Management_System_API.Business.Convertor.EducationalDegree
 {
-    public interface IEducationalDegreeParamConverter
-         : IBaseParamConverter<EducationalDegreeParam, Model.EducationalDegree>
-    {
+    using University_Management_System_API.Business.Convertor.Common;
 
+    public interface IEducationalDegreeParamConverter : IBaseParamConverter<EducationalDegreeParam, Model.EducationalDegree>
+    {
     }
 }

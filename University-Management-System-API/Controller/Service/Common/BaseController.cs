@@ -1,13 +1,13 @@
-﻿using System;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Authorization;
-using University_Management_System_API.Business.Processor.Common;
-using System.Linq;
-
-namespace University_Management_System_API.Controller.Service.Common
+﻿namespace University_Management_System_API.Controller.Service.Common
 {
+    using System;
+    using System.Linq;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Collections.Generic;
+    using Microsoft.AspNetCore.Authorization;
+    using University_Management_System_API.Business.Processor.Common;
+
     [Authorize]
     [ApiController]
     [Produces("application/json")]
@@ -35,7 +35,7 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns>new param</returns>
         /// <response code="201">Returns the newly created item</response>
         /// <response code="400">If the param is null</response> 
-        [HttpPost("Create")]
+        [HttpPost(nameof(Create))]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [AllowAnonymous]
@@ -65,7 +65,7 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns>new params</returns>
         /// <response code="201">Returns newly created items</response>
         /// <response code="400">If the param is null</response> 
-        [HttpPost("CreateByList")]
+        [HttpPost(nameof(CreateByList))]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult CreateByList([FromBody]List<TParam> param)
@@ -128,7 +128,7 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns>response</returns>
         /// <response code="200">Returns deleted items</response>
         /// <response code="400">If the param's id is null</response> 
-        [HttpDelete("Erase")]
+        [HttpDelete("EraseByList")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult Erase(List<TPK> idList)
@@ -184,7 +184,7 @@ namespace University_Management_System_API.Controller.Service.Common
         /// </summary>
         /// <returns>params</returns>
         /// <response code="302">Returns the found item</response>
-        [HttpGet("ListAll")]
+        [HttpGet(nameof(ListAll))]
         //[Authorize(Roles = "Admin, User")]      
         [ProducesResponseType(StatusCodes.Status302Found)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -239,10 +239,10 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns></returns>
         /// <response code="200"></response>
         /// <response code="400"></response> 
+        [AllowAnonymous]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet("FindByFieldSingle/{field}/{value}")]
-        [AllowAnonymous]
         public ActionResult FindByFieldSingle(string field, string value)
         {
             if (field == null && value == null)
@@ -358,7 +358,7 @@ namespace University_Management_System_API.Controller.Service.Common
         /// <returns>response and update params</returns>
         /// <response code="200">Returns updated objects</response>
         /// <response code="400">If the params are null</response> 
-        [HttpPut()]
+        [HttpPut("UpdateByList")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult Update(List<TParam> param)

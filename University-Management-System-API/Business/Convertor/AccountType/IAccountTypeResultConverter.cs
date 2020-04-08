@@ -1,10 +1,8 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.AccountType
+﻿namespace University_Management_System_API.Business.Convertor.AccountType
 {
-    public interface IAccountTypeResultConverter 
-        : IBaseResultConverter<Model.AccountType, AccountTypeResult>
-    {
+    using University_Management_System_API.Business.Convertor.Common;
 
+    public interface IAccountTypeResultConverter : IBaseResultConverter<Model.AccountType, AccountTypeResult>
+    {
     }
 }

@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using University_Management_System_API.Business.Convertor.UserUserGroup;
-using University_Management_System_API.Business.Processor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.UserUserGroup;
-
-namespace University_Management_System_API.Business.Processor.UserUserGroup
+﻿namespace University_Management_System_API.Business.Processor.UserUserGroup
 {
+    using University_Management_System_API.Business.Convertor.UserUserGroup;
+    using University_Management_System_API.Business.Processor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.UserUserGroup;
+
     public class UserUserGroupProcessor
          : BaseProcessor<IUserUserGroupParamConverter, IUserUserGroupResultConverter, UserUserGroupParam,
              UserUserGroupResult, IUserUserGroupDao, long, Model.UserUserGroup>, IUserUserGroupProcessor
@@ -15,13 +13,13 @@ namespace University_Management_System_API.Business.Processor.UserUserGroup
             return param.Id;
         }
 
-        public UserUserGroupProcessor(IUserUserGroupDao dao,
+        public UserUserGroupProcessor(
+            IUserUserGroupDao dao,
             IUserUserGroupParamConverter paramConverter,
             IUserUserGroupResultConverter resultConverter)
 
             : base(dao, paramConverter, resultConverter)
         {
-
         }
     }
 }

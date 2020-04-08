@@ -1,9 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.UserStatus;
-using University_Management_System_API.Business.Processor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.UserStatus;
-
-namespace University_Management_System_API.Business.Processor.UserStatus
+﻿namespace University_Management_System_API.Business.Processor.UserStatus
 {
+    using University_Management_System_API.Business.Convertor.UserStatus;
+    using University_Management_System_API.Business.Processor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.UserStatus;
+
     public class UserStatusProcessor 
         : BaseProcessor<IUserStatusParamConverter, IUserStatusResultConverter, UserStatusParam,
             UserStatusResult, IUserStatusDao, long, Model.UserStatus> ,IUserStatusProcessor 
@@ -13,13 +13,13 @@ namespace University_Management_System_API.Business.Processor.UserStatus
             return param.Id;
         }
 
-        public UserStatusProcessor(IUserStatusDao dao,
+        public UserStatusProcessor(
+            IUserStatusDao dao,
             IUserStatusParamConverter paramConverter,
             IUserStatusResultConverter resultConverter)
 
             : base(dao, paramConverter, resultConverter)
         {
-
         }
     }
 }

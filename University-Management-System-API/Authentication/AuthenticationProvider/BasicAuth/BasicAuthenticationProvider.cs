@@ -1,16 +1,16 @@
-﻿using System;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net.Http.Headers;
-using Microsoft.AspNetCore.Http;
-using University_Management_System_API.Business.Processor.User;
-using University_Management_System_API.Business.Convertor.User;
-using University_Management_System_API.Business.Processor.ApiSession;
-using University_Management_System_API.Business.Processor.UserUserGroup;
-using University_Management_System_API.Authentication.AuthenticationProvider.BasicAuth;
-
-namespace University_Management_System_API.Authentication.AuthenticationProvider
+﻿namespace University_Management_System_API.Authentication.AuthenticationProvider
 {
+    using System;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Net.Http.Headers;
+    using Microsoft.AspNetCore.Http;
+    using University_Management_System_API.Business.Processor.User;
+    using University_Management_System_API.Business.Convertor.User;
+    using University_Management_System_API.Business.Processor.ApiSession;
+    using University_Management_System_API.Business.Processor.UserUserGroup;
+    using University_Management_System_API.Authentication.AuthenticationProvider.BasicAuth;
+
     public class BasicAuthenticationProvider : BaseAuthenticationProvider, IBasicAuthenticationProvider
     {
         private IApiSessionProcessor _apiSessionProcessor;

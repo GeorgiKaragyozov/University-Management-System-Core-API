@@ -1,20 +1,20 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Options;
-using System.Text.RegularExpressions;
-using University_Management_System_API.Authentication.Common;
-using University_Management_System_API.Business.Processor.User;
-using University_Management_System_API.Business.Convertor.User;
-using University_Management_System_API.Business.Convertor.ApiSession;
-using University_Management_System_API.Business.Processor.ApiSession;
-using University_Management_System_API.Business.Processor.Account;
-using University_Management_System_API.Business.Convertor.Account;
-
-namespace University_Management_System_API.Business.Processor.Auth
+﻿namespace University_Management_System_API.Business.Processor.Auth
 {
+    using System;
+    using System.Linq;
+    using System.Text;
+    using System.Security.Claims;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.Extensions.Options;
+    using System.Text.RegularExpressions;
+    using University_Management_System_API.Authentication.Common;
+    using University_Management_System_API.Business.Processor.User;
+    using University_Management_System_API.Business.Convertor.User;
+    using University_Management_System_API.Business.Convertor.ApiSession;
+    using University_Management_System_API.Business.Processor.ApiSession;
+    using University_Management_System_API.Business.Processor.Account;
+    using University_Management_System_API.Business.Convertor.Account;
+
     public class AuthProcessor : IAuthProcessor
     {
         private IHttpContextAccessor _httpContextAccessor;

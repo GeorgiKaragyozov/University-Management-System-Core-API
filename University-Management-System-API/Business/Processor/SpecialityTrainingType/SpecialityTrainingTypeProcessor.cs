@@ -1,9 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.SpecialityTrainingType;
-using University_Management_System_API.Business.Processor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.SpecialityTrainingType;
-
-namespace University_Management_System_API.Business.Processor.SpecialityTrainingType
+﻿namespace University_Management_System_API.Business.Processor.SpecialityTrainingType
 {
+    using University_Management_System_API.Business.Convertor.SpecialityTrainingType;
+    using University_Management_System_API.Business.Processor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.SpecialityTrainingType;
+
     public class SpecialityTrainingTypeProcessor
          : BaseProcessor<ISpecialityTrainingTypeParamConverter, ISpecialityTrainingTypeResultConverter,
             SpecialityTrainingTypeParam, SpecialityTrainingTypeResult, ISpecialityTrainingTypeDao,
@@ -14,13 +14,13 @@ namespace University_Management_System_API.Business.Processor.SpecialityTraining
             return param.Id;
         }
 
-        public SpecialityTrainingTypeProcessor(ISpecialityTrainingTypeDao dao,
+        public SpecialityTrainingTypeProcessor(
+            ISpecialityTrainingTypeDao dao,
             ISpecialityTrainingTypeParamConverter paramConverter,
             ISpecialityTrainingTypeResultConverter resultConverter)
 
             : base(dao, paramConverter, resultConverter)
         {
-
         }
     }
 }

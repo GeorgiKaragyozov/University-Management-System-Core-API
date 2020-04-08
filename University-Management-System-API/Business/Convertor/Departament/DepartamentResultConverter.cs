@@ -1,14 +1,14 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.Departament
+﻿namespace University_Management_System_API.Business.Convertor.Departament
 {
+    using University_Management_System_API.Business.Convertor.Common;
+
     public class DepartamentResultConverter 
         : BaseResultConverter<Model.Departament, DepartamentResult>, IDepartamentResultConverter
     {
-        public override void ConvertSpecific(Model.Departament param, DepartamentResult result)
+        public override void ConvertSpecific(Model.Departament entity, DepartamentResult result)
         {
-            result.StatusId = param.Status.Id;
-            result.StatusName = param.Status.Name;
+            result.StatusId = entity.Status.Id;
+            result.StatusName = entity.Status.Name;
         }
 
         public override DepartamentResult GetResult()

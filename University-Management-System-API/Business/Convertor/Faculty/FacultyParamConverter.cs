@@ -1,10 +1,9 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.FacultyStatus;
-using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.Faculty
+﻿namespace University_Management_System_API.Business.Convertor.Faculty
 {
-    public class FacultyParamConverter 
-        : BaseParamConverter<FacultyParam, Model.Faculty>, IFacultyParamConverter
+    using University_Management_System_API.DataAccess.DataAccessObject.FacultyStatus;
+    using University_Management_System_API.Business.Convertor.Common;
+
+    public class FacultyParamConverter : BaseParamConverter<FacultyParam, Model.Faculty>, IFacultyParamConverter
     {
         private IFacultyStatusDao _statusDao;
         public IFacultyStatusDao StatusDao

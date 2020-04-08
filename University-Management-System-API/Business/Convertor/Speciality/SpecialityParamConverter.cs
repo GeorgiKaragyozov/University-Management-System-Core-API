@@ -1,10 +1,10 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.SpecialityStatus;
-using University_Management_System_API.Business.Convertor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.Faculty;
-using University_Management_System_API.DataAccess.DataAccessObject.EducationalDegree;
-
-namespace University_Management_System_API.Business.Convertor.Speciality
+﻿namespace University_Management_System_API.Business.Convertor.Speciality
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.SpecialityStatus;
+    using University_Management_System_API.Business.Convertor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.Faculty;
+    using University_Management_System_API.DataAccess.DataAccessObject.EducationalDegree;
+
     public class SpecialityParamConverter 
         : BaseParamConverter<SpecialityParam, Model.Speciality>, ISpecialityParamConverter
     {

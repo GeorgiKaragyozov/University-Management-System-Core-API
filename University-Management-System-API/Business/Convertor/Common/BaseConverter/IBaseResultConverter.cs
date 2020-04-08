@@ -2,10 +2,10 @@
 {
     public interface IBaseResultConverter<TEntity, TResult>
     {
-        TResult ConvertStandart(TEntity param, TResult result);
+        TResult ConvertStandart(TEntity entity, TResult result);
 
-        void ConvertSpecific(TEntity param, TResult result);
+        void ConvertSpecific(TEntity entity, TResult result);
 
-        TResult Convert(TEntity param);
+        TResult Convert(TEntity entity);
     }
 }

@@ -1,9 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.TeacherDiscipline;
-using University_Management_System_API.Business.Processor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.TeacherDiscipline;
-
-namespace University_Management_System_API.Business.Processor.TeacherDiscipline
+﻿namespace University_Management_System_API.Business.Processor.TeacherDiscipline
 {
+    using University_Management_System_API.Business.Convertor.TeacherDiscipline;
+    using University_Management_System_API.Business.Processor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.TeacherDiscipline;
+
     public class TeacherDisciplineProcessor
          : BaseProcessor<ITeacherDisciplineParamConverter, ITeacherDisciplineResultConverter,
             TeacherDisciplineParam, TeacherDisciplineResult, ITeacherDisciplineDao,
@@ -14,13 +14,13 @@ namespace University_Management_System_API.Business.Processor.TeacherDiscipline
             return param.Id;
         }
 
-        public TeacherDisciplineProcessor(ITeacherDisciplineDao dao,
+        public TeacherDisciplineProcessor(
+            ITeacherDisciplineDao dao,
             ITeacherDisciplineParamConverter paramConverter,
             ITeacherDisciplineResultConverter resultConverter)
 
             : base(dao, paramConverter, resultConverter)
         {
-
         }
     }
 }

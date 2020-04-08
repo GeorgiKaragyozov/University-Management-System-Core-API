@@ -1,9 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.EducationalDegree;
-using University_Management_System_API.Business.Processor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.EducationalDegree;
-
-namespace University_Management_System_API.Business.Processor.EducationalDegree
+﻿namespace University_Management_System_API.Business.Processor.EducationalDegree
 {
+    using University_Management_System_API.Business.Convertor.EducationalDegree;
+    using University_Management_System_API.Business.Processor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.EducationalDegree;
+
     public class EducationalDegreeProcessor
         : BaseProcessor<IEducationalDegreeParamConverter, IEducationalDegreeResultConverter,
            EducationalDegreeParam, EducationalDegreeResult, IEducationalDegreeDao,
@@ -14,13 +14,13 @@ namespace University_Management_System_API.Business.Processor.EducationalDegree
             return param.Id;
         }
 
-        public EducationalDegreeProcessor(IEducationalDegreeDao dao,
+        public EducationalDegreeProcessor(
+            IEducationalDegreeDao dao,
             IEducationalDegreeParamConverter paramConverter,
             IEducationalDegreeResultConverter resultConverter)
 
             : base(dao, paramConverter, resultConverter)
         {
-
         }
     }
 }

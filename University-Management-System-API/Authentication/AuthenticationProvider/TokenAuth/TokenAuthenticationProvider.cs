@@ -1,14 +1,15 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using University_Management_System_API.Business.Convertor.User;
-using University_Management_System_API.Business.Processor.User;
-using University_Management_System_API.Business.Convertor.ApiSession;
-using University_Management_System_API.Business.Processor.ApiSession;
-using University_Management_System_API.Business.Processor.UserUserGroup;
-using University_Management_System_API.Authentication.AuthenticationProvider.TokenAuth;
-
+﻿
 namespace University_Management_System_API.Authentication.AuthenticationProvider
 {
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Http;
+    using University_Management_System_API.Business.Convertor.User;
+    using University_Management_System_API.Business.Processor.User;
+    using University_Management_System_API.Business.Convertor.ApiSession;
+    using University_Management_System_API.Business.Processor.ApiSession;
+    using University_Management_System_API.Business.Processor.UserUserGroup;
+    using University_Management_System_API.Authentication.AuthenticationProvider.TokenAuth;
+
     public class TokenAuthenticationProvider : BaseAuthenticationProvider, ITokenAuthenticationProvider
     {
         private IApiSessionProcessor _apiSessionProcessor;

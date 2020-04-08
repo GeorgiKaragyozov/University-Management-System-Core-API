@@ -1,14 +1,14 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.TeacherDisciplineStatus
+﻿namespace University_Management_System_API.Business.Convertor.TeacherDisciplineStatus
 {
+    using University_Management_System_API.Business.Convertor.Common;
+
     public class TeacherDisciplineStatusResultConverter 
         : BaseResultConverter<Model.TeacherDisciplineStatus, TeacherDisciplineStatusResult>,
             ITeacherDisciplineStatusResultConverter
     {
-        public override void ConvertSpecific(Model.TeacherDisciplineStatus param,
-            TeacherDisciplineStatusResult result)
-        { }
+        public override void ConvertSpecific(Model.TeacherDisciplineStatus entity, TeacherDisciplineStatusResult result)
+        { 
+        }
 
         public override TeacherDisciplineStatusResult GetResult()
         {

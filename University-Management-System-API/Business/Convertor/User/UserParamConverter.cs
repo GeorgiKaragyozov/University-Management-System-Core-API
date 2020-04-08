@@ -1,13 +1,12 @@
-﻿using System.Text;
-using Microsoft.Extensions.Options;
-using University_Management_System_API.Authentication.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.UserStatus;
-using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.User
+﻿namespace University_Management_System_API.Business.Convertor.User
 {
-    public class UserParamConverter 
-        : BaseParamConverter<UserParam, Model.User>, IUserParamConverter
+    using System.Text;
+    using Microsoft.Extensions.Options;
+    using University_Management_System_API.Authentication.Common;
+    using University_Management_System_API.Business.Convertor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.UserStatus;
+
+    public class UserParamConverter : BaseParamConverter<UserParam, Model.User>, IUserParamConverter
     {
         private IUserStatusDao _statusDao;
         public IUserStatusDao StatusDao
@@ -50,12 +49,10 @@ namespace University_Management_System_API.Business.Convertor.User
         {
             //get secret value
             var secret = this.Options.Value.Secret;
-
             //to byte secret value
             var key = Encoding.UTF8.GetBytes(secret);
 
             entity.Password = HashPlainText.GenerateHash(entity.Password, key);
-
             return entity;
         }
     }

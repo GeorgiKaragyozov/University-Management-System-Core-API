@@ -1,10 +1,10 @@
-﻿using System.Threading.Tasks;
-using University_Management_System_API.Business.Convertor.User;
-using University_Management_System_API.Business.Processor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.User;
-
-namespace University_Management_System_API.Business.Processor.User
+﻿namespace University_Management_System_API.Business.Processor.User
 {
+    using System.Threading.Tasks;
+    using University_Management_System_API.Business.Convertor.User;
+    using University_Management_System_API.Business.Processor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.User;
+
     public class UserProcessor
         : BaseProcessor<IUserParamConverter, IUserResultConverter, UserParam, UserResult, IUserDao, long,
             Model.User>, IUserProcessor
@@ -14,7 +14,8 @@ namespace University_Management_System_API.Business.Processor.User
             return param.Id;
         }
 
-        public UserProcessor(IUserDao dao,
+        public UserProcessor(
+            IUserDao dao,
             IUserParamConverter paramConverter,
             IUserResultConverter resultConverter)
 

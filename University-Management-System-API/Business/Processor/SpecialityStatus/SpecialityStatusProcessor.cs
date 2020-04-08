@@ -1,9 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.SpecialityStatus;
-using University_Management_System_API.Business.Processor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.SpecialityStatus;
-
-namespace University_Management_System_API.Business.Processor.SpecialityStatus
+﻿namespace University_Management_System_API.Business.Processor.SpecialityStatus
 {
+    using University_Management_System_API.Business.Convertor.SpecialityStatus;
+    using University_Management_System_API.Business.Processor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.SpecialityStatus;
+
     public class SpecialityStatusProcessor
         : BaseProcessor<ISpecialityStatusParamConverter, ISpecialityStatusResultConverter,
            SpecialityStatusParam, SpecialityStatusResult, ISpecialityStatusDao,
@@ -14,13 +14,13 @@ namespace University_Management_System_API.Business.Processor.SpecialityStatus
             return param.Id;
         }
 
-        public SpecialityStatusProcessor(ISpecialityStatusDao dao,
+        public SpecialityStatusProcessor(
+            ISpecialityStatusDao dao,
             ISpecialityStatusParamConverter paramConverter,
             ISpecialityStatusResultConverter resultConverter)
 
             : base(dao, paramConverter, resultConverter)
         {
-
         }
     }
 }

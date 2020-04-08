@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-
-namespace University_Management_System_API.Authentication.Common
+﻿namespace University_Management_System_API.Authentication.Common
 {
+    using System;
+    using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+
     public static class HashPlainText
     {
         /// <summary>

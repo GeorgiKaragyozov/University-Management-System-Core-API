@@ -1,15 +1,14 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.UserGroup
+﻿namespace University_Management_System_API.Business.Convertor.UserGroup
 {
+    using University_Management_System_API.Business.Convertor.Common;
+
     public class UserGroupResultConverter
-        : BaseResultConverter<Model.UserGroup, UserGroupResult>,
-           IUserGroupResultConverter
+        : BaseResultConverter<Model.UserGroup, UserGroupResult>, IUserGroupResultConverter
     {
-        public override void ConvertSpecific(Model.UserGroup param, UserGroupResult result)
+        public override void ConvertSpecific(Model.UserGroup entity, UserGroupResult result)
         {
-            result.StatusId = param.Status.Id;
-            result.StatusName = param.Status.Name;
+            result.StatusId = entity.Status.Id;
+            result.StatusName = entity.Status.Name;
         }
 
         public override UserGroupResult GetResult()

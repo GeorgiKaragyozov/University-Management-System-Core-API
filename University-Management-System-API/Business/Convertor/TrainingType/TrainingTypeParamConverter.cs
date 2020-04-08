@@ -1,11 +1,10 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.Speciality;
-
-namespace University_Management_System_API.Business.Convertor.TrainingType
+﻿namespace University_Management_System_API.Business.Convertor.TrainingType
 {
+    using University_Management_System_API.Business.Convertor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.Speciality;
+
     public class TrainingTypeParamConverter
-         : BaseParamConverter<TrainingTypeParam, Model.TrainingType>,
-            ITrainingTypeParamConverter
+         : BaseParamConverter<TrainingTypeParam, Model.TrainingType>, ITrainingTypeParamConverter
     {
         private ISpecialityDao _specialityDao;
         public ISpecialityDao SpecialityDao
@@ -14,8 +13,7 @@ namespace University_Management_System_API.Business.Convertor.TrainingType
             set { _specialityDao = value; }
         }
 
-        public TrainingTypeParamConverter(
-            ISpecialityDao specialityDao)
+        public TrainingTypeParamConverter(ISpecialityDao specialityDao)
         {
             this.SpecialityDao = specialityDao;
         }

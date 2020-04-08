@@ -1,9 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.UserGroupStatus
+﻿namespace University_Management_System_API.Business.Convertor.UserGroupStatus
 {
-    public class UserGroupStatusParamConverter
-           : BaseParamConverter<UserGroupStatusParam, Model.UserGroupStatus>,  IUserGroupStatusParamConverter
+    using University_Management_System_API.Business.Convertor.Common;
+
+    public class UserGroupStatusParamConverter 
+        : BaseParamConverter<UserGroupStatusParam, Model.UserGroupStatus>,  IUserGroupStatusParamConverter
     {
         public override Model.UserGroupStatus GetEntity(UserGroupStatusParam param)
         {

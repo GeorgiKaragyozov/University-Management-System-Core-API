@@ -1,10 +1,9 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.RoomStatus;
-using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.Room
+﻿namespace University_Management_System_API.Business.Convertor.Room
 {
-    public class RoomParamConverter 
-        : BaseParamConverter<RoomParam, Model.Room>, IRoomParamConverter
+    using University_Management_System_API.DataAccess.DataAccessObject.RoomStatus;
+    using University_Management_System_API.Business.Convertor.Common;
+
+    public class RoomParamConverter : BaseParamConverter<RoomParam, Model.Room>, IRoomParamConverter
     {
         private IRoomStatusDao _statusDao;
         public IRoomStatusDao StatusDao

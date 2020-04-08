@@ -1,11 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.SpecialityStatus;
-using University_Management_System_API.Business.Processor.Common;
-
-namespace University_Management_System_API.Business.Processor.SpecialityStatus
+﻿namespace University_Management_System_API.Business.Processor.SpecialityStatus
 {
-    public interface ISpecialityStatusProcessor 
-        : IBaseProcessor<SpecialityStatusParam, SpecialityStatusResult, long>
-    {
+    using University_Management_System_API.Business.Convertor.SpecialityStatus;
+    using University_Management_System_API.Business.Processor.Common;
 
+    public interface ISpecialityStatusProcessor : IBaseProcessor<SpecialityStatusParam, SpecialityStatusResult, long>
+    {
     }
 }

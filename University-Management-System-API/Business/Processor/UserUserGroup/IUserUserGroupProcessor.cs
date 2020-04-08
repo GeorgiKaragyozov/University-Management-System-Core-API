@@ -1,12 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using University_Management_System_API.Business.Convertor.UserUserGroup;
-using University_Management_System_API.Business.Processor.Common;
-
-namespace University_Management_System_API.Business.Processor.UserUserGroup
+﻿namespace University_Management_System_API.Business.Processor.UserUserGroup
 {
+    using University_Management_System_API.Business.Convertor.UserUserGroup;
+    using University_Management_System_API.Business.Processor.Common;
+
     public interface IUserUserGroupProcessor : IBaseProcessor<UserUserGroupParam, UserUserGroupResult, long>
     {
-
     }
 }

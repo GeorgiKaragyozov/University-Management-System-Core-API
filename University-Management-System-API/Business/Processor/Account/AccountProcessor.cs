@@ -1,9 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.Account;
-using University_Management_System_API.Business.Processor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.Account;
-
-namespace University_Management_System_API.Business.Processor.Account
+﻿namespace University_Management_System_API.Business.Processor.Account
 {
+    using University_Management_System_API.Business.Convertor.Account;
+    using University_Management_System_API.Business.Processor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.Account;
+
     public class AccountProcessor
         : BaseProcessor<IAccountParamConverter, IAccountResultConverter, AccountParam, AccountResult,
             IAccountDao, long, Model.Account>, IAccountProcessor
@@ -13,13 +13,13 @@ namespace University_Management_System_API.Business.Processor.Account
             return param.Id;
         }
 
-        public AccountProcessor(IAccountDao dao,
+        public AccountProcessor(
+            IAccountDao dao,
             IAccountParamConverter paramConverter,
             IAccountResultConverter resultConverter)
 
             : base(dao, paramConverter, resultConverter)
         {
-
         }
     }
 }

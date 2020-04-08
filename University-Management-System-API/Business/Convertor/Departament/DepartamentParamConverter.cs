@@ -1,8 +1,8 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.DepartamentStatus;
-
-namespace University_Management_System_API.Business.Convertor.Departament
+﻿namespace University_Management_System_API.Business.Convertor.Departament
 {
+    using University_Management_System_API.Business.Convertor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.DepartamentStatus;
+
     public class DepartamentParamConverter 
         : BaseParamConverter<DepartamentParam, Model.Departament>, IDepartamentParamConverter
     {

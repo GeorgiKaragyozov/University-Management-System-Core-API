@@ -4,8 +4,6 @@
     {
         public long StatusId { get; set; }
         public long FacultyId { get; set; }
-        public long EducationalDegreeId { get; set; }
-
-        //public TrainingType TrainingType { get; set; }      
+        public long EducationalDegreeId { get; set; }    
     }
 }

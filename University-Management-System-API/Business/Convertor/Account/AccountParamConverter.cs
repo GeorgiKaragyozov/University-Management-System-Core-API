@@ -1,15 +1,14 @@
-﻿using System;
-using University_Management_System_API.Business.Convertor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.AccountStatus;
-using University_Management_System_API.DataAccess.DataAccessObject.AccountType;
-using University_Management_System_API.DataAccess.DataAccessObject.Departament;
-using University_Management_System_API.DataAccess.DataAccessObject.Speciality;
-using University_Management_System_API.DataAccess.DataAccessObject.User;
-
-namespace University_Management_System_API.Business.Convertor.Account
+﻿namespace University_Management_System_API.Business.Convertor.Account
 {
-    public class AccountParamConverter 
-        : BaseParamConverter<AccountParam, Model.Account>, IAccountParamConverter
+    using System;
+    using University_Management_System_API.Business.Convertor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.AccountStatus;
+    using University_Management_System_API.DataAccess.DataAccessObject.AccountType;
+    using University_Management_System_API.DataAccess.DataAccessObject.Departament;
+    using University_Management_System_API.DataAccess.DataAccessObject.Speciality;
+    using University_Management_System_API.DataAccess.DataAccessObject.User;
+
+    public class AccountParamConverter : BaseParamConverter<AccountParam, Model.Account>, IAccountParamConverter
     {
         private IUserDao _userDao;
         public IUserDao UserDao

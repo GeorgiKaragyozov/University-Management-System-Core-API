@@ -1,9 +1,9 @@
-﻿using University_Management_System_API.Business.Convertor.LectureStatus;
-using University_Management_System_API.Business.Processor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.LectureStatus;
-
-namespace University_Management_System_API.Business.Processor.LectureStatus
+﻿namespace University_Management_System_API.Business.Processor.LectureStatus
 {
+    using University_Management_System_API.Business.Convertor.LectureStatus;
+    using University_Management_System_API.Business.Processor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.LectureStatus;
+
     public class LectureStatusProcessor
          : BaseProcessor<ILectureStatusParamConverter, ILectureStatusResultConverter,
            LectureStatusParam, LectureStatusResult, ILectureStatusDao,
@@ -14,13 +14,13 @@ namespace University_Management_System_API.Business.Processor.LectureStatus
             return param.Id;
         }
 
-        public LectureStatusProcessor(ILectureStatusDao dao,
+        public LectureStatusProcessor(
+            ILectureStatusDao dao,
             ILectureStatusParamConverter paramConverter,
             ILectureStatusResultConverter resultConverter)
 
             : base(dao, paramConverter, resultConverter)
         {
-
         }
     }
 }

@@ -1,10 +1,10 @@
-﻿using University_Management_System_API.DataAccess.DataAccessObject.Discipline;
-using University_Management_System_API.DataAccess.DataAccessObject.TeacherDisciplineStatus;
-using University_Management_System_API.Business.Convertor.Common;
-using University_Management_System_API.DataAccess.DataAccessObject.Account;
-
-namespace University_Management_System_API.Business.Convertor.TeacherDiscipline
+﻿namespace University_Management_System_API.Business.Convertor.TeacherDiscipline
 {
+    using University_Management_System_API.DataAccess.DataAccessObject.Discipline;
+    using University_Management_System_API.DataAccess.DataAccessObject.TeacherDisciplineStatus;
+    using University_Management_System_API.Business.Convertor.Common;
+    using University_Management_System_API.DataAccess.DataAccessObject.Account;
+
     public class TeacherDisciplineParamConverter 
         : BaseParamConverter<TeacherDisciplineParam, Model.TeacherDiscipline>,
           ITeacherDisciplineParamConverter
@@ -51,8 +51,7 @@ namespace University_Management_System_API.Business.Convertor.TeacherDiscipline
             };
         }
 
-        public override void ConvertSpecific(TeacherDisciplineParam param,
-            Model.TeacherDiscipline entity)
+        public override void ConvertSpecific(TeacherDisciplineParam param, Model.TeacherDiscipline entity)
         {
             entity.Account = AccountDao.Find(param.TeacherId);
             entity.Discipline = DisciplineDao.Find(param.DisciplineId);

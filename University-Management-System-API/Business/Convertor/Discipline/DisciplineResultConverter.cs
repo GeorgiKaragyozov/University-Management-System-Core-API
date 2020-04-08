@@ -1,14 +1,14 @@
-﻿using University_Management_System_API.Business.Convertor.Common;
-
-namespace University_Management_System_API.Business.Convertor.Discipline
+﻿namespace University_Management_System_API.Business.Convertor.Discipline
 {
+    using University_Management_System_API.Business.Convertor.Common;
+
     public class DisciplineResultConverter 
         : BaseResultConverter<Model.Discipline, DisciplineResult>, IDisciplineResultConverter
     {
-        public override void ConvertSpecific(Model.Discipline param, DisciplineResult result)
+        public override void ConvertSpecific(Model.Discipline entity, DisciplineResult result)
         {
-            result.StatusId = param.Status.Id;
-            result.StatusName = param.Status.Name;
+            result.StatusId = entity.Status.Id;
+            result.StatusName = entity.Status.Name;
         }
 
         public override DisciplineResult GetResult()

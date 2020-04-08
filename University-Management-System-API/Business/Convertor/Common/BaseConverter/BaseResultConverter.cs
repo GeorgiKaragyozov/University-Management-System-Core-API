@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-
-namespace University_Management_System_API.Business.Convertor.Common
+﻿namespace University_Management_System_API.Business.Convertor.Common
 {
+    using System.Linq;
+    using System.Reflection;
+    using System.Collections.Generic;
+
     public abstract class BaseResultConverter<TEntity, TResult> : IBaseResultConverter<TEntity, TResult>
     {
         /// <summary>
@@ -11,12 +11,12 @@ namespace University_Management_System_API.Business.Convertor.Common
         /// if the param's property has the track attribute it will map the property 
         /// to a destination property(from the attribute) in the entity.m
         /// </summary>
-        /// <param name="param">Param</param>
+        /// <param name="entity">Param</param>
         /// <param name="result">Result</param>
         /// <returns>Mapped result</returns>
-        public TResult ConvertStandart(TEntity param, TResult result)
+        public TResult ConvertStandart(TEntity entity, TResult result)
         {
-            Dictionary<string, PropertyInfo> paramProp = param.GetType().GetProperties()
+            Dictionary<string, PropertyInfo> paramProp = entity.GetType().GetProperties()
              .ToDictionary(x => x.Name, x => x);
 
             Dictionary<string, PropertyInfo> resultProp = result.GetType().GetProperties()
@@ -27,7 +27,7 @@ namespace University_Management_System_API.Business.Convertor.Common
                 if (resultProp.ContainsKey(paramItem.Key))
                 {
                     result.GetType().GetProperty(paramItem.Key).SetValue(
-                        result, paramItem.Value.GetValue(param));
+                        result, paramItem.Value.GetValue(entity));
                 }
             }
 
@@ -38,9 +38,9 @@ namespace University_Management_System_API.Business.Convertor.Common
         /// Sets the result's specific properties using the metadata for the property
 		/// from the related param's property.
         /// </summary>
-        /// <param name="param">Param</param>
+        /// <param name="entity">Param</param>
         /// <param name="result">Result</param>
-        public abstract void ConvertSpecific(TEntity param, TResult result);
+        public abstract void ConvertSpecific(TEntity entity, TResult result);
 
         public TResult Convert(TEntity entity)
         {

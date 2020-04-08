@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace University_Management_System_API.Business.Processor.Common
+﻿namespace University_Management_System_API.Business.Processor.Common
 {
+    using System.Collections.Generic;
+
     public interface IBaseProcessor<TParam, TResult, TPK>
     {
         TResult Create(TParam param);
