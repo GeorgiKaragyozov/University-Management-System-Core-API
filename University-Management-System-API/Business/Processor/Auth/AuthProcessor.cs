@@ -14,6 +14,10 @@
     using University_Management_System_API.Business.Processor.ApiSession;
     using University_Management_System_API.Business.Processor.Account;
     using University_Management_System_API.Business.Convertor.Account;
+    using University_Management_System_API.Business.Convertor.Auth;
+    using University_Management_System_API.Business.Convertor.TrainingType;
+    using University_Management_System_API.Business.Convertor.AccountType;
+    using University_Management_System_API.Business.Processor.AccountType;
 
     public class AuthProcessor : IAuthProcessor
     {
@@ -49,6 +53,14 @@
         }
 
 
+        private IAccountTypeProcessor _accountTypeProcessor;
+        public IAccountTypeProcessor AccountTypeProcessor
+        {
+            get { return this._accountTypeProcessor; }
+            set { this._accountTypeProcessor = value; }
+        }
+
+
         private IOptions<SecretKeySettings> _options;
         public IOptions<SecretKeySettings> Options
         {
@@ -60,10 +72,14 @@
             IHttpContextAccessor httpContextAccessor,
             IApiSessionProcessor apiSessionProcessor,
             IUserProcessor userProcessor,
-            IOptions<SecretKeySettings> options)
+            IAccountProcessor accountProcessor,
+            IOptions<SecretKeySettings> options,
+            IAccountTypeProcessor accountTypeProcessor)
         {
             this.HttpContextAccessor = httpContextAccessor;
             this.ApiSessionProcessor = apiSessionProcessor;
+            this.AccountProcessor = accountProcessor;
+            this.AccountTypeProcessor = accountTypeProcessor;
             this.UserProcessor = userProcessor;
             this.Options = options;
         }
@@ -171,6 +187,48 @@
             {
                 throw new Exception(ex.Message);
             }     
+        }
+
+        public AccountResult Register(RegisterParam param)
+        {
+            //Create user
+            UserParam userParam = new UserParam
+            {
+                Username = param.Username,
+                Password = param.Password,
+                StatusId = 1
+            };
+            UserResult userResult = UserProcessor.Create(userParam);
+
+            //Create accountType
+            AccountTypeParam accountTypeParam = new AccountTypeParam
+            {
+                Name = param.Group
+            };
+            AccountTypeResult accountTypeResult = AccountTypeProcessor.Create(accountTypeParam);
+
+            //Finally create account
+            AccountParam accountParam = new AccountParam
+            {
+                StatusId = 1,
+                SpecialityId = 1,
+                DepartamentId = 1,
+                UserId = userResult.Id,      
+                TypeId = accountTypeResult.Id,
+                FirstName = param.FirstName,
+                MiddleName = param.MiddleName,
+                LastName = param.LastName,
+                Egn = param.Egn,
+                Address = param.Address,
+                City = param.City,
+                Country = param.Country,
+                MobilePhone = param.MobilePhone,
+                HomePhone = param.HomePhone,
+                Email = param.Email
+            };
+            AccountResult accountResult = AccountProcessor.Create(accountParam);
+
+            return accountResult;
         }
     }
 }

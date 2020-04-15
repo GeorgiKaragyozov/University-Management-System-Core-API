@@ -5,6 +5,7 @@
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Authorization;
     using University_Management_System_API.Business.Processor.Auth;
+    using University_Management_System_API.Business.Convertor.Auth;
 
     [Authorize]
     [ApiController]
@@ -59,7 +60,7 @@
         /// <returns>new param</returns>
         /// <response code="200">Logout Successfully</response>
         /// <response code="400"></response> 
-        [HttpGet(nameof(Logout))]
+        [HttpPost(nameof(Logout))]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult Logout()
@@ -74,6 +75,22 @@
             {
                 return NotFound(ex.Message);
             }         
+        }
+
+        [HttpPost(nameof(Register))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [AllowAnonymous]
+        public ActionResult Register([FromBody]RegisterParam param)
+        {
+            try
+            {       
+                return Ok(Processor.Register(param));
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
     }
 }

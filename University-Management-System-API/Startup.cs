@@ -33,6 +33,15 @@ namespace University_Management_System_API
             BaseRegisterExtensions.BaseRegisterDependencies(services);
 
             services.AddSwaggerDocumentation();
+
+            //Enable cors
+            services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
+            {
+                builder.WithOrigins("http://localhost:4200")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials();
+            }));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -45,13 +54,9 @@ namespace University_Management_System_API
             SwaggerServiceExtensions.UseSwaggerDocumentation(app);
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
 
-            app.UseCors(x => x
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
+            app.UseCors("ApiCorsPolicy");
 
             app.UseAuthentication();
             app.UseAuthorization();
